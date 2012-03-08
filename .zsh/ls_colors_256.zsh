@@ -1,0 +1,3 @@
+#LS_COLORS="di=01;38;05;012:\
+#no=01;38;05;44"
+#export LS_COLORS

@@ -1,0 +1,59 @@
+*background: #000000
+*foreground: #ffffff
+urxvt*scrollBar: false
+#*font: -misc-fixed-medium-r-normal--11-100-75-75-c-60-iso8859-1
+#*boldFont: -misc-fixed-medium-r-normal-*-11-100-75-75-c-60-iso8859-1
+*font: -misc-fixed-medium-r-*-*-13-*-*-*-*-*-iso10646-1
+*boldFont: -misc-fixed-medium-r-*-*-13-*-*-*-*-*-iso10646-1
+
+urxvt*geometry: 82x60
+
+! black
+*color0: #000000
+
+! dark red
+color1: #a61300
+
+! dark green
+*color2: #4c7800
+
+! dark yellow
+*color3: #b83A00
+
+! dark blue
+*color4: #00afd6
+
+! dark magenta
+*color5: #7c00b5
+
+! dark cyan
+*color6: #00d6bd
+
+! dark white
+*color7: #999999
+
+! dark black
+*color8: #222222
+
+! red
+*color9: #ff1e00
+
+! green
+*color10: #a2ff00
+
+! yellow
+*color11: #ff5000
+
+! blue
+*color12: #00d0ff
+
+! magenta
+*color13: #ae00ff
+
+! cyan
+*color14: #00ffe1
+
+! white
+*color15: #ffffff
+
+Xcursor.theme: buuf
