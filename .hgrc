@@ -1,0 +1,6 @@
+[ui]
+username = Daniel Beecham <daniel@lunix.se>
+
+[extensions]
+hgext.bookmarks =
+hggit =
