@@ -29,7 +29,10 @@ export WAFDIR="/usr/local/lib"
 
 # VIM is awesome.
 export EDITOR="/usr/bin/vim"
-export PAGER="/usr/bin/vimmanpager"
+#export PAGER="/usr/bin/vimmanpager"
+export PAGER="/usr/bin/less"
+
+export PATH="$PATH:/usr/local/go/bin"
 
 # Makes sure less displays escape characters right.
 export LESS="-R"
