@@ -32,7 +32,9 @@ export EDITOR="/usr/bin/vim"
 #export PAGER="/usr/bin/vimmanpager"
 export PAGER="/usr/bin/less"
 
+# GO stuff
 export PATH="$PATH:/usr/local/go/bin"
+export GOROOT="/usr/local/go"
 
 # Makes sure less displays escape characters right.
 export LESS="-R"
