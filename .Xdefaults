@@ -6,7 +6,7 @@ urxvt*scrollBar: false
 *font: -misc-fixed-medium-r-*-*-13-*-*-*-*-*-iso10646-1
 *boldFont: -misc-fixed-medium-r-*-*-13-*-*-*-*-*-iso10646-1
 
-urxvt*geometry: 82x60
+urxvt*geometry: 83x50
 
 ! black
 *color0: #000000
