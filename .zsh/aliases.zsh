@@ -1,5 +1,5 @@
 # Common commands and aliases.
-alias ls="ls --color -F"
+alias ls="ls --color -F -s"
 alias lsof="lsof -Pn"
 alias mmv='noglob zmv -W'
 alias -g ...="../.."
