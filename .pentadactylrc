@@ -1,4 +1,4 @@
 set autocomplete=
-noremap j 12j
-noremap k 12k
+map -builtin j 12j
+map -builtin k 12k
 colorscheme simple_dark
