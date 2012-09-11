@@ -2,7 +2,7 @@ scriptencoding utf-8
 " ^^ Please leave the above line at the start of the file.
 
 " Default configuration file for Vim
-" $Header: /var/cvsroot/gentoo-x86/app-editors/vim-core/files/vimrc-r3,v 1.1 2006/03/25 20:26:27 genstef Exp $
+" $Header: /var/cvsroot/gentoo-x86/app-editors/vim-core/files/vimrc-r4,v 1.3 2010/04/15 19:30:32 darkside Exp $
 
 " Written by Aron Griffis <agriffis@gentoo.org>
 " Modified by Ryan Phillips <rphillips@gentoo.org>
@@ -19,33 +19,31 @@ scriptencoding utf-8
 " deviating only where it makes sense
 set nocompatible        " Use Vim defaults (much better!)
 set bs=2                " Allow backspacing over everything in insert mode
-set autoindent          " Always set auto-indenting on
+set ai                  " Always set auto-indenting on
 set history=50          " keep 50 lines of command history
 set ruler               " Show the cursor position all the time
 set tabstop=4
-set shiftwidth=4
 set softtabstop=4
-set smarttab
+set shiftwidth=4
+set expandtab
 set foldmethod=marker
 set background=dark
 set number
 set showcmd
-" set list 
-" set listchars=tab:.\ ,extends:>
-" set list listchars=tab:.\ 
-set listchars=tab:»·,trail:·,extends:>
-" q: sucks
-nmap q: :q
+set textwidth=80
 
-" Annoying default mappings
-inoremap <S-Up>   <C-o>gk
-inoremap <S-Down> <C-o>gj
-noremap  <S-Up>   gk
-noremap  <S-Down> gj
+"set listchars=tab:»·,trail:·,extends:>
+set listchars=tab:.\ ,trail:·,extends:>
+set list
 
-" Make <space> in normal mode go down a page rather than left a
-" character
-noremap <space> <C-f>
+" convert spaces to tabs when reading file
+autocmd! bufreadpost * set noexpandtab | retab! 4
+
+" convert tabs to spaces before writing file
+autocmd! bufwritepre * set expandtab | retab! 4
+
+" convert spaces to tabs after writing file (to show guides again)
+autocmd! bufwritepost * set noexpandtab | retab! 4
 
 set viminfo='20,\"500   " Keep a .viminfo file.
 
@@ -65,28 +63,11 @@ if v:version >= 700
 endif
 " }}}
 
-" Nice statusbar {{{
-set laststatus=2
-set statusline=
-set statusline+=%2*%-3.3n%0*\                " buffer number
-set statusline+=%f\                          " file name
-set statusline+=%h%1*%m%r%w%0*               " flags
-set statusline+=\[%{strlen(&ft)?&ft:'none'}, " filetype
-set statusline+=%{&encoding},                " encoding
-set statusline+=%{&fileformat}]              " file format
-if filereadable(expand("$VIM/vimfiles/plugin/vimbuddy.vim"))
-    set statusline+=\ %{VimBuddy()}          " vim buddy
-endif
-set statusline+=%=                           " right align
-set statusline+=%2*0x%-8B\                   " current char
-set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
-" }}}
-
 " {{{ Modeline settings
 " We don't allow modelines by default. See bug #14088 and bug #73715.
 " If you're not concerned about these, you can enable them on a per-user
 " basis by adding "set modeline" to your ~/.vimrc file.
-set modeline
+set nomodeline
 " }}}
 
 " {{{ Locale settings
@@ -114,11 +95,17 @@ endif
 
 " Always check for UTF-8 when trying to determine encodings.
 if &fileencodings !~? "utf-8"
+  " If we have to add this, the default encoding is not Unicode.
+  " We use this fact later to revert to the default encoding in plaintext/empty
+  " files.
+  let g:added_fenc_utf8 = 1
   set fileencodings+=utf-8
 endif
 
 " Make sure we have a sane fallback for encoding detection
-set fileencodings+=default
+if &fileencodings !~? "default"
+  set fileencodings+=default
+endif
 " }}}
 
 " {{{ Syntax highlighting settings
@@ -155,65 +142,8 @@ if isdirectory(expand("$VIMRUNTIME/ftplugin"))
   " Uncomment the next line (or copy to your ~/.vimrc) for plugin-provided
   " indent settings. Some people don't like these, so we won't turn them on by
   " default.
- " filetype indent on
+  " filetype indent on
 endif
 " }}}
-
-" {{{ Fix &shell, see bug #101665.
-if "" == &shell
-  if executable("/bin/bash")
-    set shell=/bin/bash
-  elseif executable("/bin/sh")
-    set shell=/bin/sh
-  endif
-endif
-"}}}
-
-" {{{ Autocommands
-if has("autocmd")
-
-augroup gentoo
-  au!
-
-  " Gentoo-specific settings for ebuilds.  These are the federally-mandated
-  " required tab settings.  See the following for more information:
-  " http://www.gentoo.org/proj/en/devrel/handbook/handbook.xml
-  " Note that the rules below are very minimal and don't cover everything.
-  " Better to emerge app-vim/gentoo-syntax, which provides full syntax,
-  " filetype and indent settings for all things Gentoo.
-  au BufRead,BufNewFile *.e{build,class} let is_bash=1|setfiletype sh
-  au BufRead,BufNewFile *.e{build,class} set ts=4 sw=4 noexpandtab
-
-  " In text files, limit the width of text to 78 characters, but be careful
-  " that we don't override the user's setting.
-  autocmd BufNewFile,BufRead *.txt
-        \ if &tw == 0 && ! exists("g:leave_my_textwidth_alone") |
-        \     setlocal textwidth=78 |
-        \ endif
-
-  " When editing a file, always jump to the last cursor position
-  autocmd BufReadPost *
-        \ if ! exists("g:leave_my_cursor_position_alone") |
-        \     if line("'\"") > 0 && line ("'\"") <= line("$") |
-        \         exe "normal g'\"" |
-        \     endif |
-        \ endif
-
-  " When editing a crontab file, set backupcopy to yes rather than auto. See
-  " :help crontab and bug #53437.
-  autocmd FileType crontab set backupcopy=yes
-
-augroup END
-
-endif " has("autocmd")
-" }}}
-
-let g:indent_guides_start_level = 1
-let g:indent_guides_guid_size = 1
-hi IndentGuidesOdd  ctermbg=white
-hi IndentGuidesEven ctermbg=lightgrey
-
-au BufNewFile,BufRead *.inc set filetype=php
 
 " vim: set fenc=utf-8 tw=80 sw=2 sts=2 et foldmethod=marker :
-
