@@ -23,21 +23,12 @@ export LANG="en_GB.UTF-8"
 
 # I want my bin folder in my path.
 export PATH="/home/zhaozhou/bin:$PATH"
-
-# WAF
-export WAFDIR="/usr/local/lib"
-
-# VIM is awesome.
 export EDITOR="/usr/bin/vim"
-#export PAGER="/usr/bin/vimmanpager"
 export PAGER="/usr/bin/less"
 
-# GO stuff
+# GO
 export PATH="$PATH:/usr/local/go/bin"
 export GOROOT="/usr/local/go"
 
 # Makes sure less displays escape characters right.
 export LESS="-R"
-
-# I don't like Color Wrappers randomize, I want my CW grey.
-export CW_COLORIZE="grey"

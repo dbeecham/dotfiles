@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <resistance>
+        <strength>20</strength>
+        <screen_edge_strength>20</screen_edge_strength>
+    </resistance>
+
+    <focus>
+        <focusNew>yes</focusNew>
+        <focusLast>yes</focusLast>
+        <followMouse>no</followMouse>
+        <raiseOnFocus>yes</raiseOnFocus>
+    </focus>
+
+    <placement>
+        <policy>Smart</policy>
+    </placement>
+
+    <desktops>
+        <number>9</number>
+        <firstdesk>5</firstdesk>
+        <names>
+            <name>0000</name>
+            <name>0001</name>
+            <name>0010</name>
+            <name>0011</name>
+            <name>0100</name>
+            <name>0101</name>
+            <name>0110</name>
+            <name>0111</name>
+            <name>1000</name>
+        </names>
+    </desktops>
+
+    <resize>
+        <drawContents>no</drawContents>
+        <popupShow>Always</popupShow>
+        <popupPosition>Fixed</popupPosition>
+        <popupFixedPosition>
+            <x>10</x>
+            <y>10</y>
+        </popupFixedPosition>
+    </resize>
+
+    <margins>
+            <top>0</top>
+            <bottom>22</bottom>
+            <left>0</left>
+            <right>0</right>
+    </margins>
+
+    <applications>
+        <application class="*">
+            <decor>no</decor>
+        </application>
+    </applications>
+
+    <theme>
+        <name>1977-Grey</name>
+        <keepBorder>yes</keepBorder>
+        <font place="MenuHeader">
+            <name>fixed</name>
+            <size>10</size>
+            <weight>normal</weight>
+        </font>
+        <font place="MenuItem">
+            <name>fixed</name>
+            <size>10</size>
+            <weight>normal</weight>
+        </font>
+        <font place="OnScreenDisplay">
+            <name>fixed</name>
+            <size>10</size>
+            <weight>normal</weight>
+        </font>
+        <font place="InactiveOnScreenDisplay">
+            <name>fixed</name>
+            <size>10</size>
+            <weight>normal</weight>
+        </font>
+    </theme>
+
+    <keyboard>
+        <keybind key="W-l">
+            <action name="GoToDesktop">
+                <to>right</to>
+                <wrap>no</wrap>
+            </action>
+        </keybind>
+        <keybind key="W-h">
+            <action name="GoToDesktop">
+                <to>left</to>
+                <wrap>no</wrap>
+            </action>
+        </keybind>
+        <keybind key="W-j">
+            <action name="GoToDesktop">
+                <to>down</to>
+                <wrap>no</wrap>
+            </action>
+        </keybind>
+        <keybind key="W-k">
+            <action name="GoToDesktop">
+                <to>up</to>
+                <wrap>no</wrap>
+            </action>
+        </keybind>
+        <keybind key="A-Tab">
+            <action name="NextWindow">
+                <finalactions>
+                    <action name="Focus" />
+                    <action name="Raise" />
+                    <action name="Unshade" />
+                </finalactions>
+            </action>
+        </keybind>
+        <keybind key="A-j">
+            <action name="DirectionalCycleWindows">
+                <direction>south</direction>
+                <dialog>no</dialog>
+            </action>
+        </keybind>
+        <keybind key="A-k">
+            <action name="DirectionalCycleWindows">
+                <direction>north</direction>
+                <dialog>no</dialog>
+            </action>
+        </keybind>
+        <keybind key="A-h">
+            <action name="DirectionalCycleWindows">
+                <direction>west</direction>
+                <dialog>no</dialog>
+            </action>
+        </keybind>
+        <keybind key="A-l">
+            <action name="DirectionalCycleWindows">
+                <direction>east</direction>
+                <dialog>no</dialog>
+            </action>
+        </keybind>
+        <keybind key="A-S-Tab">
+            <action name="PreviousWindow">
+                <finalactions>
+                    <action name="Focus" />
+                    <action name="Raise" />
+                    <action name="Unshade" />
+                </finalactions>
+            </action>
+        </keybind>
+        <keybind key="W-Return">
+            <action name="Execute">
+                <command>urxvt</command>
+            </action>
+        </keybind>
+        <keybind key="W-space">
+            <action name="Execute">
+                <command>gmrun</command>
+            </action>
+        </keybind>
+        <keybind key="W-S-c">
+            <action name="Close" />
+        </keybind>
+    </keyboard>
+
+    <mouse>
+        <dragThreshold>1</dragThreshold>
+        <doubleClickTime>400</doubleClickTime>
+        <screenEdgeWarpTime>10</screenEdgeWarpTime>
+        <screenEdgeWarpMouse>true</screenEdgeWarpMouse>
+        
+        <context name="Frame">
+            <mousebind button="A-Left" action="Drag">
+                <action name="Move" />
+            </mousebind>
+
+            <mousebind button="A-Right" action="Press">
+                <action name="Focus"/>
+                <action name="Raise"/>
+                <action name="Unshade"/>
+            </mousebind>
+
+            <mousebind button="A-Right" action="Drag">
+                <action name="Resize"/>
+            </mousebind>
+        </context>
+        <context name="Client">
+            <mousebind button="Left" action="Press">
+                <action name="Focus" />
+                <action name="Raise" />
+            </mousebind>
+        </context>
+        <context name="Root">
+            <mousebind button="Right" action="Press">
+                <action name="ShowMenu">
+                    <menu>root-menu</menu>
+                </action>
+            </mousebind>
+        </context>
+
+    </mouse>
+
+</openbox_config>
