@@ -115,6 +115,9 @@
                 </finalactions>
             </action>
         </keybind>
+        <keybind key="W-f">
+            <action name="ToggleFullscreen" />
+        </keybind>
         <keybind key="A-j">
             <action name="DirectionalCycleWindows">
                 <direction>south</direction>
