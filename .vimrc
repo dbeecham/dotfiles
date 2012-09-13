@@ -1,40 +1,23 @@
 scriptencoding utf-8
-" ^^ Please leave the above line at the start of the file.
-
-" Default configuration file for Vim
-" $Header: /var/cvsroot/gentoo-x86/app-editors/vim-core/files/vimrc-r4,v 1.3 2010/04/15 19:30:32 darkside Exp $
-
-" Written by Aron Griffis <agriffis@gentoo.org>
-" Modified by Ryan Phillips <rphillips@gentoo.org>
-" Modified some more by Ciaran McCreesh <ciaranm@gentoo.org>
-" Added Redhat's vimrc info by Seemant Kulleen <seemant@gentoo.org>
-
-" You can override any of these settings on a global basis via the
-" "/etc/vim/vimrc.local" file, and on a per-user basis via "~/.vimrc". You may
-" need to create these.
-
-" {{{ General settings
-" The following are some sensible defaults for Vim for most users.
-" We attempt to change as little as possible from Vim's defaults,
-" deviating only where it makes sense
-set nocompatible        " Use Vim defaults (much better!)
-set bs=2                " Allow backspacing over everything in insert mode
-set ai                  " Always set auto-indenting on
-set history=50          " keep 50 lines of command history
-set ruler               " Show the cursor position all the time
+set encoding=utf-8
+set bs=2
+set ai
+set history=50
+set ruler
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set expandtab
 set foldmethod=marker
 set background=dark
-set number
+set nonumber
 set showcmd
 set textwidth=80
+set laststatus=2        " always display statusline for powerline
+
+let g:Powerline_symbols = "compatible"
 
 "set listchars=tab:»·,trail:·,extends:>
 set listchars=tab:.\ ,trail:·,extends:>
-set list
 
 " convert spaces to tabs when reading file
 autocmd! bufreadpost * set noexpandtab | retab! 4
@@ -61,7 +44,57 @@ set suffixes+=.info,.aux,.log,.dvi,.bbl,.out,.o,.lo
 if v:version >= 700
   set numberwidth=3
 endif
+
+" Indent if we're at the beginning of a line, else, do completion.
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-n>
+
+" Thank you, Gary Bernhardt (destroyallsoftware.com)
+" Arrow keys are unacceptable
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
+
+let mapleader = ","
+
+" Open files in directory of current file
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>e :edit %%
+map <leader>v :view %%
+
+" Rename file
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+map <leader>r :call RenameFile()<cr>
+
+" Show numbers
+map <leader>n :set number!<cr>
+
+" Show list
+map <leader>l :set list!<cr>
+
+" Pathogen
+call pathogen#infect()
+filetype plugin indent on
+
 " }}}
+
 
 " {{{ Modeline settings
 " We don't allow modelines by default. See bug #14088 and bug #73715.
@@ -145,5 +178,6 @@ if isdirectory(expand("$VIMRUNTIME/ftplugin"))
   " filetype indent on
 endif
 " }}}
+
 
 " vim: set fenc=utf-8 tw=80 sw=2 sts=2 et foldmethod=marker :
