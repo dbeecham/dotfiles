@@ -57,7 +57,7 @@
     </applications>
 
     <theme>
-        <name>1977-Grey</name>
+        <name>lunix</name>
         <keepBorder>yes</keepBorder>
         <font place="MenuHeader">
             <name>fixed</name>

@@ -1,0 +1,47 @@
+! vim:enc=utf-8:nu:ai:si:et:ts=4:sw=4:ft=xdefaults:
+
+!! lunix - A very minimalist theme for Openbox
+!! Many thanks to Thayer Williams <thayer@gmail.com> (http://cinderwick.ca)
+!! Author: Daniel Beecham <daniel@lunix.se>
+!! Website: http://lunix.se
+
+
+!! osd
+osd.border.width: 1
+osd.hilight.bg: solid flat
+osd.hilight.bg.color: #222222
+osd.unhilight.bg: solid flat
+osd.unhilight.bg.color: #ffffff
+osd.label.text.color: #ffffff
+
+
+!! menus
+menu.title.bg: flat
+menu.title.bg.color: #424242
+menu.title.text.color: #ffffff
+menu.title.text.justify: right
+
+menu.items.bg: flat solid
+menu.items.bg.color: #ffffff
+menu.items.bg.border.color: #bbb8a9
+menu.items.text.color: #81807c
+menu.items.justify: left
+
+menu.items.disabled.text.color: #d7d7d7
+menu.bullet.image.color: #000000
+menu.bullet.selected.image.color: #ffffff
+
+menu.items.active.bg: flat border
+menu.items.active.bg.color: #a1a1a1
+menu.items.active.bg.border.color: #909090
+menu.items.active.text.color: white
+
+!! fonts
+menu.title.text.font:shadow=n
+
+!! window borders
+window.inactive.border.color: #424242
+window.active.border.color: #acacac
+
+!! Somehow OpenBox crashes without this defined
+window.inactive.label.text.color: #424242
