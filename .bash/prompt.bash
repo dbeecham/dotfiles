@@ -16,4 +16,8 @@ LCYAN="\[\033[1;36m\]"
 WHITE="\[\033[1;37m\]"
 RESET="\[\033[0m\]"
 
-PS1="${WHITE}(${YELLOW}#${WHITE}) \$(short_pwd) \$ ${RESET}"
+if [ $(whoami) == "root" ]; then
+    PS1="${WHITE}(${LRED}@${YELLOW}#${WHITE}) \$(short_pwd) \$ ${RESET}"
+else
+    PS1="${WHITE}(${YELLOW}#${WHITE}) \$(short_pwd) \$ ${RESET}"
+fi
