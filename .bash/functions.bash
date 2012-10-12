@@ -1,8 +1,8 @@
 function cd() {
     if [ "$*" == "" ]; then
-        builtin cd ~ && ls
+        builtin cd ~ && ls --color -F --group-directories-first
     else
-        builtin cd "$*" && ls
+        builtin cd "$*" && ls --color -F --group-directories-first
     fi
 }
 
