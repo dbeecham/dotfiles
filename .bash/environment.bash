@@ -3,6 +3,7 @@ export EDITOR="/usr/bin/vim"
 export PAGER="/usr/bin/less"
 export LESS="-R"
 export PACMAN="/usr/bin/pacman-color"
+export GOPATH="~/go"
 
 if test -e /etc/arch-release; then
     export DIST="arch"
