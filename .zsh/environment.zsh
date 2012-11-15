@@ -28,7 +28,10 @@ export PAGER="/usr/bin/less"
 
 # GO
 export PATH="$PATH:/usr/local/go/bin"
-export GOROOT="/usr/local/go"
+export GOROOT="/home/zhaozhou/go"
 
 # Makes sure less displays escape characters right.
 export LESS="-R"
+
+# fish-like syntax highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

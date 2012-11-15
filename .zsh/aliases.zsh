@@ -11,3 +11,6 @@ alias mv="mv -v"
 alias ds="dirs -v"
 alias ps='ps af -o pid,user,tty,command'
 alias pc="pacman-color"
+
+# Globals and stuff.
+export GITHUB='git+ssh://git@github.com'
