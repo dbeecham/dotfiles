@@ -12,11 +12,30 @@ autoload -U colors && colors
 # Enables additional prompt extentions
 setopt prompt_subst
 
+# Change directory without 'cd' command.
+setopt auto_cd
+
+# Autocorrect
+setopt correct
+
 DIRSTACKSIZE=16
 setopt autopushd pushdminus pushdsilent pushdtohome
 
 # using !command with verification
 setopt histverify
+
+# history setting
+setopt histignoredups
+setopt histignorespace
+
+# Why is this setting even a thing?!
+setopt interactivecomments
+
+# Don't want to accidentally overwrite a file. Can use >! to overwrite, or !!.
+setopt noclobber
+
+# I can't believe I actually want this option.
+setopt sunkeyboardhack
 
 # Set up language.
 export LANG="en_GB.UTF-8"
