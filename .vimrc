@@ -13,6 +13,7 @@ set nonumber
 set showcmd
 set textwidth=80
 set laststatus=2        " always display statusline for powerline
+set title
 
 let g:Powerline_symbols = "compatible"
 
@@ -85,6 +86,7 @@ map <leader>r :call RenameFile()<cr>
 
 " Show numbers
 map <leader>n :set number!<cr>
+set number
 
 " Show list
 map <leader>l :set list!<cr>
@@ -92,6 +94,9 @@ map <leader>l :set list!<cr>
 " Pathogen
 call pathogen#infect()
 filetype plugin indent on
+
+" colors
+colorscheme grb256
 
 " }}}
 
