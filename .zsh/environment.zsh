@@ -53,4 +53,4 @@ export GOROOT="/home/zhaozhou/go"
 export LESS="-R"
 
 # fish-like syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
