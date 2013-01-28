@@ -20,15 +20,6 @@ let g:Powerline_symbols = "compatible"
 "set listchars=tab:»·,trail:·,extends:>
 set listchars=tab:.\ ,trail:·,extends:>
 
-" convert spaces to tabs when reading file
-autocmd! bufreadpost * set noexpandtab | retab! 4
-
-" convert tabs to spaces before writing file
-autocmd! bufwritepre * set expandtab | retab! 4
-
-" convert spaces to tabs after writing file (to show guides again)
-autocmd! bufwritepost * set noexpandtab | retab! 4
-
 set viminfo='20,\"500   " Keep a .viminfo file.
 
 " Don't use Ex mode, use Q for formatting
@@ -94,9 +85,6 @@ map <leader>l :set list!<cr>
 " Pathogen
 call pathogen#infect()
 filetype plugin indent on
-
-" colors
-colorscheme grb256
 
 " }}}
 
