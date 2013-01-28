@@ -33,24 +33,24 @@ theme.taglist_squares_unsel = "/usr/share/awesome/themes/zenburn/taglist/squarez
 -- }}}
 
 -- {{{ Misc
-theme.awesome_icon           = "/home/zhaozhou/.config/awesome/themes/orange/awesome-icon.png"
+theme.awesome_icon           = "/home/dbe/.config/awesome/themes/orange/awesome-icon.png"
 theme.menu_submenu_icon      = "/usr/share/awesome/themes/default/submenu.png"
 theme.tasklist_floating_icon = "/usr/share/awesome/themes/default/tasklist/floatingw.png"
 -- }}}
 
 -- {{{ Layout
-theme.layout_tile       = "/home/zhaozhou/.config/awesome/themes/orange/layouts/tile.png"
-theme.layout_tileleft   = "/home/zhaozhou/.config/awesome/themes/orange/layouts/tileleft.png"
-theme.layout_tilebottom = "/home/zhaozhou/.config/awesome/themes/orange/layouts/tilebottom.png"
-theme.layout_tiletop    = "/home/zhaozhou/.config/awesome/themes/orange/layouts/tiletop.png"
-theme.layout_fairv      = "/home/zhaozhou/.config/awesome/themes/orange/layouts/fairv.png"
-theme.layout_fairh      = "/home/zhaozhou/.config/awesome/themes/orange/layouts/fairh.png"
-theme.layout_spiral     = "/home/zhaozhou/.config/awesome/themes/orange/layouts/spiral.png"
-theme.layout_dwindle    = "/home/zhaozhou/.config/awesome/themes/orange/layouts/dwindle.png"
-theme.layout_max        = "/home/zhaozhou/.config/awesome/themes/orange/layouts/max.png"
-theme.layout_fullscreen = "/home/zhaozhou/.config/awesome/themes/orange/layouts/fullscreen.png"
-theme.layout_magnifier  = "/home/zhaozhou/.config/awesome/themes/orange/layouts/magnifier.png"
-theme.layout_floating   = "/home/zhaozhou/.config/awesome/themes/orange/layouts/floating.png"
+theme.layout_tile       = "/home/dbe/.config/awesome/themes/orange/layouts/tile.png"
+theme.layout_tileleft   = "/home/dbe/.config/awesome/themes/orange/layouts/tileleft.png"
+theme.layout_tilebottom = "/home/dbe/.config/awesome/themes/orange/layouts/tilebottom.png"
+theme.layout_tiletop    = "/home/dbe/.config/awesome/themes/orange/layouts/tiletop.png"
+theme.layout_fairv      = "/home/dbe/.config/awesome/themes/orange/layouts/fairv.png"
+theme.layout_fairh      = "/home/dbe/.config/awesome/themes/orange/layouts/fairh.png"
+theme.layout_spiral     = "/home/dbe/.config/awesome/themes/orange/layouts/spiral.png"
+theme.layout_dwindle    = "/home/dbe/.config/awesome/themes/orange/layouts/dwindle.png"
+theme.layout_max        = "/home/dbe/.config/awesome/themes/orange/layouts/max.png"
+theme.layout_fullscreen = "/home/dbe/.config/awesome/themes/orange/layouts/fullscreen.png"
+theme.layout_magnifier  = "/home/dbe/.config/awesome/themes/orange/layouts/magnifier.png"
+theme.layout_floating   = "/home/dbe/.config/awesome/themes/orange/layouts/floating.png"
 -- }}}
 
 return theme

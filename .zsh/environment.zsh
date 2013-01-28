@@ -47,7 +47,7 @@ setopt sunkeyboardhack
 export LANG="en_GB.UTF-8"
 
 # I want my bin folder in my path.
-export PATH="/home/zhaozhou/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 export EDITOR="/usr/bin/vim"
 export PAGER="/usr/bin/less"
  
@@ -60,7 +60,7 @@ export WORDCHARS='*?[]~&;!$%^<>'
 
 # GO
 export PATH="$PATH:/usr/local/go/bin"
-export GOROOT="/home/zhaozhou/go"
+export GOROOT="$HOME/go"
 
 # Makes sure less displays escape characters right.
 export LESS="-FXRS"
