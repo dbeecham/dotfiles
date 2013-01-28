@@ -1,24 +1,55 @@
+" Much here is stolen from Gary Bernhardt (github.com/garybernhardt)
+" or from the default Gentoo configuration.
+
+" {{{ Pathogen
+call pathogen#runtime_append_all_bundles()
+" }}}
+
+" {{{ General settings
 scriptencoding utf-8
 set encoding=utf-8
-set bs=2
+set nocompatible
+" allow unsaved background buffers and remember marks/undo for them
+set hidden
+set history=10000
+set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 set ai
-set history=50
+set laststatus=0
+set showmatch
+set incsearch hlsearch
+set ignorecase smartcase
+set cursorline
+" behaviour when switching buffers
+set switchbuf=useopen
+set nonumber
+" tab line visible when more then one tab is open
+set showtabline=1
+set winwidth=79
+" stop clearing the screen at exit
+" http://www.shallowsky.com/linux/noaltscreen.html
+set t_ti= t_te=
+" keep more context when working off the end of a buffer
+set scrolloff=3
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+" allow backspacing over everything
+set bs=2
+set showcmd
+syntax on
+" rulers are cool
 set ruler
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
 set foldmethod=marker
 set background=dark
-set nonumber
-set showcmd
-set textwidth=80
-set laststatus=2        " always display statusline for powerline
+"set textwidth=80
 set title
+" emacs-style, bash-like tab completion
+set wildmode=longest,list wildmenu
 
-let g:Powerline_symbols = "compatible"
+let g:Powerline_symbols = "compatible" " 'compatible' or 'fancy'
 
-"set listchars=tab:»·,trail:·,extends:>
-set listchars=tab:.\ ,trail:·,extends:>
+set listchars=tab:»·,trail:·,extends:> " unicode
+"set listchars=tab:.\ ,trail:~,extends:> " ascii
 
 set viminfo='20,\"500   " Keep a .viminfo file.
 
@@ -33,9 +64,80 @@ set suffixes+=.info,.aux,.log,.dvi,.bbl,.out,.o,.lo
 " When displaying line numbers, don't use an annoyingly wide number column. This
 " doesn't enable line numbers -- :set number will do that. The value given is a
 " minimum width to use for the number column, not a fixed size.
-if v:version >= 700
-  set numberwidth=3
-endif
+"if v:version >= 700
+"  set numberwidth=3
+"endif
+" }}}
+
+" {{{ Autocmds
+augroup vimrcEx
+  " Clear all autocmds in the group
+  autocmd!
+  autocmd FileType text setlocal textwidth=78
+  " Jump to last cursor position unless it's invalid or in an event handler
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+  "for ruby, autoindent with two spaces, always expand tabs
+  autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
+  autocmd FileType python set sw=4 sts=4 et
+
+  autocmd! BufRead,BufNewFile *.sass setfiletype sass
+
+  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
+  autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
+
+  " Indent p tags
+  autocmd FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd' | endif
+
+  " Don't syntax highlight markdown because it's often wrong
+  autocmd! FileType mkd setlocal syn=off
+
+  " Leave the return key alone when in command line windows, since it's used
+  " to run commands there.
+  autocmd! CmdwinEnter * :unmap <cr>
+  autocmd! CmdwinLeave * :call MapCR()
+augroup END
+" }}}
+
+" {{{ Color settings
+set t_Co=256
+set background=dark
+color grb256
+" }}}
+
+" {{{ Key mapping settings
+
+let mapleader=","
+
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
+
+" Open files in directory of current file
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>e :edit %%
+map <leader>v :view %%
+
+" Move around splits with <c-hjkl>
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" Can't be bothered to understand ESC vs <c-c> in insert mode
+imap <c-c> <esc>
+
+" Clear the search buffer when hitting return
+function! MapCR()
+  nnoremap <cr> :nohlsearch<cr>
+endfunction
+call MapCR()
+
+nnoremap <leader><leader> <c-^>
 
 " Indent if we're at the beginning of a line, else, do completion.
 function! InsertTabWrapper()
@@ -48,20 +150,6 @@ function! InsertTabWrapper()
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
-
-" Thank you, Gary Bernhardt (destroyallsoftware.com)
-" Arrow keys are unacceptable
-map <Left> <Nop>
-map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
-
-let mapleader = ","
-
-" Open files in directory of current file
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <leader>e :edit %%
-map <leader>v :view %%
 
 " Rename file
 function! RenameFile()
@@ -77,17 +165,11 @@ map <leader>r :call RenameFile()<cr>
 
 " Show numbers
 map <leader>n :set number!<cr>
-set number
 
 " Show list
 map <leader>l :set list!<cr>
 
-" Pathogen
-call pathogen#infect()
-filetype plugin indent on
-
 " }}}
-
 
 " {{{ Modeline settings
 " We don't allow modelines by default. See bug #14088 and bug #73715.
@@ -168,9 +250,9 @@ if isdirectory(expand("$VIMRUNTIME/ftplugin"))
   " Uncomment the next line (or copy to your ~/.vimrc) for plugin-provided
   " indent settings. Some people don't like these, so we won't turn them on by
   " default.
-  " filetype indent on
+  filetype indent on
+
 endif
 " }}}
-
 
 " vim: set fenc=utf-8 tw=80 sw=2 sts=2 et foldmethod=marker :

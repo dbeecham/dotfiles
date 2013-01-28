@@ -3,6 +3,12 @@ C=$(tput colors)
 # Set up EMACS bindings.
 bindkey -e
 
+# LS Colors
+export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+
+# grep colors
+export GREP_OPTIONS="--color"
+
 # Enable completion system.
 autoload -Uz compinit && compinit
 
@@ -44,13 +50,20 @@ export LANG="en_GB.UTF-8"
 export PATH="/home/zhaozhou/bin:$PATH"
 export EDITOR="/usr/bin/vim"
 export PAGER="/usr/bin/less"
+ 
+# GNU Screen sets -o vi if EDITOR=vi, so we have to force it back.
+set -o emacs
+
+# By default, zsh considers many characters part of a word (e.g., _ and -).
+# Narrow that down to allow easier skipping through words via M-f and M-b.
+export WORDCHARS='*?[]~&;!$%^<>'
 
 # GO
 export PATH="$PATH:/usr/local/go/bin"
 export GOROOT="/home/zhaozhou/go"
 
 # Makes sure less displays escape characters right.
-export LESS="-R"
+export LESS="-FXRS"
 
 # fish-like syntax highlighting
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
