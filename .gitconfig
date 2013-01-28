@@ -1,0 +1,15 @@
+[user]
+	name = Daniel Beecham
+	email = daniel@lunix.se
+
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	aa = add --all
+
+	l = "!. ~/.githelpers && pretty_git_log"
+	r = "!git l -30"
+
+[merge]
+	tool = vimdiff
