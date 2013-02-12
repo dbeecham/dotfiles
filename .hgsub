@@ -1,3 +1,0 @@
-.zsh/zsh-syntax-highlighting = git+ssh://git@github.com/zsh-users/zsh-syntax-highlighting 
-.vim/bundle/vim-powerline = git+ssh://git@github.com/Lokaltog/vim-powerline
-.vim/bundle/command-t = git+ssh://git@github.com/wincent/Command-t
