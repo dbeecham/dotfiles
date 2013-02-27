@@ -46,7 +46,7 @@ set title
 " emacs-style, bash-like tab completion
 set wildmode=longest,list wildmenu
 
-let g:Powerline_symbols = "compatible" " 'compatible' or 'fancy'
+let g:Powerline_symbols = "fancy" " 'compatible' or 'fancy'
 
 set listchars=tab:»·,trail:·,extends:> " unicode
 "set listchars=tab:.\ ,trail:~,extends:> " ascii
@@ -81,16 +81,13 @@ augroup vimrcEx
     \ endif
 
   "for ruby, autoindent with two spaces, always expand tabs
-  autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
+  autocmd FileType ruby,haml,eruby,yaml,html,sass,cucumber set ai sw=2 sts=2 et
   autocmd FileType python set sw=4 sts=4 et
 
   autocmd! BufRead,BufNewFile *.sass setfiletype sass
 
   autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
   autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
-
-  " Indent p tags
-  autocmd FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd' | endif
 
   " Don't syntax highlight markdown because it's often wrong
   autocmd! FileType mkd setlocal syn=off
@@ -109,13 +106,24 @@ color grb256
 " }}}
 
 " {{{ Key mapping settings
+"
 
 let mapleader=","
 
-map <Left> <Nop>
-map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
+" dvorak -> qwerty
+" movement
+map t j
+map n k
+map s l
+" next
+noremap - n
+" back
+noremap d b
+" delete
+noremap e d
+
+" NERDTree
+map <leader>b :NERDTreeToggle<CR>
 
 " Open files in directory of current file
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
@@ -138,6 +146,15 @@ endfunction
 call MapCR()
 
 nnoremap <leader><leader> <c-^>
+
+function! ToggleLastStatus()
+  if &laststatus == 0
+    set laststatus=2
+  else
+    set laststatus=0
+  endif
+endfunction
+map <leader>s :call ToggleLastStatus()<cr>
 
 " Indent if we're at the beginning of a line, else, do completion.
 function! InsertTabWrapper()
@@ -169,13 +186,16 @@ map <leader>n :set number!<cr>
 " Show list
 map <leader>l :set list!<cr>
 
+" make
+nnoremap <leader>m :make<cr>:cw<cr>
+
 " }}}
 
 " {{{ Modeline settings
 " We don't allow modelines by default. See bug #14088 and bug #73715.
 " If you're not concerned about these, you can enable them on a per-user
 " basis by adding "set modeline" to your ~/.vimrc file.
-set nomodeline
+" set nomodeline
 " }}}
 
 " {{{ Locale settings
@@ -223,6 +243,13 @@ if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
 endif
+" }}}
+
+" NERDTree settings {{{
+
+let NERDTreeWinSize=18
+let NERDTreeWinPos="right"
+let NERDTreeMinimalUI=1
 " }}}
 
 " {{{ Terminal fixes
