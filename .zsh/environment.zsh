@@ -59,7 +59,7 @@ set -o emacs
 export WORDCHARS='*?[]~&;!$%^<>'
 
 # GO
-export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:/home/dbe/go/bin"
 export GOROOT="$HOME/go"
 
 # Makes sure less displays escape characters right.
