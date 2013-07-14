@@ -59,8 +59,8 @@ set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-" Allow backspace over eol,tabs
-set backspace=1
+" Allow backspace over everything
+set backspace=2
 
 " Show (partial) commands
 set showcmd
