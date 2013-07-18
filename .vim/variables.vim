@@ -59,7 +59,7 @@ set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-" Allow backspace over everything
+" Allow backspace over eol,tabs
 set backspace=2
 
 " Show (partial) commands
@@ -117,7 +117,4 @@ let NERDTreeWinPos="right"
 let NERDTreeMinimalUI=1
 
 " Filetype plugin settings
-if isdirectory(expand("$VIMRUNTIME/ftplugin"))
-    filetype plugin on
-    filetype indent on
-endif
+filetype plugin indent on

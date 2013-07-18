@@ -30,8 +30,11 @@ imap <c-c> <esc>
 " Clear surch buffer when hitting return
 nnoremap <CR> :nohlsearch<CR>
 
-" Need to figure this out...
+" Ctrl-O? 
 nnoremap <Leader><Leader> <c-^>
+
+" Toggle autoclosing of {(["'
+nnoremap <Leader>a <Plug>ToggleAutoCloseMappings
 
 " Indent if we're at the beginning of a line, else, do completion.
 "   function! InsertTabWrapper()
