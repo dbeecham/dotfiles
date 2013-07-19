@@ -82,6 +82,46 @@
     </theme>
 
     <keyboard>
+        <keybind key="W-s-l">
+            <action name="SendToDesktop">
+                <to>right</to>
+                <wrap>no</wrap>
+            </action>
+            <action name="GoToDesktop">
+                <to>right</to>
+                <wrap>no</wrap>
+            </action>
+        </keybind>
+        <keybind key="W-s-h">
+            <action name="SendToDesktop">
+                <to>left</to>
+                <wrap>no</wrap>
+            </action>
+            <action name="GoToDesktop">
+                <to>left</to>
+                <wrap>no</wrap>
+            </action>
+        </keybind>
+        <keybind key="W-s-j">
+            <action name="SendToDesktop">
+                <to>down</to>
+                <wrap>no</wrap>
+            </action>
+            <action name="GoToDesktop">
+                <to>down</to>
+                <wrap>no</wrap>
+            </action>
+        </keybind>
+        <keybind key="W-s-k">
+            <action name="SendToDesktop">
+                <to>up</to>
+                <wrap>no</wrap>
+            </action>
+            <action name="GoToDesktop">
+                <to>up</to>
+                <wrap>no</wrap>
+            </action>
+        </keybind>
         <keybind key="W-l">
             <action name="GoToDesktop">
                 <to>right</to>
@@ -159,6 +199,11 @@
         <keybind key="W-space">
             <action name="Execute">
                 <command>gmrun</command>
+            </action>
+        </keybind>
+        <keybind key="W-t">
+            <action name="Execute">
+                <command>tile</command>
             </action>
         </keybind>
         <keybind key="W-S-c">

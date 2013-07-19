@@ -1,0 +1,28 @@
+# This file has approximate avoid parameters for various window
+# manager configurations
+#
+# Syntax: ProfileName Top Right Bottom Left
+#
+# If not specified, occupy whole screen
+Default 0 0 18 0
+#
+# MWM, Icons on Bottom. Gkrellm on Right
+MWMBottomGkrellmRight 0 84 84 0
+# MWM, Icons on Bottom. Gkrellm on Left
+MWMBottomGkrellmLeft 0 0 84 84
+# MWM, Icons on Bottom, Top, Left, or Right
+MWMBottom 0 0 84 0
+MWMTop 84 0 0 0
+MWMLeft 0 0 0 68
+MWMRight 0 68 0 0
+#
+# BlackBox/FluxBox with Slit. Bar on Bottom
+BlackBoxSlitLeft 0 0 27 87
+BlackBoxSlitRight 0 87 27 0
+#
+# Common Desktop Environment and GNOME do not work well yet.
+CDEWithPanel 0 0 86 0
+Gnome2 0 0 36 0
+#
+# ae_fspanel. works great with Oroborus!
+ae_fspanel 0 0 24 0

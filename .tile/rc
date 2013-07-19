@@ -1,0 +1,24 @@
+## Window Placement Orientation. Default: vertical
+#orientation vertical|horizontal
+orientation vertical
+
+## Multiple Desktop support.. netwm (GNOME/etc), workspace (*Box/Oroborus/etc), off. Default: off
+#multi-desktop netwm|workspace|off
+multi-desktop off
+
+## window manager profile name (from wmprofiles). Default: Default
+wmprofile Default
+#wmprofile MWMBottomGkrellmRight
+
+## Turn on verbose logging. Default: 0
+#verbosity 0-5
+verbosity 1
+
+## X11 Atom / String Value pairs to ignore for calculations and re-placement. No Defaults
+## Syntax: avoid Atom(STRING) value
+avoid WM_NAME Bottom Panel
+avoid WM_NAME Desktop
+avoid WM_NAME gkrellm
+avoid WM_NAME gbuffy
+avoid WM_NAME tint2
+#avoid WM_CLASS FrontPanel
