@@ -12,3 +12,4 @@ alias ds="dirs -v"
 alias ps='ps af -o pid,user,tty,command'
 alias pc="pacman-color"
 alias oct="octave --silent"
+alias hs="ghci"

@@ -11,12 +11,6 @@ augroup auto_code
 	autocmd FileType javascript iabbrev <buffer> iff if ()<left>
 augroup END
 
-" Closetag
-augroup filetype_html
-    autocmd!
-    autocmd FileType html,xml,xsl source ~/.vim/scripts/closetag.vim
-augroup END
-
 " Restore Cursor Position
 function! ResCur()
   if line("'\"") <= line("$")
@@ -24,7 +18,6 @@ function! ResCur()
     return 1
   endif
 endfunction
-
 augroup resCur
   autocmd!
   autocmd BufWinEnter * call ResCur()
