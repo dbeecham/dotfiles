@@ -81,6 +81,7 @@ set ruler
 
 " Foldings set to marker (changed using autocmds)
 set foldmethod=marker
+set foldnestmax=2
 
 " Text width
 set textwidth=80
@@ -93,7 +94,7 @@ set wildmode=longest,list
 set wildmenu
 
 " Characters to use to represent hidden characters
-set listchars=tab:»·,trail:·,extends:> " unicode
+set listchars=tab:»·,trail:·,extends:>,eol:$ " unicode
 "set listchars=tab:.\ ,trail:~,extends:> " ascii
 
 " Keep a viminfo file

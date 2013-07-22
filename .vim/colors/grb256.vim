@@ -31,3 +31,5 @@ highlight DiffDelete term=reverse cterm=bold ctermbg=lightred ctermfg=16
 
 highlight PmenuSel ctermfg=16 ctermbg=156
 
+highlight Braces ctermfg=33 guifg=#0087ff
+highlight Curly ctermfg=99 
