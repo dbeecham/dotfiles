@@ -1,0 +1,49 @@
+[
+	{"keys": [",", "p"],
+	 "command": "show_overlay", 
+	 "args": {"overlay": "command_palette"},
+	 "context": [{"key": "setting.command_mode"}]},
+
+
+	  // SublimeREPL
+
+	{"keys": [",", "r", "s"],
+	 "command": "repl_transfer_current",
+	 "context": [{"key": "setting.command_mode"}],
+	 "args": {"scope": "selection"}},
+
+	{"keys": [",", "r", "S"],
+	 "command": "repl_transfer_current",
+	 "context": [{"key": "setting.command_mode"}],
+	 "args": {"scope": "selection", "action": "view_write"}},
+
+	{"keys": [",", "r", "f"],
+	 "command": "repl_transfer_current",
+	 "context": [{"key": "setting.command_mode"}],
+	 "args": {"scope": "file"}},
+
+	{"keys": [",", "r", "F"],
+	 "command": "repl_transfer_current",
+	 "context": [{"key": "setting.command_mode"}],
+	 "args": {"scope": "file", "action": "view_write"}},
+
+	{"keys": [",", "r", "l"],
+	 "command": "repl_transfer_current",
+	 "context": [{"key": "setting.command_mode"}],
+	 "args": {"scope": "lines"}},
+
+	{"keys": [",", "r", "L"],
+	 "command": "repl_transfer_current",
+	 "context": [{"key": "setting.command_mode"}],
+	 "args": {"scope": "lines", "action": "view_write"}},
+
+	{"keys": [",", "r", "b"],
+	 "command": "repl_transfer_current",
+	 "context": [{"key": "setting.command_mode"}],
+	 "args": {"scope": "block"}},
+
+	{"keys": [",", "r", "B"],
+	 "command": "repl_transfer_current",
+	 "context": [{"key": "setting.command_mode"}],
+	 "args": {"scope": "block", "action": "view_write"}}
+]
