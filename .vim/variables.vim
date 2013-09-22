@@ -1,4 +1,5 @@
 " utf-8
+
 scriptencoding utf-8
 set encoding=utf-8
 
@@ -119,3 +120,7 @@ let NERDTreeMinimalUI=1
 
 " Filetype plugin settings
 filetype plugin indent on
+
+" vimclojure
+let vimclojure#HighlightBuiltins = 1
+let vimclojure#ParenRainbow = 1
