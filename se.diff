@@ -1,0 +1,11 @@
+--- /usr/share/X11/xkb/symbols/se	2012-12-25 12:40:03.000000000 +0100
++++ se	2013-09-22 17:39:19.286389560 +0200
+@@ -88,6 +88,8 @@
+     key <AB08> { [         w,          W,      lstroke,      Lstroke ]	};
+     key <AB09> { [         v,          V, leftdoublequotemark, grave ]	};
+     key <AB10> { [         z,          Z, guillemotleft,        less ]	};
++
++    include "capslock(swapescape)"
+ };
+ 
+ // Ivan Popov, 2005-07-17
