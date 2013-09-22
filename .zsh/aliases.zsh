@@ -13,3 +13,4 @@ alias ps='ps af -o pid,user,tty,command'
 alias pc="pacman-color"
 alias oct="octave --silent"
 alias hs="ghci"
+alias vim="TERM=xterm-256color vim"
