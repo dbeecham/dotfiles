@@ -27,7 +27,7 @@ nnoremap <c-l> <c-w>l
 " Can't be bothered to understand ESC vs <c-c> in insert mode
 imap <c-c> <esc>
 
-" Clear surch buffer when hitting return
+" Clear search buffer when hitting return
 nnoremap <CR> :nohlsearch<CR>
 
 " Back to previous file
