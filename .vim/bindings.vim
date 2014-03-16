@@ -6,6 +6,9 @@ nnoremap <Down> <nop>
 nnoremap <Left> <nop>
 nnoremap <Right> <nop>
 
+nnoremap J 5j
+nnoremap K 5k
+
 " The idea is you want to make it easier to make it easier to edit text
 nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>
@@ -24,6 +27,9 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+" Easier surround
+nnoremap <Leader>s ys
+
 " Can't be bothered to understand ESC vs <c-c> in insert mode
 imap <c-c> <esc>
 
@@ -35,6 +41,9 @@ nnoremap <Leader><Leader> <c-^>
 
 " Toggle autoclosing of {(["'
 nnoremap <Leader>a :execute "normal \<Plug>ToggleAutoCloseMappings"<cr>
+
+" Toggle syntax
+nnoremap <Leader>h :if exists("g:syntax_on") <bar> syntax off <bar> else <bar> syntax enable <bar> endif<cr>
 
 " Other window
 nnoremap ,w <c-w><c-w>

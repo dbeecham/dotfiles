@@ -6,6 +6,9 @@ set encoding=utf-8
 " Not compatible with vi
 set nocompatible
 
+" Lets use the mouse
+set mouse=a
+
 " Show mode ("-- INSERT --")
 set showmode
 
