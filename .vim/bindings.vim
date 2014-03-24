@@ -10,16 +10,16 @@ nnoremap J 5j
 nnoremap K 5k
 
 " The idea is you want to make it easier to make it easier to edit text
-nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
-nnoremap <Leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap gf :e <cfile><CR>
 
 " Quote selected text
-vnoremap <Leader>" c"<C-r>""<Esc>
-vnoremap <Leader>' c'<C-r>"'<Esc>
+vnoremap <leader>" c"<C-r>""<Esc>
+vnoremap <leader>' c'<C-r>"'<Esc>
 
 " NERDTree
-nnoremap <Leader>b :NERDTreeToggle<CR>
+nnoremap <leader>b :NERDTreeToggle<CR>
 
 " Move around splits with <c-hjkl>
 nnoremap <c-j> <c-w>j
@@ -28,7 +28,7 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 " Easier surround
-nnoremap <Leader>s ys
+nnoremap <leader>s ys
 
 command -nargs=1 Silent
             \ | execute ':silent !'.<q-args>
@@ -50,13 +50,13 @@ imap <c-c> <esc>
 nnoremap <CR> :nohlsearch<CR>
 
 " Back to previous file
-nnoremap <Leader><Leader> <c-^>
+nnoremap <leader><leader> <c-^>
 
 " Toggle autoclosing of {(["'
-nnoremap <Leader>a :execute "normal \<Plug>ToggleAutoCloseMappings"<cr>
+nnoremap <leader>a :execute "normal \<Plug>ToggleAutoCloseMappings"<cr>
 
 " Toggle syntax
-nnoremap <Leader>h :if exists("g:syntax_on") <bar> syntax off <bar> else <bar> syntax enable <bar> endif<cr>
+nnoremap <leader>h :if exists("g:syntax_on") <bar> syntax off <bar> else <bar> syntax enable <bar> endif<cr>
 
 " Other window
 nnoremap ,w <c-w><c-w>
@@ -99,10 +99,10 @@ nnoremap <leader>t :CtrlP<CR>
 
 " tabularize
 if exists(":Tabularize")
-    nmap <Leader>a= :Tabularize /=<CR>
-    vmap <Leader>a= :Tabularize /=<CR>
-    nmap <Leader>a: :Tabularize /:\zs<CR>
-    vmap <Leader>a: :Tabularize /:\zs<CR>
+    nmap <leader>a= :Tabularize /=<CR>
+    vmap <leader>a= :Tabularize /=<CR>
+    nmap <leader>a: :Tabularize /:\zs<CR>
+    vmap <leader>a: :Tabularize /:\zs<CR>
 endif
 
 " https://gist.github.com/tpope/287147
