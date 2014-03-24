@@ -30,8 +30,15 @@ nnoremap <c-l> <c-w>l
 " Easier surround
 nnoremap <Leader>s ys
 
+command -nargs=1 Silent
+            \ | execute ':silent !'.<q-args>
+            \ | execute ':redraw!'
+
 " ghci
-nnoremap <leader>g :! ghci<cr>
+nnoremap <leader>g :Silent ghci<cr>
+
+" ghci open file
+nnoremap <leader>G :Silent ghci %<cr>
 
 " quit!
 nnoremap Q :q!<cr>
@@ -92,10 +99,10 @@ nnoremap <leader>t :CtrlP<CR>
 
 " tabularize
 if exists(":Tabularize")
-  nmap <Leader>a= :Tabularize /=<CR>
-  vmap <Leader>a= :Tabularize /=<CR>
-  nmap <Leader>a: :Tabularize /:\zs<CR>
-  vmap <Leader>a: :Tabularize /:\zs<CR>
+    nmap <Leader>a= :Tabularize /=<CR>
+    vmap <Leader>a= :Tabularize /=<CR>
+    nmap <Leader>a: :Tabularize /:\zs<CR>
+    vmap <Leader>a: :Tabularize /:\zs<CR>
 endif
 
 " https://gist.github.com/tpope/287147
