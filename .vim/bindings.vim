@@ -30,6 +30,12 @@ nnoremap <c-l> <c-w>l
 " Easier surround
 nnoremap <Leader>s ys
 
+" ghci
+nnoremap <leader>g :! ghci<cr>
+
+" quit!
+nnoremap Q :q!<cr>
+
 " Can't be bothered to understand ESC vs <c-c> in insert mode
 imap <c-c> <esc>
 
