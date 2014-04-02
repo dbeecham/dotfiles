@@ -2,3 +2,6 @@ set autocomplete=
 map -builtin j 12j
 map -builtin k 12k
 colorscheme simple_dark
+set defsearch=google
+set guioptions=s
+set showtabline=never
