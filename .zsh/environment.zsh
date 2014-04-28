@@ -24,9 +24,6 @@ setopt auto_cd
 # Autocorrect
 setopt correct
 
-DIRSTACKSIZE=16
-setopt autopushd pushdminus pushdsilent pushdtohome
-
 # using !command with verification
 setopt histverify
 
