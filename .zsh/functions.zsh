@@ -9,6 +9,7 @@ if (( C == 8 )); then
 fi
 
 chpwd() {
+    CURDIR="$(pwd | awk -F '/' '{print $(NF)}' )"
 	ls --color -F
 	echo
 }
