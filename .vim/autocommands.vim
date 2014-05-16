@@ -22,3 +22,5 @@ augroup resCur
   autocmd!
   autocmd BufWinEnter * call ResCur()
 augroup END
+
+au VimLeave * ! echo; ls --color -F --group-directories-first
