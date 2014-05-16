@@ -22,5 +22,9 @@ o() {
         cd $1
         return
     fi
+    if test "$1" = "-"; then
+        cd -
+        return
+    fi
     vim $1
 }
