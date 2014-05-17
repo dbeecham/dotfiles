@@ -43,6 +43,12 @@ nnoremap <leader>G :Silent ghci %<cr>
 " quit!
 nnoremap Q :q!<cr>
 
+" wq annoyance...
+command WQ wq
+command Wq wq
+command W w
+command Q q
+
 " Can't be bothered to understand ESC vs <c-c> in insert mode
 imap <c-c> <esc>
 
@@ -91,8 +97,11 @@ map <leader>n :set number!<cr>
 " Show list
 map <leader>l :set list!<cr>
 
-" make
-nnoremap <leader>m :make<cr>:cw<cr>
+" make (bake)
+nnoremap <leader>b :make<cr>:cw<cr>
+
+" man
+nnoremap <leader>m K
 
 " ctrl-p -> command-t
 nnoremap <leader>t :CtrlP<CR>
