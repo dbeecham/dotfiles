@@ -43,6 +43,9 @@ nnoremap <leader>G :Silent ghci %<cr>
 " quit!
 nnoremap Q :q!<cr>
 
+" ; is easier to do then :
+nnoremap ; :
+
 " wq annoyance...
 command WQ wq
 command Wq wq
