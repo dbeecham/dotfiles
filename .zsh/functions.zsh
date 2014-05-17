@@ -13,6 +13,11 @@ chpwd() {
 	echo
 }
 
+a() {
+    ls --color -F --group-directories-first $@
+    echo
+}
+
 o() {
     if test -z $1; then
         cd
