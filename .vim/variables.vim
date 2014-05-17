@@ -94,8 +94,11 @@ set textwidth=80
 set title
 
 " Emacs-style, Bash-like tab completion
-set wildmode=longest,list
+set wildmode=longest:full,full
 set wildmenu
+
+" Same with ctrln, ctrlp
+set completeopt=longest,menu
 
 " Characters to use to represent hidden characters
 set listchars=tab:»·,trail:·,extends:>,eol:$ " unicode
