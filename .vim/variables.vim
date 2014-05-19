@@ -3,8 +3,13 @@
 scriptencoding utf-8
 set encoding=utf-8
 
+let g:airline_theme='sol'
+
 " Not compatible with vi
 set nocompatible
+
+" Autoclose is off by default
+let g:AutoCloseOn=0
 
 " Lets use the mouse
 set mouse=a
@@ -37,7 +42,7 @@ set ignorecase
 set smartcase
 
 " Show cursor line, column
-set cursorline cursorcolumn
+"set cursorline cursorcolumn
 
 " Switching between buffers
 set switchbuf=usetab
@@ -72,12 +77,12 @@ set showcmd
 " Syntax highlighting / colors
 if &t_Co > 2 || has("gui_running")
     syntax on
-    set background=dark
+    set background=light
     set hlsearch
-    if $TERM ==? "xterm-256color" || $TERM ==? "rxvt-256color"
-        set t_Co=256
-        color grb256
-    endif
+    ""if $TERM ==? "xterm-256color" || $TERM ==? "rxvt-256color"
+    ""    set t_Co=256
+    ""    color grb256
+    ""endif
 endif
 
 " Ruler is enabled (whenever statusline is not set)
