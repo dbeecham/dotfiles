@@ -62,7 +62,7 @@ nnoremap <CR> :nohlsearch<CR>
 nnoremap <leader><leader> <c-^>
 
 " Toggle autoclosing of {(["'
-nnoremap <leader>a :execute "normal \<Plug>ToggleAutoCloseMappings"<cr>
+nnoremap <leader>a :AutoCloseToggle<cr>
 
 " Toggle syntax
 nnoremap <leader>h :if exists("g:syntax_on") <bar> syntax off <bar> else <bar> syntax enable <bar> endif<cr>
