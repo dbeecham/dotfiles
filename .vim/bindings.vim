@@ -19,13 +19,22 @@ vnoremap <leader>" c"<C-r>""<Esc>
 vnoremap <leader>' c'<C-r>"'<Esc>
 
 " NERDTree
-nnoremap <leader>b :NERDTreeToggle<CR>
+nnoremap <leader>x :NERDTreeToggle<CR>
 
 " Move around splits with <c-hjkl>
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+" and resize them with <s-hjkl>
+nnoremap <s-h> :vertical resize -5<cr>
+nnoremap <s-l> :vertical resize +5<cr>
+nnoremap <s-j> :resize -5<cr>
+nnoremap <s-k> :resize +5<cr>
+
+" close tabs with c-d
+nnoremap <c-d> :close<cr>
 
 " Easier surround
 nnoremap <leader>s ys

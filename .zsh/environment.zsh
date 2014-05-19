@@ -1,3 +1,7 @@
+if test "$COLORTERM" = "gnome-terminal"; then
+    export TERM="xterm-256color"
+fi
+
 C=$(tput colors)
 
 # Set up EMACS bindings.
