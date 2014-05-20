@@ -30,8 +30,9 @@ nnoremap <c-l> <c-w>l
 " and resize them with <s-hjkl>
 nnoremap <s-h> :vertical resize -5<cr>
 nnoremap <s-l> :vertical resize +5<cr>
-nnoremap <s-j> :resize -5<cr>
-nnoremap <s-k> :resize +5<cr>
+" conflicts with 5j 5k
+"nnoremap <s-j> :resize -5<cr>
+"nnoremap <s-k> :resize +5<cr>
 
 " close tabs with c-d
 nnoremap <c-d> :close<cr>
@@ -117,6 +118,9 @@ nnoremap <leader>m K
 
 " ctrl-p -> command-t
 nnoremap <leader>t :CtrlP<CR>
+
+" ctrl-n, new tab
+nnoremap <c-n> :tabnew<cr>
 
 " tabularize
 if exists(":Tabularize")

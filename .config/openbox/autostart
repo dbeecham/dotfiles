@@ -1,0 +1,2 @@
+feh --bg-scale ~/bg &
+~/bin/setlayout 0 3 3 0
