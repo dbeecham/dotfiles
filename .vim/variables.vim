@@ -43,12 +43,13 @@ set smartcase
 
 " Show cursor line, column
 "set cursorline cursorcolumn
+set cursorline
 
 " Switching between buffers
 set switchbuf=usetab
 
-" No numbers by default
-set nonumber
+" number on by default
+set number
 
 " Tab line visible when more then one tab is open
 set showtabline=1
@@ -147,8 +148,24 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.space = "\ua0"
 
+function! s:DiffWithSaved()
+  let filetype=&ft
+  diffthis
+  vnew | r # | normal! 1Gdd
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSaved call s:DiffWithSaved()
+
 " show tab bar
 set showtabline=2
 
 " colors
 hi TabLineFill ctermfg=7
+" disable the underline behind tabline words
+hi TabLine term=NONE cterm=NONE
+hi CursorLine term=NONE cterm=NONE ctermbg=7
+hi CursorColumn term=NONE cterm=NONE ctermfg=7
+hi LineNr ctermfg=249 ctermbg=254
+hi CursorLineNr ctermfg=249 ctermbg=255
+hi VertSplit ctermfg=247 ctermbg=254 cterm=NONE
