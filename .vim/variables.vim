@@ -3,7 +3,9 @@
 scriptencoding utf-8
 set encoding=utf-8
 
-let g:airline_theme='sol'
+let g:airline_theme='bubblegum'
+
+let g:AutoCloseExpandSpace = 0 " make iabbrev work again
 
 " Not compatible with vi
 set nocompatible
@@ -78,12 +80,12 @@ set showcmd
 " Syntax highlighting / colors
 if &t_Co > 2 || has("gui_running")
     syntax on
-    set background=light
+    set background=dark
     set hlsearch
-    ""if $TERM ==? "xterm-256color" || $TERM ==? "rxvt-256color"
-    ""    set t_Co=256
-    ""    color grb256
-    ""endif
+    if $TERM ==? "xterm-256color" || $TERM ==? "rxvt-256color"
+        set t_Co=256
+        color grb256
+    endif
 endif
 
 " Ruler is enabled (whenever statusline is not set)
@@ -161,11 +163,12 @@ com! DiffSaved call s:DiffWithSaved()
 set showtabline=2
 
 " colors
-hi TabLineFill ctermfg=7
+hi TabLineFill ctermfg=234
 " disable the underline behind tabline words
 hi TabLine term=NONE cterm=NONE
-hi CursorLine term=NONE cterm=NONE ctermbg=7
-hi CursorColumn term=NONE cterm=NONE ctermfg=7
-hi LineNr ctermfg=249 ctermbg=254
-hi CursorLineNr ctermfg=249 ctermbg=255
-hi VertSplit ctermfg=247 ctermbg=254 cterm=NONE
+hi CursorLine term=NONE cterm=NONE ctermbg=234
+hi CursorColumn term=NONE cterm=NONE ctermfg=234
+hi LineNr ctermfg=244 ctermbg=234
+hi CursorLineNr ctermfg=244 ctermbg=235
+hi VertSplit ctermfg=247 ctermbg=234 cterm=NONE
+hi NonText ctermfg=231
