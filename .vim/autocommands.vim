@@ -24,3 +24,6 @@ augroup resCur
 augroup END
 
 au VimLeave * ! echo; ls --color -F --group-directories-first
+
+" Haskell compiler = ghc
+au BufEnter *.hs compiler ghc
