@@ -20,11 +20,10 @@ vnoremap <leader>' c'<C-r>"'<Esc>
 
 " NERDTree
 nnoremap <leader>x :NERDTreeToggle<CR>
-
 " Move around splits with <c-hjkl>
+nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 " and resize them with <s-hjkl>
