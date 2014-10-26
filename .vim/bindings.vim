@@ -8,6 +8,8 @@ nnoremap <Right> <nop>
 
 nnoremap J 5j
 nnoremap K 5k
+vnoremap J 5j
+vnoremap K 5k
 
 " The idea is you want to make it easier to make it easier to edit text
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>

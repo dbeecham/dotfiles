@@ -67,7 +67,7 @@ export GOROOT="$HOME/go"
 export LESS="-FXRS"
 
 # fish-like syntax highlighting
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh sets xterm title
 case $TERM in

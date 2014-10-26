@@ -3,7 +3,7 @@
 scriptencoding utf-8
 set encoding=utf-8
 
-let g:airline_theme='bubblegum'
+" let g:airline_theme='bubblegum'
 
 let g:AutoCloseExpandSpace = 0 " make iabbrev work again
 
@@ -12,9 +12,6 @@ set nocompatible
 
 " Autoclose is off by default
 let g:AutoCloseOn=0
-
-" Lets use the mouse
-set mouse=a
 
 " Show mode ("-- INSERT --")
 set showmode
@@ -45,7 +42,7 @@ set smartcase
 
 " Show cursor line, column
 "set cursorline cursorcolumn
-set cursorline
+"set cursorline
 
 " Switching between buffers
 set switchbuf=usetab
@@ -80,11 +77,12 @@ set showcmd
 " Syntax highlighting / colors
 if &t_Co > 2 || has("gui_running")
     syntax on
-    set background=dark
+    set background=light
     set hlsearch
+    "    color github
     if $TERM ==? "xterm-256color" || $TERM ==? "rxvt-256color"
-        set t_Co=256
-        color grb256
+    "    set t_Co=256
+        "color grb256
     endif
 endif
 
@@ -162,13 +160,24 @@ com! DiffSaved call s:DiffWithSaved()
 " show tab bar
 set showtabline=2
 
-" colors
-hi TabLineFill ctermfg=234
+" dark colors
+"hi TabLineFill ctermfg=234
 " disable the underline behind tabline words
-hi TabLine term=NONE cterm=NONE
-hi CursorLine term=NONE cterm=NONE ctermbg=234
-hi CursorColumn term=NONE cterm=NONE ctermfg=234
-hi LineNr ctermfg=244 ctermbg=234
-hi CursorLineNr ctermfg=244 ctermbg=235
-hi VertSplit ctermfg=247 ctermbg=234 cterm=NONE
-hi NonText ctermfg=231
+"hi TabLine term=NONE cterm=NONE
+"hi CursorLine term=NONE cterm=NONE ctermbg=234
+"hi CursorColumn term=NONE cterm=NONE ctermfg=234
+"hi LineNr ctermfg=244 ctermbg=234
+"hi CursorLineNr ctermfg=244 ctermbg=235
+"hi VertSplit ctermfg=247 ctermbg=234 cterm=NONE
+"hi NonText ctermfg=231
+
+" light colors
+"hi TabLineFill ctermfg=255 ctermbg=255
+" disable the underline behind tabline words
+"hi TabLine term=NONE cterm=NONE
+"hi CursorLine term=NONE cterm=NONE ctermbg=255
+"hi CursorColumn term=NONE cterm=NONE ctermfg=255
+"hi LineNr ctermfg=240 ctermbg=255
+"hi CursorLineNr ctermfg=240 ctermbg=254
+"hi VertSplit ctermfg=240 ctermbg=255 cterm=NONE
+""hi NonText ctermfg=255
