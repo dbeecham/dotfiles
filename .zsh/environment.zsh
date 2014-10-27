@@ -22,6 +22,9 @@ autoload -U colors && colors
 # Enables additional prompt extentions
 setopt prompt_subst
 
+# extended globbing, ^file, file.???, [...], etc.
+setopt extended_glob
+
 # Change directory without 'cd' command.
 setopt auto_cd
 
