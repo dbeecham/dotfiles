@@ -81,3 +81,6 @@ case $TERM in
         precmd () {print -Pn "\e]0;%n@%m: %~\a"}
         ;;
 esac
+
+# let completions be friendly colors
+zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
