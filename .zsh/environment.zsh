@@ -7,6 +7,9 @@ C=$(tput colors)
 # Set up vi bindings.
 bindkey -v
 
+# paste file
+export P=~/.paste
+
 # shorter delay between mode switch
 export KEYTIMEOUT=1
 
@@ -68,6 +71,9 @@ export WORDCHARS='*?[]~&;!$%^<>'
 # GO
 export PATH="$PATH:/home/dbe/go/bin"
 export GOROOT="$HOME/go"
+
+# Haskell
+export PATH="$PATH:/usr/local/haskell/ghc-7.8.3-x86_64/bin"
 
 # Makes sure less displays escape characters right.
 export LESS="-FXRS"
