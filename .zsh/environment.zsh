@@ -4,14 +4,8 @@ fi
 
 C=$(tput colors)
 
-# Set up vi bindings.
-bindkey -v
-
-# paste file
-export P=~/.paste
-
-# shorter delay between mode switch
-export KEYTIMEOUT=1
+# Set up EMACS bindings.
+bindkey -e
 
 # LS Colors
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
@@ -62,7 +56,7 @@ export EDITOR="/usr/bin/vim"
 export PAGER="/usr/bin/less"
  
 # GNU Screen sets -o vi if EDITOR=vi, so we have to force it back.
-#set -o emacs
+set -o emacs
 
 # By default, zsh considers many characters part of a word (e.g., _ and -).
 # Narrow that down to allow easier skipping through words via M-f and M-b.
@@ -72,8 +66,8 @@ export WORDCHARS='*?[]~&;!$%^<>'
 export PATH="$PATH:/home/dbe/go/bin"
 export GOROOT="$HOME/go"
 
-# Haskell
-export PATH="$PATH:/usr/local/haskell/ghc-7.8.3-x86_64/bin"
+# Haste
+export PATH="$PATH:/home/dbe/.cabal/bin"
 
 # Makes sure less displays escape characters right.
 export LESS="-FXRS"
@@ -87,6 +81,3 @@ case $TERM in
         precmd () {print -Pn "\e]0;%n@%m: %~\a"}
         ;;
 esac
-
-# let completions be friendly colors
-zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
