@@ -49,6 +49,7 @@ set switchbuf=usetab
 
 " number on by default
 set number
+set relativenumber
 
 " Tab line visible when more then one tab is open
 set showtabline=1
