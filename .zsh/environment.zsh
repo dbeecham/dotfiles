@@ -10,9 +10,6 @@ bindkey -e
 # LS Colors
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 
-# grep colors
-export GREP_OPTIONS="--color"
-
 # Enable completion system.
 autoload -Uz compinit && compinit
 
