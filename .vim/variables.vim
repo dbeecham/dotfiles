@@ -141,6 +141,8 @@ let vimclojure#ParenRainbow = 1
 " show mode
 set showmode
 
+let g:haddock_browser = "elinks"
+
 " powerline fonts
 let g:airline_powerline_fonts = 1
 
