@@ -78,7 +78,7 @@ set showcmd
 " Syntax highlighting / colors
 if &t_Co > 2 || has("gui_running")
     syntax on
-    set background=light
+    set background=dark
     set hlsearch
     "    color github
     if $TERM ==? "xterm-256color" || $TERM ==? "rxvt-256color"
@@ -138,8 +138,8 @@ filetype plugin indent on
 let vimclojure#HighlightBuiltins = 1
 let vimclojure#ParenRainbow = 1
 
-" dont show mode
-set noshowmode
+" show mode
+set showmode
 
 " powerline fonts
 let g:airline_powerline_fonts = 1
