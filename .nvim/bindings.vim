@@ -105,7 +105,7 @@ map <leader>n :set number!<cr>:set relativenumber!<cr>
 map <leader>l :set list!<cr>
 
 " make (bake)
-nnoremap <leader>b :make<cr>:cw<cr>
+nnoremap <leader>b :Make<cr>:cw<cr>
 
 " man
 nnoremap <leader>m K
