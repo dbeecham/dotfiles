@@ -78,7 +78,7 @@ set showcmd
 " Syntax highlighting / colors
 if &t_Co > 2 || has("gui_running")
     syntax on
-    set background=dark
+    set background=light
     set hlsearch
     "    color github
     if $TERM ==? "xterm-256color" || $TERM ==? "rxvt-256color"
@@ -145,6 +145,9 @@ let g:haddock_browser = "elinks"
 
 " powerline fonts
 let g:airline_powerline_fonts = 1
+
+" vim-slime
+let g:slime_target = "tmux"
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}

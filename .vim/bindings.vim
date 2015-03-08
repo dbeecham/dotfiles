@@ -16,10 +16,6 @@ nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap gf :e <cfile><CR>
 
-" Quote selected text
-vnoremap <leader>" c"<C-r>""<Esc>
-vnoremap <leader>' c'<C-r>"'<Esc>
-
 " NERDTree
 nnoremap <leader>x :NERDTreeToggle<CR>
 " Move around splits with <c-hjkl>
@@ -37,9 +33,6 @@ nnoremap <s-l> :vertical resize +5<cr>
 
 " close tabs with c-d
 nnoremap <c-d> :close<cr>
-
-" Easier surround
-nnoremap <leader>s ys
 
 command -nargs=1 Silent
             \ | execute ':silent !'.<q-args>
@@ -106,7 +99,7 @@ endfunction
 map <leader>r :call RenameFile()<cr>
 
 " Show numbers
-map <leader>n :set number!<cr>
+map <leader>n :set number!<cr>:set relativenumber!<cr>
 
 " Show list
 map <leader>l :set list!<cr>
