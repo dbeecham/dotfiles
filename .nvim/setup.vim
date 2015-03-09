@@ -28,5 +28,6 @@ Plug 'mklabs/grunt.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'lambdatoast/elm.vim'
 Plug 'jpalardy/vim-slime'
+Plug 'ap/vim-buftabline'
 
 call plug#end()

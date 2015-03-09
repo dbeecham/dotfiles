@@ -51,8 +51,8 @@ set switchbuf=usetab
 set number
 set relativenumber
 
-" Tab line visible when more then one tab is open
-set showtabline=1
+" Tab line visible always
+set showtabline=2
 
 " Minimum window size
 set winwidth=80
