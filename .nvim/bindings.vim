@@ -14,15 +14,21 @@ vnoremap K 5k
 " The idea is you want to make it easier to make it easier to edit text
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
-nnoremap gf :e <cfile><CR>
+nnoremap of :e <cfile><CR>
 
 " NERDTree
 nnoremap <leader>x :NERDTreeToggle<CR>
 " Move around splits with <c-hjkl>
-nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
+"nnoremap <m-h> <c-w>h
+"nnoremap <m-j> <c-w>j
+"nnoremap <m-k> <c-w>k
+"nnoremap <m-l> <c-w>l
+
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <m-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <m-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <m-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <m-l> :TmuxNavigateRight<cr>
 
 " and resize them with <s-hjkl>
 nnoremap <s-h> :vertical resize -5<cr>
@@ -72,7 +78,11 @@ nnoremap <leader>a :AutoCloseToggle<cr>
 nnoremap <leader>h :if exists("g:syntax_on") <bar> syntax off <bar> else <bar> syntax enable <bar> endif<cr>
 
 " Other window
-nnoremap ,w <c-w><c-w>
+nnoremap <leader>w <c-w><c-w>
+
+" tags
+nnoremap <leader>f :tag 
+nnoremap gf <C-]>
 
 " Indent if we're at the beginning of a line, else, do completion.
 "   function! InsertTabWrapper()
@@ -117,12 +127,12 @@ nnoremap <leader>t :CtrlP<CR>
 nnoremap <c-n> :tabnew<cr>
 
 " tabularize
-if exists(":Tabularize")
-    nmap <leader>a= :Tabularize /=<CR>
-    vmap <leader>a= :Tabularize /=<CR>
-    nmap <leader>a: :Tabularize /:\zs<CR>
-    vmap <leader>a: :Tabularize /:\zs<CR>
-endif
+"if exists(":Tabularize")
+"    nmap <leader>a= :Tabularize /=<CR>
+"    vmap <leader>a= :Tabularize /=<CR>
+"    nmap <leader>a: :Tabularize /:\zs<CR>
+"    vmap <leader>a: :Tabularize /:\zs<CR>
+"endif
 
 " https://gist.github.com/tpope/287147
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
