@@ -10,6 +10,9 @@ let g:AutoCloseExpandSpace = 0 " make iabbrev work again
 " Not compatible with vi
 set nocompatible
 
+" change directory when switching buffer
+set autochdir
+
 " Autoclose is off by default
 let g:AutoCloseOn=0
 

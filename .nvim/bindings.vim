@@ -14,7 +14,7 @@ vnoremap K 5k
 " The idea is you want to make it easier to make it easier to edit text
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
-nnoremap of :e <cfile><CR>
+nnoremap gf :e <cfile><CR>
 
 " NERDTree
 nnoremap <leader>x :NERDTreeToggle<CR>
@@ -81,8 +81,8 @@ nnoremap <leader>h :if exists("g:syntax_on") <bar> syntax off <bar> else <bar> s
 nnoremap <leader>w <c-w><c-w>
 
 " tags
-nnoremap <leader>f :tag 
-nnoremap gf <C-]>
+"nnoremap <leader>f :tag 
+nnoremap gj <C-]>
 
 " Indent if we're at the beginning of a line, else, do completion.
 "   function! InsertTabWrapper()
@@ -122,6 +122,7 @@ nnoremap <leader>m K
 
 " ctrl-p -> command-t
 nnoremap <leader>t :CtrlP<CR>
+nnoremap <leader>j :CtrlPTag<cr>
 
 " ctrl-n, new tab
 nnoremap <c-n> :tabnew<cr>
