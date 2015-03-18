@@ -49,8 +49,8 @@ export LANG="en_GB.UTF-8"
 
 # I want my bin folder in my path.
 export PATH="$HOME/bin:$PATH"
-export EDITOR="/usr/bin/vim"
-export PAGER="/usr/bin/less"
+export EDITOR="vim"
+export PAGER="less"
  
 set -o vi
 
