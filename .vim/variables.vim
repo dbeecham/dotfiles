@@ -6,18 +6,101 @@ set encoding=utf-8
 " Neosnippet
 let g:neocomplete#enable_at_startup = 1
 
-" let g:airline_theme='bubblegum'
+let g:airline_theme='dark'
 
+
+" Mouse handling
+set mouse=a
+function! ToggleMouse()
+    if &mouse =~ "a"
+        set mouse=""
+        echo "Mouse turned off."
+    else
+        set mouse=a
+        echo "Mouse turned on."
+    endif
+endfunction
+
+nnoremap <leader>sm :call ToggleMouse()<cr>
+
+
+""" vim-autoclose
+" Autoclose is off by default
+let g:AutoCloseOn=0
 let g:AutoCloseExpandSpace = 0 " make iabbrev work again
+
+
+"" tagbar support for haskell (using hasktags)
+let g:tagbar_type_haskell = {
+    \ 'ctagsbin'  : 'hasktags',
+    \ 'ctagsargs' : '-x -c -o-',
+    \ 'kinds'     : [
+        \  'm:modules:0:1',
+        \  'd:data: 0:1',
+        \  'd_gadt: data gadt:0:1',
+        \  't:type names:0:1',
+        \  'nt:new types:0:1',
+        \  'c:classes:0:1',
+        \  'cons:constructors:1:1',
+        \  'c_gadt:constructor gadt:1:1',
+        \  'c_a:constructor accessors:1:1',
+        \  'ft:function types:1:1',
+        \  'fi:function implementations:0:1',
+        \  'o:others:0:1'
+    \ ],
+    \ 'sro'        : '.',
+    \ 'kind2scope' : {
+        \ 'm' : 'module',
+        \ 'c' : 'class',
+        \ 'd' : 'data',
+        \ 't' : 'type'
+    \ },
+    \ 'scope2kind' : {
+        \ 'module' : 'm',
+        \ 'class'  : 'c',
+        \ 'data'   : 'd',
+        \ 'type'   : 't'
+    \ }
+\ }
+
+"" tagbar support for lhaskell (using hasktags)
+let g:tagbar_type_lhaskell = {
+    \ 'ctagsbin'  : 'hasktags',
+    \ 'ctagsargs' : '-x -c -o-',
+    \ 'kinds'     : [
+        \  'm:modules:0:1',
+        \  'd:data: 0:1',
+        \  'd_gadt: data gadt:0:1',
+        \  't:type names:0:1',
+        \  'nt:new types:0:1',
+        \  'c:classes:0:1',
+        \  'cons:constructors:1:1',
+        \  'c_gadt:constructor gadt:1:1',
+        \  'c_a:constructor accessors:1:1',
+        \  'ft:function types:1:1',
+        \  'fi:function implementations:0:1',
+        \  'o:others:0:1'
+    \ ],
+    \ 'sro'        : '.',
+    \ 'kind2scope' : {
+        \ 'm' : 'module',
+        \ 'c' : 'class',
+        \ 'd' : 'data',
+        \ 't' : 'type'
+    \ },
+    \ 'scope2kind' : {
+        \ 'module' : 'm',
+        \ 'class'  : 'c',
+        \ 'data'   : 'd',
+        \ 'type'   : 't'
+    \ }
+\ }
 
 " Not compatible with vi
 set nocompatible
 
 " change directory when switching buffer
 set autochdir
-
-" Autoclose is off by default
-let g:AutoCloseOn=0
 
 " Show mode ("-- INSERT --")
 set showmode
@@ -85,7 +168,6 @@ set showcmd
 if &t_Co > 2 || has("gui_running")
     syntax on
     set background=dark
-    set hlsearch
     "    color github
     if $TERM ==? "xterm-256color" || $TERM ==? "rxvt-256color"
     "    set t_Co=256
@@ -150,7 +232,11 @@ set showmode
 let g:haddock_browser = "elinks"
 
 " powerline fonts
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
+let g:tmuxline_powerline_separators = 0
+
+" airline tabline
+let g:airline#extensions#tabline#enabled = 1
 
 " vim-slime
 let g:slime_target = "tmux"
@@ -168,9 +254,6 @@ function! s:DiffWithSaved()
   exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
-
-" show tab bar
-set showtabline=2
 
 " dark colors
 "hi TabLineFill ctermfg=234

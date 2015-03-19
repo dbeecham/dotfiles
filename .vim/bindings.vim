@@ -11,6 +11,27 @@ nnoremap K 5k
 vnoremap J 5j
 vnoremap K 5k
 
+""" neocomplete 
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  "return neocomplete#close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+inoremap <expr><S-j> pumvisible() ? "\<Down>" : "\<C-j>"
+inoremap <expr><S-k> pumvisible() ? "\<Up>" : "\<C-j>"
+
+" 
+
 " The idea is you want to make it easier to make it easier to edit text
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
@@ -45,7 +66,7 @@ nnoremap <s-l> :vertical resize +5<cr>
 " close tabs with c-d
 nnoremap <c-d> :close<cr>
 
-command -nargs=1 Silent
+command! -nargs=1 Silent
             \ | execute ':silent !'.<q-args>
             \ | execute ':redraw!'
 
@@ -56,16 +77,16 @@ nnoremap <leader>g :Silent ghci<cr>
 nnoremap <leader>G :Silent ghci %<cr>
 
 " quit!
-nnoremap Q :q!<cr>
+nnoremap Q :qa!<cr>
 
 " ; is easier to do then :
 nnoremap ; :
 
 " wq annoyance...
-command WQ wq
-command Wq wq
-command W w
-command Q q
+command! WQ wq
+command! Wq wq
+command! W w
+command! Q q
 
 " Can't be bothered to understand ESC vs <c-c> in insert mode
 imap <c-c> <esc>
@@ -77,10 +98,10 @@ nnoremap <CR> :nohlsearch<CR>
 nnoremap <leader><leader> <c-^>
 
 " Toggle autoclosing of {(["'
-nnoremap <leader>a :AutoCloseToggle<cr>
+nnoremap <leader>sa :AutoCloseToggle<cr>
 
 " Toggle syntax
-nnoremap <leader>h :if exists("g:syntax_on") <bar> syntax off <bar> else <bar> syntax enable <bar> endif<cr>
+nnoremap <leader>ss :if exists("g:syntax_on") <bar> syntax off <bar> else <bar> syntax enable <bar> endif<cr>
 
 " Other window
 nnoremap <leader>w <c-w><c-w>
@@ -89,17 +110,6 @@ nnoremap <leader>w <c-w><c-w>
 "nnoremap <leader>f :tag 
 nnoremap gj <C-]>
 
-" Indent if we're at the beginning of a line, else, do completion.
-"   function! InsertTabWrapper()
-"       let col = col('.') - 1
-"       if !col || getline('.')[col - 1] !~ '\k'
-"           return "\<tab>"
-"       else
-"           return "\<c-p>"
-"       endif
-"   endfunction
-"   inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-"   inoremap <s-tab> <c-n>
 
 " Rename file
 function! RenameFile()
@@ -114,13 +124,17 @@ endfunction
 map <leader>r :call RenameFile()<cr>
 
 " Show numbers
-map <leader>n :set number!<cr>:set relativenumber!<cr>
+map <leader>sn :set number!<cr>:set relativenumber!<cr>
 
 " Show list
-map <leader>l :set list!<cr>
+map <leader>sl :set list!<cr>
 
 " make (bake)
 nnoremap <leader>b :Make<cr>:cw<cr>
+
+" splitting
+noremap <C-b> :vsp<cr>
+noremap <C-v> :sp<cr>
 
 " man
 nnoremap <leader>m K
