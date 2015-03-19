@@ -25,10 +25,15 @@ nnoremap <leader>x :NERDTreeToggle<CR>
 "nnoremap <m-l> <c-w>l
 
 let g:tmux_navigator_no_mappings = 1
-nnoremap <silent> <m-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <m-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <m-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <m-l> :TmuxNavigateRight<cr>
+
+noremap <silent> h :TmuxNavigateLeft<cr>
+noremap <silent> j :TmuxNavigateDown<cr>
+noremap <silent> k :TmuxNavigateUp<cr>
+noremap <silent> l :TmuxNavigateRight<cr>
+noremap <silent> <M-h> :TmuxNavigateLeft<cr>
+noremap <silent> <M-j> :TmuxNavigateDown<cr>
+noremap <silent> <M-k> :TmuxNavigateUp<cr>
+noremap <silent> <M-l> :TmuxNavigateRight<cr>
 
 " and resize them with <s-hjkl>
 nnoremap <s-h> :vertical resize -5<cr>
