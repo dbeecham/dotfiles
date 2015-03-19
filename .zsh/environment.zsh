@@ -48,7 +48,6 @@ setopt sunkeyboardhack
 export LANG="en_GB.UTF-8"
 
 # I want my bin folder in my path.
-export PATH="$HOME/bin:$PATH"
 export EDITOR="vim"
 export PAGER="less"
  
@@ -59,11 +58,7 @@ set -o vi
 export WORDCHARS='*?[]~&;!$%^<>'
 
 # GO
-export PATH="$PATH:/home/dbe/go/bin"
 export GOROOT="$HOME/go"
-
-# Haste
-export PATH="$PATH:/home/dbe/.cabal/bin"
 
 # nix
 source ~/.nix-profile/etc/profile.d/nix.sh
