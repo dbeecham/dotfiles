@@ -1,8 +1,11 @@
 set nocompatible
 filetype off
 
-call plug#begin('~/.nvim/plugged')
+call plug#begin('~/.vim/plugged')
 
+Plug 'Shougo/vimproc'
+Plug 'eagletmt/ghcmod-vim'
+Plug 'eagletmt/neco-ghc'
 Plug 'Townk/vim-autoclose'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -11,9 +14,8 @@ Plug 'scrooloose/syntastic'
 Plug 'godlygeek/tabular'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
-Plug 'dbeecham/vim-snippets'
-Plug 'ervandew/supertab'
+Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/neosnippet.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'vim-scripts/closetag.vim'
 Plug 'vim-scripts/VimClojure'

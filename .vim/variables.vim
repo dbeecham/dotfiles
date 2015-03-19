@@ -3,6 +3,9 @@
 scriptencoding utf-8
 set encoding=utf-8
 
+" Neosnippet
+let g:neocomplete#enable_at_startup = 1
+
 " let g:airline_theme='bubblegum'
 
 let g:AutoCloseExpandSpace = 0 " make iabbrev work again
@@ -81,7 +84,7 @@ set showcmd
 " Syntax highlighting / colors
 if &t_Co > 2 || has("gui_running")
     syntax on
-    set background=light
+    set background=dark
     set hlsearch
     "    color github
     if $TERM ==? "xterm-256color" || $TERM ==? "rxvt-256color"
