@@ -27,8 +27,8 @@ endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
-inoremap <expr><S-j> pumvisible() ? "\<Down>" : "\<C-j>"
-inoremap <expr><S-k> pumvisible() ? "\<Up>" : "\<C-j>"
+inoremap <expr><S-j> pumvisible() ? "\<Down>" : "\<S-j>"
+inoremap <expr><S-k> pumvisible() ? "\<Up>" : "\<S-k>"
 
 " 
 
