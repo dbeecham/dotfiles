@@ -33,8 +33,8 @@ inoremap <expr><S-k> pumvisible() ? "\<Up>" : "\<S-k>"
 " 
 
 " The idea is you want to make it easier to make it easier to edit text
-nnoremap <leader>ev :vsplit $MYVIMRC<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>ve :vsplit $MYVIMRC<CR>
+nnoremap <leader>vs :source $MYVIMRC<CR>
 nnoremap gf :e <cfile><CR>
 
 " NERDTree
@@ -63,8 +63,6 @@ nnoremap <s-l> :vertical resize +5<cr>
 "nnoremap <s-j> :resize -5<cr>
 "nnoremap <s-k> :resize +5<cr>
 
-" close tabs with c-d
-nnoremap <c-d> :close<cr>
 
 command! -nargs=1 Silent
             \ | execute ':silent !'.<q-args>
@@ -97,37 +95,12 @@ nnoremap <CR> :nohlsearch<CR>
 " Back to previous file
 nnoremap <leader><leader> <c-^>
 
-" Toggle autoclosing of {(["'
-nnoremap <leader>sa :AutoCloseToggle<cr>
-
-" Toggle syntax
-nnoremap <leader>ss :if exists("g:syntax_on") <bar> syntax off <bar> else <bar> syntax enable <bar> endif<cr>
-
 " Other window
 nnoremap <leader>w <c-w><c-w>
 
 " tags
-"nnoremap <leader>f :tag 
 nnoremap gj <C-]>
 
-
-" Rename file
-function! RenameFile()
-    let old_name = expand('%')
-    let new_name = input('New file name: ', expand('%'), 'file')
-    if new_name != '' && new_name != old_name
-        exec ':saveas ' . new_name
-        exec ':silent !rm ' . old_name
-        redraw!
-    endif
-endfunction
-map <leader>r :call RenameFile()<cr>
-
-" Show numbers
-map <leader>sn :set number!<cr>:set relativenumber!<cr>
-
-" Show list
-map <leader>sl :set list!<cr>
 
 " make (bake)
 nnoremap <leader>b :Make<cr>:cw<cr>
@@ -140,11 +113,18 @@ noremap <C-v> :sp<cr>
 nnoremap <leader>m K
 
 " ctrl-p -> command-t
-nnoremap <leader>t :CtrlP<CR>
-nnoremap <leader>j :CtrlPTag<cr>
+nnoremap <leader>f :CtrlP<CR>
+nnoremap <leader>s :CtrlPTag<cr>
 
-" ctrl-n, new tab
-nnoremap <c-n> :tabnew<cr>
+nnoremap <leader>T :TagbarToggle<cr>
+
+nnoremap <leader>t :CtrlPCommandPalette<cr>
+
+" ctrl-n, new buffer
+nnoremap <c-n> :enew<cr>
+
+" close buffers with c-d
+nnoremap <c-d> :bdelete<cr>
 
 " tabularize
 "if exists(":Tabularize")
@@ -155,7 +135,7 @@ nnoremap <c-n> :tabnew<cr>
 "endif
 
 " https://gist.github.com/tpope/287147
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+" inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
