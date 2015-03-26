@@ -56,6 +56,13 @@ noremap <silent> <M-j> :TmuxNavigateDown<cr>
 noremap <silent> <M-k> :TmuxNavigateUp<cr>
 noremap <silent> <M-l> :TmuxNavigateRight<cr>
 
+noremap <silent> <M-o> :bnext<cr>
+noremap <silent> o :bnext<cr>
+
+noremap <silent> <M-i> :bprev<cr>
+noremap <silent> i :bprev<cr>
+
+
 " and resize them with <s-hjkl>
 nnoremap <s-h> :vertical resize -5<cr>
 nnoremap <s-l> :vertical resize +5<cr>
