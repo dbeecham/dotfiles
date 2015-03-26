@@ -3,10 +3,17 @@
 scriptencoding utf-8
 set encoding=utf-8
 
+" dark?
+let g:dark = 0
+
 " Neosnippet
 let g:neocomplete#enable_at_startup = 1
 
-let g:airline_theme='dark'
+if g:dark
+    let g:airline_theme='dark'
+else
+    let g:airline_theme='light'
+end
 
 
 " Mouse handling
@@ -167,7 +174,11 @@ set showcmd
 " Syntax highlighting / colors
 if &t_Co > 2 || has("gui_running")
     syntax on
-    set background=dark
+    if g:dark
+        set background=dark
+    else
+        set background=light
+    endif
     "    color github
     if $TERM ==? "xterm-256color" || $TERM ==? "rxvt-256color"
     "    set t_Co=256
@@ -255,24 +266,26 @@ function! s:DiffWithSaved()
 endfunction
 com! DiffSaved call s:DiffWithSaved()
 
-" dark colors
-"hi TabLineFill ctermfg=234
-" disable the underline behind tabline words
-"hi TabLine term=NONE cterm=NONE
-"hi CursorLine term=NONE cterm=NONE ctermbg=234
-"hi CursorColumn term=NONE cterm=NONE ctermfg=234
-"hi LineNr ctermfg=244 ctermbg=234
-"hi CursorLineNr ctermfg=244 ctermbg=235
-"hi VertSplit ctermfg=247 ctermbg=234 cterm=NONE
-"hi NonText ctermfg=231
-
-" light colors
-"hi TabLineFill ctermfg=255 ctermbg=255
-" disable the underline behind tabline words
-"hi TabLine term=NONE cterm=NONE
-"hi CursorLine term=NONE cterm=NONE ctermbg=255
-"hi CursorColumn term=NONE cterm=NONE ctermfg=255
-"hi LineNr ctermfg=240 ctermbg=255
-"hi CursorLineNr ctermfg=240 ctermbg=254
-"hi VertSplit ctermfg=240 ctermbg=255 cterm=NONE
-""hi NonText ctermfg=255
+if g:dark
+    " dark colors
+    "hi TabLineFill ctermfg=234
+    " disable the underline behind tabline words
+    "hi TabLine term=NONE cterm=NONE
+    "hi CursorLine term=NONE cterm=NONE ctermbg=234
+    "hi CursorColumn term=NONE cterm=NONE ctermfg=234
+    "hi LineNr ctermfg=244 ctermbg=234
+    "hi CursorLineNr ctermfg=244 ctermbg=235
+    hi VertSplit ctermfg=234 ctermbg=234 cterm=NONE
+    "hi NonText ctermfg=231
+else
+    " light colors
+    "hi TabLineFill ctermfg=255 ctermbg=255
+    " disable the underline behind tabline words
+    "hi TabLine term=NONE cterm=NONE
+    "hi CursorLine term=NONE cterm=NONE ctermbg=255
+    "hi CursorColumn term=NONE cterm=NONE ctermfg=255
+    "hi LineNr ctermfg=240 ctermbg=255
+    "hi CursorLineNr ctermfg=240 ctermbg=254
+    hi VertSplit ctermfg=254 ctermbg=255 cterm=NONE
+    ""hi NonText ctermfg=255
+end
