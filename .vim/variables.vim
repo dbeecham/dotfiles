@@ -107,7 +107,7 @@ let g:tagbar_type_lhaskell = {
 set nocompatible
 
 " change directory when switching buffer
-set autochdir
+"set autochdir
 
 " Show mode ("-- INSERT --")
 set showmode
@@ -132,6 +132,7 @@ set laststatus=2
 " Search settings
 set showmatch
 set incsearch
+
 " set hlsearch " set at syntax settings
 set ignorecase
 set smartcase
