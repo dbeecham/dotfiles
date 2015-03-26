@@ -28,8 +28,8 @@ Plug 'mklabs/grunt.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'lambdatoast/elm.vim'
 Plug 'jpalardy/vim-slime'
-"Plug 'ap/vim-buftabline'
 Plug 'bling/vim-airline'
 Plug 'majutsushi/tagbar'
+Plug 'dbeecham/ctrlp-commandpalette.vim'
 
 call plug#end()
