@@ -11,6 +11,9 @@ nnoremap K 5k
 vnoremap J 5j
 vnoremap K 5k
 
+
+nnoremap - /
+
 """ neocomplete 
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
@@ -69,17 +72,6 @@ nnoremap <s-l> :vertical resize +5<cr>
 " conflicts with 5j 5k
 "nnoremap <s-j> :resize -5<cr>
 "nnoremap <s-k> :resize +5<cr>
-
-
-command! -nargs=1 Silent
-            \ | execute ':silent !'.<q-args>
-            \ | execute ':redraw!'
-
-" ghci
-nnoremap <leader>g :Silent ghci<cr>
-
-" ghci open file
-nnoremap <leader>G :Silent ghci %<cr>
 
 " quit!
 nnoremap Q :qa!<cr>
