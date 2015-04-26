@@ -10,4 +10,16 @@ function! RunHaskellRepl()
     endif
 endfunction
 
-nnoremap <leader>G :call RunHaskellRepl()<cr>
+function! CompileHaskell()
+    if !empty(glob("*cabal"))
+        execute ':Dispatch cabal build'
+    elseif filereadable("Makefile")
+        execute ':Make'
+    else
+        echo "No way to build."
+    endif
+endfunction
+
+
+nnoremap <leader>g :call RunHaskellRepl()<cr>
+nnoremap <leader>b :call CompileHaskell()<cr>
