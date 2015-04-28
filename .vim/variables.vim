@@ -4,7 +4,17 @@ scriptencoding utf-8
 set encoding=utf-8
 
 " dark?
-let g:dark = 0
+if exists("$DARK")
+    if $DARK == "1"
+        let g:dark = 1
+    else
+        let g:dark = 0
+    endif
+else
+    " default setting
+    let g:dark = 1
+endif
+
 
 " Neosnippet
 let g:neocomplete#enable_at_startup = 1
