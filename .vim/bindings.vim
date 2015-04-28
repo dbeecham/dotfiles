@@ -28,9 +28,6 @@ function! s:my_cr_function()
   return pumvisible() ? neocomplete#close_popup() : "\<CR>"
 endfunction
 
-inoremap <expr><S-j> pumvisible() ? "\<Down>" : "\<S-j>"
-inoremap <expr><S-k> pumvisible() ? "\<Up>" : "\<S-k>"
-
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
