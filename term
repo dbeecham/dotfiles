@@ -1,0 +1,50 @@
+#!/bin/sh
+
+if test ! -n "$DARK"; then
+    export DARK=$(cat .dark)
+fi
+
+
+if test $DARK = "0"; then
+    # LIGHT
+    urxvt \
+        -bg "#ffffff" \
+        -fg "#000000" \
+        -color0 "#ffffff" \
+        -color1 "#a61300" \
+        -color2 "#4c7800" \
+        -color3 "#b83a00" \
+        -color4 "#00afd6" \
+        -color5 "#7c00b5" \
+        -color6 "#00d6bd" \
+        -color7 "#999999" \
+        -color8 "#222222" \
+        -color9 "#ff1e00" \
+        -color10 "#a2ff00" \
+        -color11 "#ff5000" \
+        -color12 "#00d0ff" \
+        -color13 "#ae00ff" \
+        -color14 "#00ffe1" \
+        -color14 "#000000" 
+else
+    # DARK
+    urxvt \
+        -bg "#000000" \
+        -fg "#ffffff" \
+        -color0 "#000000" \
+        -color1 "#a61300" \
+        -color2 "#4c7800" \
+        -color3 "#b83a00" \
+        -color4 "#00afd6" \
+        -color5 "#7c00b5" \
+        -color6 "#00d6bd" \
+        -color7 "#999999" \
+        -color8 "#222222" \
+        -color9 "#ff1e00" \
+        -color10 "#a2ff00" \
+        -color11 "#ff5000" \
+        -color12 "#00d0ff" \
+        -color13 "#ea00ff" \
+        -color14 "#00ffe1" \
+        -color14 "#ffffff" 
+fi

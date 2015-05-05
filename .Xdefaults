@@ -1,11 +1,15 @@
-*background: #000000
-*foreground: #ffffff
+#*background: #000000
+#*foreground: #ffffff
+*background: #ffffff
+*foreground: #000000
 urxvt*scrollBar: false
-*font: -misc-fixed-medium-r-*-*-13-*-*-*-*-*-iso10646-1
-*boldFont: -misc-fixed-medium-r-*-*-13-*-*-*-*-*-iso10646-1
+#*font: -misc-fixed-medium-r-*-*-13-*-*-*-*-*-iso10646-1
+#*boldFont: -misc-fixed-medium-r-*-*-13-*-*-*-*-*-iso10646-1
 
-urxvt*inheritPixmap: true
-urxvt*shading: 80
+urxvt*font: xft:Droid Sans Mono:size=10
+
+#urxvt*inheritPixmap: true
+#urxvt*shading: 80
 
 urxvt*geometry: 80x24
 
