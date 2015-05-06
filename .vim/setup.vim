@@ -32,7 +32,6 @@ Plug 'vim-scripts/VimClojure'
 Plug 'kchmck/vim-coffee-script'
 Plug 'eagletmt/ghcmod-vim'
 Plug 'eagletmt/neco-ghc'
-Plug 'amdt/vim-niji'
 
 " build systems
 Plug 'mklabs/grunt.vim'
