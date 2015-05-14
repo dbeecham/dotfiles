@@ -236,6 +236,10 @@ if v:version >= 700
     set numberwidth=3
 endif
 
+
+set viewoptions=cursor,folds,slash,unix
+" let g:skipview_files = ['*\.vim']
+
 " NERDTree settings
 let NERDTreeWinSize=18
 let NERDTreeWinPos="right"
