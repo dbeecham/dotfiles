@@ -25,6 +25,7 @@ Plug 'vim-scripts/restore_view.vim'
 Plug 'bling/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 Plug 'edkolev/promptline.vim'
+Plug 'flazz/vim-colorschemes'
 
 " languages
 Plug 'lambdatoast/elm.vim'

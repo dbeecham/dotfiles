@@ -191,10 +191,10 @@ if &t_Co > 2 || has("gui_running")
         set background=light
     endif
     "    color github
-    if $TERM ==? "xterm-256color" || $TERM ==? "rxvt-256color"
+    "if $TERM ==? "xterm-256color" || $TERM ==? "rxvt-256color"
     "    set t_Co=256
         "color grb256
-    endif
+    "endif
 endif
 
 " Ruler is enabled (whenever statusline is not set)
@@ -293,6 +293,9 @@ if g:dark
     hi VertSplit ctermfg=234 ctermbg=234 cterm=NONE
     "hi NonText ctermfg=231
 else
+    colorscheme summerfruit256
+    hi CursorLineNr ctermfg=254 ctermbg=32 gui=bold guifg=#fefefe guibg=#438ec3
+
     " light colors
     "hi TabLineFill ctermfg=255 ctermbg=255
     " disable the underline behind tabline words
