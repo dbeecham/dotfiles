@@ -127,10 +127,10 @@ nnoremap <leader>T :TagbarToggle<cr>
 nnoremap <leader>t :CtrlPCommandPalette<cr>
 
 " ctrl-n, new buffer
-nnoremap <c-n> :enew<cr>
+"nnoremap <c-n> :enew<cr>
 
 " close buffers with c-d
-nnoremap <c-d> :bdelete<cr>
+"nnoremap <c-d> :bdelete<cr>
 
 " tabularize
 "if exists(":Tabularize")
