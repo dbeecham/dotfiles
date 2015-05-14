@@ -40,13 +40,6 @@ endfunction
 
 nnoremap <leader>sm :call ToggleMouse()<cr>
 
-
-""" vim-autoclose
-" Autoclose is off by default
-let g:AutoCloseOn=0
-let g:AutoCloseExpandSpace = 0 " make iabbrev work again
-
-
 "" tagbar support for haskell (using hasktags)
 let g:tagbar_type_haskell = {
     \ 'ctagsbin'  : 'hasktags',
