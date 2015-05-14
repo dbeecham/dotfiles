@@ -117,8 +117,8 @@ nnoremap gj <C-]>
 nnoremap <leader>b :Make<cr>:cw<cr>
 
 " splitting
-noremap <C-b> :vsp<cr>
-noremap <C-v> :sp<cr>
+noremap <C-g> :vsp<cr>
+noremap <C-b> :sp<cr>
 
 " man
 nnoremap <leader>m K
