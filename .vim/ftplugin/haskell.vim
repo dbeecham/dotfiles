@@ -23,3 +23,10 @@ endfunction
 
 nnoremap <leader>g :call RunHaskellRepl()<cr>
 nnoremap <leader>b :call CompileHaskell()<cr>
+
+nnoremap <leader>a :GhcModType<cr>
+
+
+set hlsearch
+nnoremap <cr> :nohlsearch<cr>:GhcModTypeClear<cr>
+
