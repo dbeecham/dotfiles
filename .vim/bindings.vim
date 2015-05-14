@@ -41,11 +41,6 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
 \: "\<TAB>"
 
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
 
 " The idea is you want to make it easier to make it easier to edit text
 nnoremap <leader>ve :vsplit $MYVIMRC<CR>
