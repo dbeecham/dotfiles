@@ -198,7 +198,10 @@ set foldmethod=manual
 set foldnestmax=3
 
 " Text width
-set textwidth=80
+"set textwidth=80
+
+" 80 character mark
+set colorcolumn=80
 
 " Let vim set title
 set title
