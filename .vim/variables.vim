@@ -12,7 +12,7 @@ if exists("$DARK")
     endif
 else
     " default setting
-    let g:dark = 1
+    let g:dark = 0
 endif
 
 
