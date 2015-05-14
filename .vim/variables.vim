@@ -194,8 +194,8 @@ endif
 set ruler
 
 " Foldings set to marker (changed using autocmds)
-set foldmethod=marker
-set foldnestmax=2
+set foldmethod=manual
+set foldnestmax=3
 
 " Text width
 set textwidth=80
