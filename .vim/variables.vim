@@ -149,7 +149,10 @@ set switchbuf=usetab
 
 " number on by default
 set number
-set relativenumber
+
+if v:version >= 730
+    set relativenumber
+endif
 
 " Tab line visible always
 set showtabline=2
@@ -201,7 +204,9 @@ set foldnestmax=3
 "set textwidth=80
 
 " 80 character mark
-set colorcolumn=80
+if v:version >= 730
+    set colorcolumn=80
+endif
 
 " Let vim set title
 set title
