@@ -150,7 +150,7 @@ set switchbuf=usetab
 " number on by default
 set number
 
-if v:version >= 730
+if v:version >= 703
     set relativenumber
 endif
 
@@ -204,7 +204,7 @@ set foldnestmax=3
 "set textwidth=80
 
 " 80 character mark
-if v:version >= 730
+if v:version >= 703
     set colorcolumn=80
 endif
 
