@@ -15,7 +15,7 @@ font -misc-fixed-medium-r-normal--11-*-*-*-*-*-iso10646-1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvtc
 
 # kill focused window
 bindsym $mod+Shift+c kill
