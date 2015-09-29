@@ -1,0 +1,3 @@
+#!/bin/sh
+feh --bg-fill ~/bgs/dark/bg
+echo 1 > ~/.dark
