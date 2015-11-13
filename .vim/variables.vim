@@ -40,6 +40,8 @@ endfunction
 
 nnoremap <leader>sm :call ToggleMouse()<cr>
 
+let hscoptions="AtIs𝔻"
+
 "" tagbar support for haskell (using hasktags)
 let g:tagbar_type_haskell = {
     \ 'ctagsbin'  : 'hasktags',
