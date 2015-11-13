@@ -20,12 +20,14 @@ Plug 'jpalardy/vim-slime'
 Plug 'majutsushi/tagbar'
 Plug 'dbeecham/ctrlp-commandpalette.vim'
 Plug 'vim-scripts/restore_view.vim'
+Plug 'mhinz/vim-signify'
 
 " visual
 Plug 'bling/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 Plug 'edkolev/promptline.vim'
 Plug 'flazz/vim-colorschemes'
+Plug 'enomsg/vim-haskellConcealPlus'
 
 " languages
 Plug 'lambdatoast/elm.vim'
