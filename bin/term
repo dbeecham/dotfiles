@@ -32,7 +32,7 @@ else
     urxvtc \
         -tr \
         -tint white \
-        -sh 50 \
+        -sh 20 \
         -bg "#000000" \
         -fg "#ffffff" \
         -color0 "#000000" \
