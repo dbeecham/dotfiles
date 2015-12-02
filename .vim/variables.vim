@@ -16,8 +16,15 @@ else
 endif
 
 
-" Neosnippet
-let g:neocomplete#enable_at_startup = 1
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<C-l>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 if g:dark
     let g:airline_theme='dark'
@@ -40,7 +47,7 @@ endfunction
 
 nnoremap <leader>sm :call ToggleMouse()<cr>
 
-let hscoptions="AtIs𝔻"
+let hscoptions="A𝐄t𝐌Is𝐒"
 
 "" tagbar support for haskell (using hasktags)
 let g:tagbar_type_haskell = {
@@ -296,7 +303,7 @@ if g:dark
     hi VertSplit ctermfg=234 ctermbg=234 cterm=NONE
     "hi NonText ctermfg=231
 else
-    colorscheme summerfruit256
+    colorscheme summerfruit256transparent
     hi CursorLineNr ctermfg=254 ctermbg=32 gui=bold guifg=#fefefe guibg=#438ec3
 
     " light colors
