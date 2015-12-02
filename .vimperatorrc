@@ -1,2 +1,5 @@
-nnoremap j 15j
-nnoremap k 15k
+nnoremap j 8j
+nnoremap k 8k
+
+nnoremap J 30j
+nnoremap K 30k
