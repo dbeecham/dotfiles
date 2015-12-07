@@ -82,6 +82,9 @@ nnoremap <s-l> :vertical resize +5<cr>
 " quit!
 nnoremap Q :qa!<cr>
 
+nnoremap <M-c> :bdelete<cr>
+nnoremap c :bdelete<cr>
+
 " ; is easier to do then :
 nnoremap ; :
 
