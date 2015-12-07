@@ -4,7 +4,7 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'Shougo/vimproc'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'godlygeek/tabular'
