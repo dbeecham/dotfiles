@@ -167,7 +167,7 @@ endif
 set showtabline=2
 
 " Minimum window size
-set winwidth=80
+set winwidth=60
 
 " Stop clearing screen at exit
 " http://www.shallowsky.com/linux/noaltscreen.html
@@ -290,6 +290,10 @@ function! s:DiffWithSaved()
   exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
+
+
+" Delimitmate
+let delimitMate_expand_cr = 1
 
 if g:dark
     " dark colors
