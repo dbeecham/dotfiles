@@ -46,6 +46,7 @@ nnoremap - /
 nnoremap <leader>ve :vsplit $MYVIMRC<CR>
 nnoremap <leader>vs :source $MYVIMRC<CR>
 nnoremap gf :e <cfile><CR>
+nnoremap gt <C-]>
 
 " NERDTree
 nnoremap <leader>x :NERDTreeToggle<CR>
@@ -122,11 +123,11 @@ nnoremap <leader>m K
 
 " ctrl-p -> command-t
 nnoremap <leader>f :CtrlP<CR>
-nnoremap <leader>s :CtrlPTag<cr>
+nnoremap <leader>t :CtrlPTag<cr>
 
 nnoremap <leader>T :TagbarToggle<cr>
 
-nnoremap <leader>t :CtrlPCommandPalette<cr>
+nnoremap <leader>s :CtrlPCommandPalette<cr>
 
 " ctrl-n, new buffer
 "nnoremap <c-n> :enew<cr>
