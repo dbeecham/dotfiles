@@ -26,6 +26,9 @@ Plug 'majutsushi/tagbar'
 Plug 'dbeecham/ctrlp-commandpalette.vim'
 Plug 'vim-scripts/restore_view.vim'
 Plug 'mhinz/vim-signify'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
+Plug 'benekastah/neomake'
 
 " visual
 Plug 'bling/vim-airline'

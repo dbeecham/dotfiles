@@ -169,6 +169,15 @@ set showtabline=2
 " Minimum window size
 set winwidth=60
 
+let g:easytags_by_filetype="~/.tags/"
+
+" Neomake warning sign
+let g:neomake_warning_sign = {'text': '>>', 'texthl': 'WarningMsg'}
+let g:neomake_error_sign = {'text': '>>', 'texthl': 'ErrorMsg'}
+hi WarningMsg ctermfg=white ctermbg=red
+hi ErrorMsg ctermfg=white ctermbg=Grey
+
+
 " Stop clearing screen at exit
 " http://www.shallowsky.com/linux/noaltscreen.html
 set t_ti= t_te=
