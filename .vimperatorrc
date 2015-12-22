@@ -3,3 +3,6 @@ nnoremap k 8k
 
 nnoremap J 30j
 nnoremap K 30k
+
+nnoremap <A-i> :tabprevious<cr>
+nnoremap <A-o> :tabnext<cr>
