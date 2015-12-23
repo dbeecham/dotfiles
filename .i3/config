@@ -155,9 +155,14 @@ bindsym $mod+r mode "resize"
 ##   Settings.   ##
 ##               ##
 ###################
+#
+# xprop can show window properties (like Class)
 
 # One pixel border around windows.
 new_window 1pixel
+
+for_window [class="gnuplot_qt"] floating enable
+assign [class="Firefox"] 3
 
 
 ################
