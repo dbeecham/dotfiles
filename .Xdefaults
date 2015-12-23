@@ -3,10 +3,14 @@
 *background: #ffffff
 *foreground: #000000
 urxvt*scrollBar: false
-#*font: -misc-fixed-medium-r-*-*-13-*-*-*-*-*-iso10646-1
-#*boldFont: -misc-fixed-medium-r-*-*-13-*-*-*-*-*-iso10646-1
+#*font: -misc-fixed-medium-r-*-*-14-*-*-*-*-*-iso10646-1
+#*boldFont: -misc-fixed-medium-r-*-*-14-*-*-*-*-*-iso10646-1
 
-urxvt*font: xft:Droid Sans Mono:size=10
+#urxvt*font: xft:DejaVu Sans Mono:size=10
+#urxvt*boldFont: xft:DejaVu Sans Mono:size=10
+
+urxvt*font: -gnu-unifont-medium-r-normal-sans-16-160-75-75-c-80-iso10646-1
+urxvt*boldFont: -gnu-unifont-medium-r-normal-sans-16-160-75-75-c-80-iso10646-1
 
 #urxvt*inheritPixmap: true
 #urxvt*shading: 80
