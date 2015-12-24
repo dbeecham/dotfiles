@@ -169,13 +169,23 @@ set showtabline=2
 " Minimum window size
 set winwidth=60
 
-let g:easytags_by_filetype="~/.tags/"
-
 " Neomake warning sign
 let g:neomake_warning_sign = {'text': '>>', 'texthl': 'WarningMsg'}
 let g:neomake_error_sign = {'text': '>>', 'texthl': 'ErrorMsg'}
 hi WarningMsg ctermfg=white ctermbg=red
 hi ErrorMsg ctermfg=white ctermbg=Grey
+
+" let g:easytags_by_filetype="~/.tags/"
+let g:easytags_dynamic_files = 2
+let g:easytags_languages = {
+\   'haskell': {
+\     'cmd': 'hasktags',
+\       'args': ['-c'],
+\       'fileoutput_opt': '-o',
+\       'stdout_opt': '-o-',
+\       'recurse_flag': '-R',
+\   }
+\}
 
 
 " Stop clearing screen at exit
