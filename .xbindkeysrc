@@ -50,13 +50,13 @@
 #"xterm"
   #control + b:2
 
-"amixer set Master 2dB-"
+"pamixer --decrease 2"
     XF86AudioLowerVolume
 
-"amixer set Master 2dB+"
+"pamixer --increase 2"
     XF86AudioRaiseVolume
 
-"amixer set Master toggle"
+"pamixer --toggle-mute"
     XF86AudioMute
 
 #"xterm -geom 50x20+20+20"
