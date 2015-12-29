@@ -187,7 +187,7 @@ bar {
             statusline #ff0000
 
             focused_workspace $bgcolor $bgcolor $hostcolor
-            active_workspace $bgcolor $bgcolor #999999
+            active_workspace $bgcolor $bgcolor #0070ff
             inactive_workspace $bgcolor $bgcolor #999999
             urgent_workspace $bgcolor $bgcolor #ff0000
         }
