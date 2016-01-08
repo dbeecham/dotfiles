@@ -3,6 +3,8 @@ set fish_greeting ""
 set PATH $HOME/.nix-profile/bin $HOME/.nix-profile/sbin /usr/local/bin $HOME/.cabal/bin $PATH $HOME/bin/
 set PATH /opt/ghc-mod/dist/build/ghc-mod /opt/ghc-mod/dist/build/ghc-modi/ $PATH 
 
+set -x EDITOR /usr/bin/nvim
+
 function chpwd --on-variable PWD
     status --is-command-substitution; and return
     ls
