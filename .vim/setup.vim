@@ -44,6 +44,8 @@ Plug 'vim-scripts/VimClojure'
 Plug 'kchmck/vim-coffee-script'
 Plug 'eagletmt/ghcmod-vim'
 Plug 'eagletmt/neco-ghc'
+Plug 'dag/vim-fish'
+Plug 'LnL7/vim-nix'
 
 " build systems
 Plug 'mklabs/grunt.vim'
