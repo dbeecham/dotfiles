@@ -49,6 +49,8 @@ nnoremap <leader>sm :call ToggleMouse()<cr>
 
 let hscoptions="A𝐄t𝐌Is𝐒"
 
+let tagbar_map_closefold="zc"
+
 "" tagbar support for haskell (using hasktags)
 let g:tagbar_type_haskell = {
     \ 'ctagsbin'  : 'hasktags',
