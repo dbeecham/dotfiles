@@ -6,3 +6,5 @@ nnoremap K 30k
 
 nnoremap <A-i> :tabprevious<cr>
 nnoremap <A-o> :tabnext<cr>
+
+set gui=addons,nobookmarks,nomenu,nonavigation,tabs
