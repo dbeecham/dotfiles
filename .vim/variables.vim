@@ -17,14 +17,17 @@ endif
 
 
 " make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+"let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+"let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+"let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<C-l>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsExpandTrigger = "<c-l>"
+"let g:UltiSnipsJumpForwardTrigger = "<tab>"
+"let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" eclim
+let g:EclimCompletionMethod = 'omnifunc'
 
 if g:dark
     let g:airline_theme='dark'
@@ -176,6 +179,9 @@ let g:neomake_warning_sign = {'text': '>>', 'texthl': 'WarningMsg'}
 let g:neomake_error_sign = {'text': '>>', 'texthl': 'ErrorMsg'}
 hi WarningMsg ctermfg=white ctermbg=red
 hi ErrorMsg ctermfg=white ctermbg=Grey
+
+set cpoptions="aAceFsBd"
+set tags=./tags
 
 " let g:easytags_by_filetype="~/.tags/"
 let g:easytags_dynamic_files = 2
