@@ -15,6 +15,9 @@ else
     let g:dark = 0
 endif
 
+" vim-dispatch has issues with fish shell
+set shell=/bin/bash
+
 
 " make YCM compatible with UltiSnips (using supertab)
 "let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
