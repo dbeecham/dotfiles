@@ -112,7 +112,7 @@ nnoremap gj <C-]>
 
 
 " make (bake)
-nnoremap <leader>b :Make<cr>:cw<cr>
+"nnoremap <leader>b :Make<cr>:cw<cr>
 
 " splitting
 noremap <C-g> :vsp<cr>

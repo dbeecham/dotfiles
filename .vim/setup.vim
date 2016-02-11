@@ -30,6 +30,8 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
 Plug 'benekastah/neomake'
 Plug 'tpope/vim-fugitive'
+Plug 'amiorin/vim-project'
+Plug 'mhinz/vim-startify'
 
 " visual
 Plug 'bling/vim-airline'
