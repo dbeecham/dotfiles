@@ -2,17 +2,11 @@
 
 
 function isvim 
-    if echo $argv | grep -iqE "(\/|^| )g?(VIEW|n?vim?)(diff)?"
+    if pstree $argv | grep -iqE "(VIEW|n?vim?(^fm))"
         return 0
     else
         return 1
     end
 end
 
-echo $argv
-
-if test $argv = "vifm"
-    isvim (ps h --ppid (pidof vifm) -o cmd)
-else
-    isvim $argv
-end
+isvim $argv
