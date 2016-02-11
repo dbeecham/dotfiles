@@ -1,8 +1,7 @@
 #!/usr/bin/fish
 
-
 function isvim 
-    if pstree $argv | grep -iqE "(VIEW|n?vim?(^fm))"
+    if pstree $argv | grep -iqE "n?vim"
         return 0
     else
         return 1
