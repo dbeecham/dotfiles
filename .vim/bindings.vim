@@ -12,7 +12,10 @@ vnoremap J 5j
 vnoremap K 5k
 
 
-nnoremap - /
+map - <plug>(incsearch-forward)\\v
+map _ <plug>(incsearch-backward)\\v
+map / <plug>(incsearch-forward)\\v
+map ? <plug>(incsearch-backward)\\v
 
 """ neocomplete 
 " Plugin key-mappings.
@@ -113,6 +116,8 @@ nnoremap gj <C-]>
 
 " make (bake)
 "nnoremap <leader>b :Make<cr>:cw<cr>
+
+map <leader>g <plug>(easymotion-prefix)
 
 " splitting
 noremap <C-g> :vsp<cr>

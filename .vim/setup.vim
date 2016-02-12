@@ -32,6 +32,8 @@ Plug 'benekastah/neomake'
 Plug 'tpope/vim-fugitive'
 Plug 'amiorin/vim-project'
 Plug 'mhinz/vim-startify'
+Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/incsearch.vim'
 
 " visual
 Plug 'bling/vim-airline'
