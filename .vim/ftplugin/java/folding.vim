@@ -29,21 +29,6 @@ function! NextNonBlankLine(lnum)
 endfunction
 
 function! JavaFoldlevel(lnum)
-    if LineIsEmpty(a:lnum)
-        let next = NextNonBlankLine(a:lnum)
-        if IndentLevel(next) >= 2
-            return '1'
-        endif
-
-        if IndentLevel(next) >= 1 && getline(next) =~ '\v\}\s*$'
-            return '1'
-        endif
-    endif
-
-    if getline(a:lnum) =~? "\v^\s*$"
-        return '-1'
-    end
-
     if IndentLevel(a:lnum) >= 2
         return '1'
     endif
@@ -57,6 +42,16 @@ function! JavaFoldlevel(lnum)
         return '1'
     endif
 
+    if LineIsEmpty(a:lnum)
+        let next = NextNonBlankLine(a:lnum)
+        if IndentLevel(next) >= 2
+            return '1'
+        endif
+
+        if IndentLevel(next) >= 1 && getline(next) =~ '\v\}\s*$'
+            return '1'
+        endif
+    endif
 
     return '0'
 endfunction
