@@ -12,10 +12,10 @@ vnoremap J 5j
 vnoremap K 5k
 
 
-map - <plug>(incsearch-forward)\\v
-map _ <plug>(incsearch-backward)\\v
-map / <plug>(incsearch-forward)\\v
-map ? <plug>(incsearch-backward)\\v
+map - <plug>(incsearch-forward)\v
+map _ <plug>(incsearch-backward)\v
+map / <plug>(incsearch-forward)\v
+map ? <plug>(incsearch-backward)\v
 
 """ neocomplete 
 " Plugin key-mappings.

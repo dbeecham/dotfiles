@@ -183,7 +183,7 @@ let g:neomake_error_sign = {'text': '>>', 'texthl': 'ErrorMsg'}
 hi WarningMsg ctermfg=white ctermbg=red
 hi ErrorMsg ctermfg=white ctermbg=Grey
 
-set cpoptions="aAceFsBd"
+set cpoptions+=d
 set tags=./tags
 
 " let g:easytags_by_filetype="~/.tags/"
