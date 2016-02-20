@@ -48,7 +48,7 @@ set undolevels=100
 " If you installed the vim.txt help file set vimhelp.
 " If would rather use a plain text help file set novimhelp.
 
-set novimhelp
+set vimhelp
 
 " If you would like to run an executable file when you
 " press return on the file name set this.
@@ -165,6 +165,7 @@ command! reload :write | restart
 " Pdf
 filextype *.pdf zathura %c %i &, apvlv %c, xpdf %c
 fileviewer *.pdf pdftotext -nopgbrk %c -
+filetype *.pdf mupdf-x11 %c &
 
 " PostScript
 filextype *.ps,*.eps,*.ps.gz
@@ -362,6 +363,11 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 " word and Word like in vim
 nnoremap cw cW
 nnoremap cW cw
+
+" move quickly down and up
+nnoremap J 8j
+nnoremap K 8k
+
 
 nnoremap - /
 nnoremap Q :q<cr>
