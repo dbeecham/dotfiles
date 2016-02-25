@@ -1,3 +1,5 @@
 #!/usr/bin/fish
 
-git clone (echo $argv[1] | sed -E "/^[[:alnum:]_-]+\/[[:alnum:]_-]+\$/{ s/^/git:\/\/github.com\// }")
+git clone (echo $argv[1] \
+    | sed -E "/^[[:alnum:]_\.-]+\/[[:alnum:]_\.-]+\$/{ s/^/git:\/\/github.com\// }" \
+    | sed -E "/^[[:alnum:]_\.-]+\$/{s/^/git+ssh:\/\/git@github.com\/dbeecham\// } " )
