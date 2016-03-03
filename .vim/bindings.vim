@@ -51,6 +51,11 @@ nnoremap <leader>vs :source $MYVIMRC<CR>
 nnoremap gf :e <cfile><CR>
 nnoremap gt <C-]>
 
+nmap < [
+nmap > ]
+vmap < [
+vmap > ]
+
 " NERDTree
 nnoremap <leader>x :NERDTreeToggle<CR>
 " Move around splits with <c-hjkl>
