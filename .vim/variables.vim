@@ -269,6 +269,8 @@ set viminfo='20,\"500   " Keep a .viminfo file.
 " enhanced tab completion. These can be done in the user vimrc file.
 set suffixes+=.info,.aux,.log,.dvi,.bbl,.out,.o,.lo
 
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class
+
 " When displaying line numbers, don't use an annoyingly wide number column. This
 " doesn't enable line numbers -- :set number will do that. The value given is a
 " minimum width to use for the number column, not a fixed size.
