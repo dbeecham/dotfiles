@@ -34,6 +34,7 @@ Plug 'amiorin/vim-project'
 Plug 'mhinz/vim-startify'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
+Plug 'kshenoy/vim-signature'
 
 " visual
 Plug 'bling/vim-airline'
