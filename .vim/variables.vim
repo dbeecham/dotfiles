@@ -242,6 +242,9 @@ set foldnestmax=3
 " Text width
 "set textwidth=80
 
+" make diffs vertical
+set diffopt=filler,vertical
+
 " 80 character mark
 if v:version >= 703
     set colorcolumn=80
