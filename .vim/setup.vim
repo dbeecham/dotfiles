@@ -41,6 +41,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'edkolev/promptline.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'enomsg/vim-haskellConcealPlus'
+Plug 'terryma/vim-multiple-cursors'
 
 " languages
 Plug 'lambdatoast/elm.vim'
