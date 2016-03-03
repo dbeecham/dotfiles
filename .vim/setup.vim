@@ -35,6 +35,7 @@ Plug 'mhinz/vim-startify'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
 Plug 'kshenoy/vim-signature'
+Plug 'tpope/vim-unimpaired'
 
 " visual
 Plug 'bling/vim-airline'
