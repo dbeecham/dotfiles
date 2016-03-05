@@ -22,3 +22,5 @@
     a = add
     c = commit
     p = push
+    ss = status
+    co = checkout
