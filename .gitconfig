@@ -20,6 +20,7 @@
     sa = status --short --branch
     d = diff --color-words
     a = add
+    b = branch
     c = commit
     p = push
     ss = status
