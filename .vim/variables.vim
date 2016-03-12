@@ -29,6 +29,18 @@ let g:UltiSnipsExpandTrigger = "<c-l>"
 "let g:UltiSnipsJumpForwardTrigger = "<tab>"
 "let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
+" startify
+let g:startify_list_order = [
+            \ ['    Sessions:'],
+            \ 'sessions',
+            \ ['     Bookmarks:'],
+            \ 'bookmarks',
+            \ ['    LRU within this dir:'],
+            \ 'dir',
+            \ ['    LRU'],
+            \ 'files',
+            \ ]
+
 " eclim
 let g:EclimCompletionMethod = 'omnifunc'
 
