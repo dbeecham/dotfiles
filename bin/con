@@ -1,0 +1,45 @@
+#!/bin/sh
+
+ALL=0
+SEARCH=0
+
+if test "$1" == "-a"; then
+    ALL=1
+    shift
+fi
+
+if test "$1" == "-s"; then
+    SEARCH=1
+    shift
+fi
+
+if test "$1" == ""; then exit; fi
+
+# Search for contact by substring in alias
+if test $SEARCH -eq 1; then
+    MATCHES=$(egrep -l "^alias:.*$1" /home/dbe/Dropbox/contacts/*)
+    if test "$MATCHES" == ""; then
+        echo "No matches."
+    else
+        for MATCH in $MATCHES; do
+            cat $MATCH
+            echo
+        done
+    fi
+    exit 0
+fi
+
+# Find contact by exact alias
+CONTACT=$(egrep -l "^alias: $1$" /home/dbe/Dropbox/contacts/*)
+
+if test "$CONTACT" == ""; then
+    echo "No contact found" >&2
+    exit 1
+fi
+
+# If -a is given, cat the file, else grep email
+if test $ALL -eq 1; then
+    cat $CONTACT
+else
+    grep email $CONTACT | tr -d " " | cut -d ":" -f 2
+fi
