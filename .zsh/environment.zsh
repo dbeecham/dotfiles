@@ -2,6 +2,12 @@ if test "$COLORTERM" = "gnome-terminal"; then
     export TERM="xterm-256color"
 fi
 
+if test "$(cat ~/.dark)" = "1"; then
+    export DARK=1
+else
+    export DARK=0
+fi
+
 C=$(tput colors)
 
 # Set up EMACS bindings.
