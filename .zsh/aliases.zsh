@@ -1,4 +1,5 @@
 # Common commands and aliases.
+alias g="git"
 alias ls="ls --color -F --group-directories-first"
 alias la="ls -a --color -F --group-directories-first"
 alias lsof="lsof -Pn"
