@@ -1,3 +1,6 @@
 [submodule ".tmux/tmux-scroll-copy-mode"]
 	path = .tmux/tmux-scroll-copy-mode
 	url = git://github.com/NHDaly/tmux-scroll-copy-mode
+[submodule ".zsh/zsh-syntax-highlighting"]
+	path = .zsh/zsh-syntax-highlighting
+	url = git://github.com/zsh-users/zsh-syntax-highlighting
