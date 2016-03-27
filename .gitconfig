@@ -25,3 +25,4 @@
     p = push
     ss = status
     co = checkout
+    t = tag
