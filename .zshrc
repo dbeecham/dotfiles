@@ -1,8 +1,8 @@
 source ~/.zsh/environment.zsh
-source ~/.zsh/aliases.zsh
 source ~/.zsh/functions.zsh
 #source ~/.zsh/prompt_256.zsh
 source ~/.zsh/ohmy.zsh
+source ~/.zsh/aliases.zsh
 
 # For some reason, oh-my-zsh overwrites some environment variables.
 # I don't know why it does this, and I'm not sure I'm safe sourcing
