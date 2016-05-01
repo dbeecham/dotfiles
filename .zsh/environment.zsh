@@ -67,7 +67,9 @@ export WORDCHARS='*?[]~&;!$%^<>'
 export GOROOT="$HOME/go"
 
 # nix
-source ~/.nix-profile/etc/profile.d/nix.sh
+if test -e ~/.nix-profile/etc/profile.d/nix.sh; then
+    source ~/.nix-profile/etc/profile.d/nix.sh
+fi
 
 # Makes sure less displays escape characters right.
 export LESS="-FXRS"
