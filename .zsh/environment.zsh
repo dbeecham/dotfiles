@@ -51,7 +51,7 @@ setopt noclobber
 setopt sunkeyboardhack
 
 # Set up language.
-export LANG="en_GB.UTF-8"
+export LANG="en_US.UTF-8"
 
 # I want my bin folder in my path.
 export EDITOR="vim"
