@@ -10,6 +10,8 @@ fi
 
 C=$(tput colors)
 
+export PATH=~/bin:$PATH
+
 # Set up EMACS bindings.
 bindkey -e
 
