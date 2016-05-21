@@ -38,7 +38,8 @@ Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-unimpaired'
 
 " visual
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 Plug 'edkolev/promptline.vim'
 Plug 'flazz/vim-colorschemes'
