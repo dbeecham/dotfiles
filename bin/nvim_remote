@@ -1,0 +1,29 @@
+#!/usr/bin/python
+
+# To use this script, place it in path, and create some symlinks to it.
+# Each symlink will work as a separate vim session.
+
+import sys
+import neovim
+import os 
+import re
+
+if len(sys.argv) <= 1:
+    print("No file specified")
+    sys.exit(1)
+
+if len(sys.argv) > 3:
+    print("Only one argument.")
+    sys.exit(1)
+
+identifier = sys.argv[0]
+
+f = os.path.join(os.getcwd(), sys.argv[1]);
+
+try:
+    nvim = neovim.attach("socket", path="/tmp/nvim" + identifier)
+except FileNotFoundError:
+    os.environ["NVIM_LISTEN_ADDRESS"] = "/tmp/nvim" + identifier
+    os.execvp("nvim", ["nvim"] + sys.argv[1:])
+
+nvim.command(":edit " + f)
