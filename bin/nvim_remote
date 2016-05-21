@@ -8,17 +8,7 @@ import neovim
 import os 
 import re
 
-if len(sys.argv) <= 1:
-    print("No file specified")
-    sys.exit(1)
-
-if len(sys.argv) > 3:
-    print("Only one argument.")
-    sys.exit(1)
-
-identifier = sys.argv[0]
-
-f = os.path.join(os.getcwd(), sys.argv[1]);
+identifier = re.search("(.*\/)*(.*)", sys.argv[0]).group(2)
 
 try:
     nvim = neovim.attach("socket", path="/tmp/nvim" + identifier)
@@ -26,4 +16,9 @@ except FileNotFoundError:
     os.environ["NVIM_LISTEN_ADDRESS"] = "/tmp/nvim" + identifier
     os.execvp("nvim", ["nvim"] + sys.argv[1:])
 
-nvim.command(":edit " + f)
+if len(sys.argv) == 2:
+    f = os.path.join(os.getcwd(), sys.argv[1]);
+    nvim.command(":edit " + f)
+else:
+    print("Open session found, but no file was specified.")
+    print("I don't know what to do.")
