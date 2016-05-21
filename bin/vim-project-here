@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if test "$(egrep -c "Project \"$(pwd)\"" ~/.config/nvim/projects.vim)" == "0"; then
+    echo "Project \"$(pwd)\"" >> ~/.config/nvim/projects.vim
+fi
