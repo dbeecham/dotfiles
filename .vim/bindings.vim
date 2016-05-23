@@ -48,7 +48,7 @@ map ? <plug>(incsearch-backward)\v
 " The idea is you want to make it easier to make it easier to edit text
 nnoremap <leader>ve :vsplit $MYVIMRC<CR>
 nnoremap <leader>vs :source $MYVIMRC<CR>
-nnoremap gf :e %:p:h/<cfile><CR>
+"nnoremap gf :e <cfile><CR> " the build in one is best
 nnoremap gt <C-]>
 
 " NERDTree
