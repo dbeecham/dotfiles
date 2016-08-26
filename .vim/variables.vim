@@ -1,154 +1,14 @@
-" utf-8
+" enable syntax highlighting
+syntax enable
 
-scriptencoding utf-8
-"set encoding=utf-8
+" CTRL-d and CTRL-u scroll by 6 lines
+set scroll=6
 
-" dark?
-if exists("$DARK")
-    if $DARK == "1"
-        let g:dark = 1
-    else
-        let g:dark = 0
-    endif
-else
-    " default setting
-    let g:dark = 0
-endif
-
-" vim-dispatch has issues with fish shell
-set shell=/bin/bash
-
-
-" make YCM compatible with UltiSnips (using supertab)
-"let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-"let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-"let g:SuperTabDefaultCompletionType = '<C-n>'
-
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<c-l>"
-"let g:UltiSnipsJumpForwardTrigger = "<tab>"
-"let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-" startify
-let g:startify_list_order = [
-            \ ['    Sessions:'],
-            \ 'sessions',
-            \ ['     Bookmarks:'],
-            \ 'bookmarks',
-            \ ['    LRU within this dir:'],
-            \ 'dir',
-            \ ['    LRU'],
-            \ 'files',
-            \ ]
-
-" eclim
-let g:EclimCompletionMethod = 'omnifunc'
-
-if g:dark
-    let g:airline_theme='dark'
-else
-    let g:airline_theme='light'
-end
-
-
-" Mouse handling
-set mouse=a
-function! ToggleMouse()
-    if &mouse =~ "a"
-        set mouse=""
-        echo "Mouse turned off."
-    else
-        set mouse=a
-        echo "Mouse turned on."
-    endif
-endfunction
-
-nnoremap <leader>sm :call ToggleMouse()<cr>
-
-let hscoptions="A𝐄t𝐌Is𝐒"
-
-let tagbar_map_closefold="zc"
-
-"" tagbar support for haskell (using hasktags)
-let g:tagbar_type_haskell = {
-    \ 'ctagsbin'  : 'hasktags',
-    \ 'ctagsargs' : '-x -c -o-',
-    \ 'kinds'     : [
-        \  'm:modules:0:1',
-        \  'd:data: 0:1',
-        \  'd_gadt: data gadt:0:1',
-        \  't:type names:0:1',
-        \  'nt:new types:0:1',
-        \  'c:classes:0:1',
-        \  'cons:constructors:1:1',
-        \  'c_gadt:constructor gadt:1:1',
-        \  'c_a:constructor accessors:1:1',
-        \  'ft:function types:1:1',
-        \  'fi:function implementations:0:1',
-        \  'o:others:0:1'
-    \ ],
-    \ 'sro'        : '.',
-    \ 'kind2scope' : {
-        \ 'm' : 'module',
-        \ 'c' : 'class',
-        \ 'd' : 'data',
-        \ 't' : 'type'
-    \ },
-    \ 'scope2kind' : {
-        \ 'module' : 'm',
-        \ 'class'  : 'c',
-        \ 'data'   : 'd',
-        \ 'type'   : 't'
-    \ }
-\ }
-
-"" tagbar support for lhaskell (using hasktags)
-let g:tagbar_type_lhaskell = {
-    \ 'ctagsbin'  : 'hasktags',
-    \ 'ctagsargs' : '-x -c -o-',
-    \ 'kinds'     : [
-        \  'm:modules:0:1',
-        \  'd:data: 0:1',
-        \  'd_gadt: data gadt:0:1',
-        \  't:type names:0:1',
-        \  'nt:new types:0:1',
-        \  'c:classes:0:1',
-        \  'cons:constructors:1:1',
-        \  'c_gadt:constructor gadt:1:1',
-        \  'c_a:constructor accessors:1:1',
-        \  'ft:function types:1:1',
-        \  'fi:function implementations:0:1',
-        \  'o:others:0:1'
-    \ ],
-    \ 'sro'        : '.',
-    \ 'kind2scope' : {
-        \ 'm' : 'module',
-        \ 'c' : 'class',
-        \ 'd' : 'data',
-        \ 't' : 'type'
-    \ },
-    \ 'scope2kind' : {
-        \ 'module' : 'm',
-        \ 'class'  : 'c',
-        \ 'data'   : 'd',
-        \ 'type'   : 't'
-    \ }
-\ }
-
-" Not compatible with vi
+" not compatible with vi
 set nocompatible
-
-" change directory when switching buffer
-"set autochdir
 
 " Show mode ("-- INSERT --")
 set showmode
-
-" Allow unsaved background buffers and remember marks/undo for them
-set hidden
-
-" History
-set history=10000
 
 " Global indent settings, overridden in autocmds
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
@@ -164,103 +24,15 @@ set laststatus=2
 " Search settings
 set showmatch
 set incsearch
-
-" set hlsearch " set at syntax settings
+set hlsearch
 set ignorecase
 set smartcase
-
-" Show cursor line, column
-"set cursorline cursorcolumn
-"set cursorline
-
-" Switching between buffers
-set switchbuf=usetab
-
-" number on by default
-set number
-
-if v:version >= 703
-    set relativenumber
-endif
-
-" Tab line visible always
-set showtabline=2
-
-" Minimum window size
-set winwidth=60
-
-" Neomake warning sign
-let g:neomake_warning_sign = {'text': '>>', 'texthl': 'WarningMsg'}
-let g:neomake_error_sign = {'text': '>>', 'texthl': 'ErrorMsg'}
-hi WarningMsg ctermfg=white ctermbg=red
-hi ErrorMsg ctermfg=white ctermbg=Grey
-
-set cpoptions+=d
-set tags=./tags
-
-" let g:easytags_by_filetype="~/.tags/"
-let g:easytags_dynamic_files = 2
-let g:easytags_languages = {
-\   'haskell': {
-\     'cmd': 'hasktags',
-\       'args': ['-c'],
-\       'fileoutput_opt': '-o',
-\       'stdout_opt': '-o-',
-\       'recurse_flag': '-R',
-\   }
-\}
-
-
-" Stop clearing screen at exit
-" http://www.shallowsky.com/linux/noaltscreen.html
-set t_ti= t_te=
-
-" Keep more context when working off the end of a buffer
-set scrolloff=3
-
-" Keep backups (always a good idea.)
-set backup
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " Allow backspace over eol,tabs
 set backspace=2
 
 " Show (partial) commands
 set showcmd
-
-" Syntax highlighting / colors
-if &t_Co > 2 || has("gui_running")
-    syntax on
-    if g:dark
-        set background=dark
-    else
-        set background=light
-    endif
-    "    color github
-    "if $TERM ==? "xterm-256color" || $TERM ==? "rxvt-256color"
-    "    set t_Co=256
-        "color grb256
-    "endif
-endif
-
-" Ruler is enabled (whenever statusline is not set)
-set ruler
-
-" Foldings set to marker (changed using autocmds)
-set foldmethod=manual
-set foldnestmax=3
-
-" Text width
-"set textwidth=80
-
-" make diffs vertical
-set diffopt=filler,vertical
-
-" 80 character mark
-if v:version >= 703
-    set colorcolumn=80
-endif
 
 " Let vim set title
 set title
@@ -272,10 +44,6 @@ set wildmenu
 " Same with ctrln, ctrlp
 set completeopt=longest,menu
 
-" Characters to use to represent hidden characters
-set listchars=tab:»·,trail:·,extends:>,eol:$ " unicode
-"set listchars=tab:.\ ,trail:~,extends:> " ascii
-
 " Keep a viminfo file
 set viminfo='20,\"500   " Keep a .viminfo file.
 
@@ -286,6 +54,14 @@ set suffixes+=.info,.aux,.log,.dvi,.bbl,.out,.o,.lo
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class
 
+" number on by default
+set number
+
+" and relative numbers if support exists
+if v:version >= 703
+    set relativenumber
+endif
+
 " When displaying line numbers, don't use an annoyingly wide number column. This
 " doesn't enable line numbers -- :set number will do that. The value given is a
 " minimum width to use for the number column, not a fixed size.
@@ -294,77 +70,5 @@ if v:version >= 700
 endif
 
 
-set viewoptions=cursor,folds,slash,unix
-" let g:skipview_files = ['*\.vim']
-
-" NERDTree settings
-let NERDTreeWinSize=18
-let NERDTreeWinPos="right"
-let NERDTreeMinimalUI=1
-
 " Filetype plugin settings
 filetype plugin indent on
-
-" vimclojure
-let vimclojure#HighlightBuiltins = 1
-let vimclojure#ParenRainbow = 1
-
-" show mode
-set showmode
-
-let g:haddock_browser = "elinks"
-
-" powerline fonts
-let g:airline_powerline_fonts = 0
-let g:tmuxline_powerline_separators = 0
-
-" airline tabline
-let g:airline#extensions#tabline#enabled = 1
-
-" vim-slime
-let g:slime_target = "tmux"
-
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
-
-function! s:DiffWithSaved()
-  let filetype=&ft
-  diffthis
-  vnew | r # | normal! 1Gdd
-  diffthis
-  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
-endfunction
-com! DiffSaved call s:DiffWithSaved()
-
-
-" Delimitmate
-let delimitMate_expand_cr = 1
-
-if g:dark
-    " dark colors
-    "hi TabLineFill ctermfg=234
-    " disable the underline behind tabline words
-    "hi TabLine term=NONE cterm=NONE
-    "hi CursorLine term=NONE cterm=NONE ctermbg=234
-    "hi CursorColumn term=NONE cterm=NONE ctermfg=234
-    "hi LineNr ctermfg=244 ctermbg=234
-    "hi CursorLineNr ctermfg=244 ctermbg=235
-    hi VertSplit ctermfg=234 ctermbg=234 cterm=NONE
-    "hi NonText ctermfg=231
-else
-    colorscheme summerfruit256transparent
-    hi CursorLineNr ctermfg=254 ctermbg=32 gui=bold guifg=#fefefe guibg=#438ec3
-
-    " light colors
-    "hi TabLineFill ctermfg=255 ctermbg=255
-    " disable the underline behind tabline words
-    "hi TabLine term=NONE cterm=NONE
-    "hi CursorLine term=NONE cterm=NONE ctermbg=255
-    "hi CursorColumn term=NONE cterm=NONE ctermfg=255
-    "hi LineNr ctermfg=240 ctermbg=255
-    "hi CursorLineNr ctermfg=240 ctermbg=254
-    hi VertSplit ctermfg=254 ctermbg=255 cterm=NONE
-    ""hi NonText ctermfg=255
-end
