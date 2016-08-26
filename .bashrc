@@ -3,8 +3,6 @@ if [[ $- != *i* ]] ; then
     return
 fi
 
-B=~/.bash
-
-source $B/environment.bash
-source $B/functions.bash
-source $B/aliases.bash
+source ~/.bash/environment.bash
+source ~/.bash/functions.bash
+source ~/.bash/aliases.bash
