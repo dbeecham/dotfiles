@@ -7,5 +7,4 @@ B=~/.bash
 
 source $B/environment.bash
 source $B/functions.bash
-source $B/prompt.bash
 source $B/aliases.bash
