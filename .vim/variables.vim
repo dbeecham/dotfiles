@@ -52,6 +52,11 @@ set viminfo='20,\"500   " Keep a .viminfo file.
 " enhanced tab completion. These can be done in the user vimrc file.
 set suffixes+=.info,.aux,.log,.dvi,.bbl,.out,.o,.lo
 
+" When doing CTRL-R CTRL-F to expand current filename, I had the issue that
+" file names were VARIABLE=/path/im/interested/in. Making = not part of file
+" names makes these expansions work properly.
+set isfname-==
+
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class
 
 " number on by default
