@@ -1,3 +1,3 @@
 function cd() {
-    builtin cd "$@" && ls -F
+    builtin cd "$@" && ls -F --color
 }
