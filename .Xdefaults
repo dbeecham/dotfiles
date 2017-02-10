@@ -1,19 +1,21 @@
 #*background: #000000
 #*foreground: #ffffff
-*background: #ffffff
-*foreground: #000000
+*background: #000000
+*foreground: #ffffff
 urxvt*scrollBar: false
 #*font: -misc-fixed-medium-r-*-*-14-*-*-*-*-*-iso10646-1
 #*boldFont: -misc-fixed-medium-r-*-*-14-*-*-*-*-*-iso10646-1
 
 #urxvt*font: xft:DejaVu Sans Mono:size=10
 #urxvt*boldFont: xft:DejaVu Sans Mono:size=10
+urxvt*font: xft:Ubuntu Mono:size=12
+urxvt*boldFont: xft:Ubuntu Mono:size=12
 
-urxvt*font: -gnu-unifont-medium-r-normal-sans-16-160-75-75-c-80-iso10646-1
-urxvt*boldFont: -gnu-unifont-medium-r-normal-sans-16-160-75-75-c-80-iso10646-1
+#urxvt*font: -gnu-unifont-medium-r-normal-sans-16-160-75-75-c-80-iso10646-1
+#urxvt*boldFont: -gnu-unifont-medium-r-normal-sans-16-160-75-75-c-80-iso10646-1
 
-#urxvt*inheritPixmap: true
-#urxvt*shading: 80
+urxvt*inheritPixmap: true
+urxvt*shading: 80
 
 urxvt*geometry: 80x24
 
