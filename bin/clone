@@ -1,5 +1,16 @@
-#!/usr/bin/fish
+#!/usr/bin/env sh
 
-git clone (echo $argv[1] \
-    | sed -E "/^[[:alnum:]_\.-]+\/[[:alnum:]_\.-]+\$/{ s/^/git:\/\/github.com\// }" \
-    | sed -E "/^[[:alnum:]_\.-]+\$/{s/^/git+ssh:\/\/git@github.com\/dbeecham\// } " )
+clone_repo() {
+    RESULT=`echo "$@" \
+        | sed -E "/^[[:alnum:]_\.-]+\/[[:alnum:]_\.-]+\$/{ s/^/git:\/\/github.com\// }" \
+        | sed -E "/^[[:alnum:]_\.-]+\$/{s/^/git+ssh:\/\/git@github.com\/dbeecham\// } " `
+    echo "Cloning ${RESULT}..."
+    git clone ${RESULT}
+}
+
+if test -z "$@"; then
+    echo "Need a repo to clone as argument."
+    exit 1
+fi
+
+clone_repo "$@"
