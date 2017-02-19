@@ -19,3 +19,15 @@ nnoremap <cr> :nohlsearch<cr>
 " Go to tag under cursor
 " C-] is impossible on swedish keyboard
 nnoremap <leader>t <C-]>
+
+" Ultisnips is very useful.
+let g:UltiSnipsExpandTrigger="<C-l>"
+let g:UltiSnipsJumpForwardTrigger="<C-j>"
+let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+
+" So is fzf
+nnoremap <leader>f :Files<cr>
+
+" Not a big change, but makes life so much easier.
+nnoremap J 5j
+nnoremap K 5k
