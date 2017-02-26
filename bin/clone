@@ -2,7 +2,7 @@
 
 clone_repo() {
     RESULT=`echo "$@" \
-        | sed -E "/^[[:alnum:]_\.-]+\/[[:alnum:]_\.-]+\$/{ s/^/git:\/\/github.com\// }" \
+        | sed -E "/^[[:alnum:]_\.-]+\/[[:alnum:]_\.-]+\$/{ s/^/git+ssh:\/\/git@github.com\// }" \
         | sed -E "/^[[:alnum:]_\.-]+\$/{s/^/git+ssh:\/\/git@github.com\/dbeecham\// } " `
     echo "Cloning ${RESULT}..."
     git clone ${RESULT}
