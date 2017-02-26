@@ -2,6 +2,7 @@
 alias g="git"
 alias ls="ls --color -F --group-directories-first"
 alias la="ls -a --color -F --group-directories-first"
+alias ll="ls -al --color -F --group-directories-first"
 alias lsof="lsof -Pn"
 alias mmv='noglob zmv -W'
 alias -g ...="../.."
