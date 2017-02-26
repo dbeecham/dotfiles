@@ -1,4 +1,4 @@
-if test "$COLORTERM" = "gnome-terminal"; then
+if test "$COLORTERM" = "gnome-terminal" -o "$TERM" = "rxvt-unicode"; then
     export TERM="xterm-256color"
 fi
 
