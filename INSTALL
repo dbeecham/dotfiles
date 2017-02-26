@@ -7,6 +7,7 @@ installera ttf-ubuntu-fonts (för .Xdefaults)
 installera zsh
 kör .zsh/setup.sh
 echo 1/0 > .dark
+installera exuberant-ctags
 installera fzf
 lägg till ctrl-k som fzf-file-widget
 vim pluginstall
