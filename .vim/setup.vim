@@ -23,4 +23,13 @@ Plug 'xolox/vim-easytags'
 " mean some vim config anyway, and it does not open
 " folds.
 Plug 'farmergreg/vim-lastplace'
+
+
+" vim-slime. Very useful.
+" The easiest way to use this is to fire up tmux, and do a
+" <C-a> :, followed by "list-panes<cr>". Look at the ID of the
+" pane you have your CLI in (probably "%1").
+" When you slime using <C-c><C-c>, use "%1" as slime target.
+Plug 'jpalardy/vim-slime'
+
 call plug#end()
