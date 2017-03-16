@@ -31,3 +31,5 @@ nnoremap <leader>f :Files<cr>
 " Not a big change, but makes life so much easier.
 nnoremap J 5j
 nnoremap K 5k
+vnoremap J 5j
+vnoremap K 5k
