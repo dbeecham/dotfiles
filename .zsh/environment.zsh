@@ -1,4 +1,4 @@
-if test "$COLORTERM" = "gnome-terminal" -o "$TERM" = "rxvt-unicode"; then
+if test "$COLORTERM" = "gnome-terminal" -o "$TERM" = "rxvt-unicode" -o "$TERM" = "rxvt-unicode-256color"; then
     export TERM="xterm-256color"
 fi
 
@@ -11,9 +11,6 @@ fi
 C=$(tput colors)
 
 export PATH=~/bin:$PATH
-
-# Set up EMACS bindings.
-bindkey -e
 
 # LS Colors
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
@@ -58,8 +55,9 @@ export LANG="en_US.UTF-8"
 # I want my bin folder in my path.
 export EDITOR="vim"
 export PAGER="less"
- 
-set -o vi
+
+# use emacs mode in shell
+bindkey -e
 
 # By default, zsh considers many characters part of a word (e.g., _ and -).
 # Narrow that down to allow easier skipping through words via M-f and M-b.
@@ -90,4 +88,4 @@ esac
 # It's only a couple of environment variables anyway.
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="find . \( -path ./sources -o -path ./MATLAB -o -path ./.dropbox-dist -o -path '*/node_modules/*' -o -path '*/.npm/*' -o -path '*/.git/*' \) -prune -o -type d -print 2>/dev/null"
