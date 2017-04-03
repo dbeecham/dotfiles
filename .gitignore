@@ -1,1 +1,7 @@
 .netrwhist
+.vim/plugged
+bin/matlab
+bin/mbuild
+bin/mcc
+bin/mex
+bin/deploytool
