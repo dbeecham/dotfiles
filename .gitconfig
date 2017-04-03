@@ -4,12 +4,12 @@
 [push]
 	default = simple
 [color "status"]
-    added = blue
+    added = cyan
     changed = green
-    untracked = dim black
+    untracked = dim white
 [color "diff"]
-    meta = dim black
-    frag = dim black
+    meta = dim white
+    frag = dim white
     new = green
     old = red
     context = white
@@ -18,7 +18,7 @@
     ll = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim black)- %an%C(reset)%C(bold yellow)%d%C(reset)\n' --all --stat
     s = status --short --branch --untracked-files=no
     sa = status --short --branch
-    d = diff --color-words
+    d = diff
     a = add
     b = branch
     c = commit
