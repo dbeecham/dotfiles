@@ -1,7 +1,7 @@
-#*background: #000000
-#*foreground: #ffffff
-*background: #000000
+*background: #222222
 *foreground: #ffffff
+#*background: #ffffff
+#*foreground: #000000
 urxvt*scrollBar: false
 #*font: -misc-fixed-medium-r-*-*-14-*-*-*-*-*-iso10646-1
 #*boldFont: -misc-fixed-medium-r-*-*-14-*-*-*-*-*-iso10646-1
@@ -15,12 +15,12 @@ urxvt*boldFont: xft:Ubuntu Mono:size=12
 #urxvt*boldFont: -gnu-unifont-medium-r-normal-sans-16-160-75-75-c-80-iso10646-1
 
 urxvt*inheritPixmap: true
-urxvt*shading: 80
+urxvt*shading: 20
 
 urxvt*geometry: 80x24
 
 ! black
-*color0: #000000
+*color0: #222222
 
 ! dark red
 color1: #a61300
@@ -38,7 +38,7 @@ color1: #a61300
 *color5: #7c00b5
 
 ! dark cyan
-*color6: #00d6bd
+*color6: #085268
 
 ! dark white
 *color7: #999999
@@ -50,7 +50,7 @@ color1: #a61300
 *color9: #ff1e00
 
 ! green
-*color10: #a2ff00
+*color10: #087022
 
 ! yellow
 *color11: #ff5000
@@ -62,7 +62,7 @@ color1: #a61300
 *color13: #ae00ff
 
 ! cyan
-*color14: #00ffe1
+*color14: #1e92b5
 
 ! white
 *color15: #ffffff
