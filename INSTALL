@@ -14,3 +14,4 @@ vim pluginstall
 installera node och npm och rust
 sudo apt-get install python-dev libxml2-dev libxslt-dev
 cd .vim/plugged/YouCompleteMe && ./install.py --clang-completer --tern-completer --racer-completer
+install runcached, copy to /usr/local/bin, symlink to /usr/local/bin/c
