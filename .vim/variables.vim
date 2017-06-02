@@ -7,13 +7,16 @@ set scroll=6
 " not compatible with vi
 set nocompatible
 
+" I scroll sometimes
+set mouse=a
+
 " Show mode ("-- INSERT --")
 set showmode
 
 " Global indent settings, overridden in autocmds
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 set autoindent
-set smartindent
+set nosmartindent  " smartindent makes comments in python ignore indentation rules
 
 " Don't automatically wrap
 set nowrap
