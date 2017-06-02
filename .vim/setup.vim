@@ -25,6 +25,12 @@ Plug 'xolox/vim-easytags'
 Plug 'farmergreg/vim-lastplace'
 
 
+" Jag har kört utan vim-fugitive ett tag nu,
+" men den gör väldigt stor skillnad till ens workflow,
+" så jag vill ha den.
+Plug 'tpope/vim-fugitive'
+
+
 " vim-slime. Very useful.
 " The easiest way to use this is to fire up tmux, and do a
 " <C-a> :, followed by "list-panes<cr>". Look at the ID of the
