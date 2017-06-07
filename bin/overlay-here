@@ -1,0 +1,34 @@
+#!/usr/bin/env sh
+
+if test ! -d ./overlay; then
+    read -p "No overlay found here. Want to create one? (y/N)" yn
+    case $yn in
+        [Yy]* ) install -d overlay/upperdir && install -d overlay/workdir && install -d overlay/mnt; break;;
+        * ) exit;;
+    esac
+fi
+
+if test ! -d ./overlay/upperdir; then
+    echo "Missing overlay/upperdir. Broken overlay?"
+    exit
+fi
+
+if test ! -d ./overlay/workdir; then
+    echo "Missing overlay/workdir. Broken overlay?"
+    exit
+fi
+
+if test ! -d ./overlay/mnt; then
+    echo "Missing overlay/mnt. Broken overlay?"
+    exit
+fi
+
+echo "Entering own mount namespace..."
+sudo unshare -m sh -c "echo 'Mounting local overlay...' && \
+    mount -t overlay overlay -o upperdir=$(pwd)/overlay/upperdir,workdir=$(pwd)/overlay/workdir,lowerdir=/ $(pwd)/overlay/mnt && \
+    mount -o bind /sys overlay/mnt/sys && \
+    mount -t proc none overlay/mnt/proc && \
+    mount -o bind /dev overlay/mnt/dev && \
+    mount -o bind /dev/pts overlay/mnt/dev/pts && \
+    echo 'chrooting...' && \
+    chroot overlay/mnt sh -c 'export action=\"(chroot) \"; cd $(pwd) && sudo -E -u $(whoami) $SHELL'"
