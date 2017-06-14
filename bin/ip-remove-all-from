@@ -1,0 +1,17 @@
+#!/bin/sh
+
+
+usage() {
+    echo "USAGE: $0 <interface>"
+    echo "    ex: $0 eth0"
+    exit 0
+}
+
+
+if test "$1" = ""; then
+    usage
+fi
+
+for IP in $(ip -o addr show dev $1 | grep -Po 'inet6? \K[\S]+'); do
+    ip addr del $IP dev $1
+done
