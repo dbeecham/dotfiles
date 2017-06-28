@@ -1,0 +1,1 @@
+/home/dbe/.config/nvim

@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'flazz/vim-colorschemes'
@@ -37,5 +37,9 @@ Plug 'tpope/vim-fugitive'
 " pane you have your CLI in (probably "%1").
 " When you slime using <C-c><C-c>, use "%1" as slime target.
 Plug 'jpalardy/vim-slime'
+
+" writing tables is sometimes needed, and writing them yourself
+" is a real PITA.
+Plug 'dhruvasagar/vim-table-mode'
 
 call plug#end()

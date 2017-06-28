@@ -27,6 +27,8 @@ let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 
 " So is fzf
 nnoremap <leader>f :Files<cr>
+nnoremap <C-t> :Files<cr>
+
 " I've been using this for a while now, and grown to use it. It makes a
 " difference when tags are not available.
 nnoremap <leader>l :Lines<cr>
