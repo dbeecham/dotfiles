@@ -33,6 +33,9 @@ nnoremap <C-t> :Files<cr>
 " difference when tags are not available.
 nnoremap <leader>l :Lines<cr>
 
+" My brain wants to press enter to expand a snippet, so I'll bind it.
+imap <expr> <cr> pumvisible() ? "<C-l>" : "<cr>"
+
 " Not a big change, but makes life so much easier.
 nnoremap J 5j
 nnoremap K 5k
