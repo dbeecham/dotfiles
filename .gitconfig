@@ -26,6 +26,7 @@
     ss = status
     co = checkout
     t = tag
-    move-head-to = reset --soft
+    move-head-to-commit = reset --soft
+    move-head-to-ref = symbolic-ref HEAD
     reset-index = reset --mixed HEAD
     move-branch = branch -f
