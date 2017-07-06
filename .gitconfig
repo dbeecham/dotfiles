@@ -26,3 +26,6 @@
     ss = status
     co = checkout
     t = tag
+    move-head-to = reset --soft
+    reset-index = reset --mixed HEAD
+    move-branch = branch -f
