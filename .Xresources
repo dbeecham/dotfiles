@@ -1,0 +1,52 @@
+URxvt.depth:                    32
+URxvt.colorBD:                  #ffffff
+URxvt.colorUL:                  #ffffff
+URxvt.geometry:                 90x30
+URxvt.cursorUnderline:          false
+URxvt.cursorBlink:              true
+URxvt.pointerBlank:             true
+URxvt.font:                     xft:Ubuntu Mono:size=13
+URxvt.boldFont:                 xft:Ubuntu Mono:Bold:size=13
+Xft.autohint:                   1
+Xft.lcdfilter:                  lcddefault
+Xft.hintstyle:                  hintslight
+Xft.hinting:                    1
+Xft.antialias:                  1
+Xft.rgba:                       rgb
+URxvt.letterSpace:              -2
+URxvt.utmpInhibit:              true
+URxvt.skipBuiltinGlyphs:        true
+URxvt.perl-ext-common:          default,matcher
+URxvt.url-launcher:             /usr/bin/chromium-browser
+URxvt.matcher.button:           3
+URxvt.scrollBar:                true
+URxvt.scrollBar_right:          true
+URxvt.foreground:                   #e8e5e5
+URxvt.background:                   #5b5a55
+URxvt.cursorColor:                  #bfbfbf
+URxvt.color0:                       #000000
+URxvt.color8:                       #808080
+URxvt.color1:                       #b78282
+URxvt.color9:                       #dca3a3
+URxvt.color2:                       #60b48a
+URxvt.color10:                      #c3bf9f
+URxvt.color3:                       #dfaf8f
+URxvt.color11:                      #f0dfaf
+
+! blue #5a7793
+URxvt.color4:                       #99ccff
+URxvt.color12:                      #94bff3
+URxvt.color5:                       #dc8cc3
+URxvt.color13:                      #ec93d3
+URxvt.color6:                       #8cd0d3
+URxvt.color14:                      #93e0e3
+URxvt.color7:                       #dcdccc
+URxvt.color15:                      #eeeeee
+
+URxvt.fading: 20
+URxvt.faceColor: #000000
+
+URxvt.saveLines: 20000
+
+Xcursor.theme: core
+Xcursor.size: 32
