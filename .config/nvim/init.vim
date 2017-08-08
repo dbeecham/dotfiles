@@ -5,4 +5,4 @@ source ~/.config/nvim/bindings.vim
 source ~/.config/nvim/abbreviations.vim
 
 
-colorscheme phd
+silent! colorscheme phd

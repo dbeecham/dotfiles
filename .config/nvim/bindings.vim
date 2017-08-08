@@ -1,4 +1,6 @@
-let mapleader = ","
+if exists(":let")
+    let mapleader = ","
+endif
 
 " I'd like to search using -, since / is too slow.
 nmap - /
@@ -37,9 +39,11 @@ nnoremap <A-i> :tabprev<cr>
 
 
 " Ultisnips is very useful.
-let g:UltiSnipsExpandTrigger="<C-l>"
-let g:UltiSnipsJumpForwardTrigger="<C-j>"
-let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+if exists(":let")
+    let g:UltiSnipsExpandTrigger="<C-l>"
+    let g:UltiSnipsJumpForwardTrigger="<C-j>"
+    let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+endif
 
 " So is fzf
 nnoremap <leader>f :Files<cr>

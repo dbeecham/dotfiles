@@ -1,4 +1,8 @@
-call plug#begin('~/.config/nvim/plugged')
+if exists(":call")
+    call plug#begin('~/.config/nvim/plugged')
+endif
+
+if exists("g:loaded_plug")
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'flazz/vim-colorschemes'
@@ -97,3 +101,5 @@ Plug 'jpalardy/vim-slime'
 Plug 'dhruvasagar/vim-table-mode'
 
 call plug#end()
+
+endif

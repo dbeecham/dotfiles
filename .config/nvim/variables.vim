@@ -1,5 +1,8 @@
 " enable syntax highlighting
-syntax enable
+if exists(":syntax")
+    " enable syntax highlighting
+    syntax enable
+endif
 
 " CTRL-d and CTRL-u scroll by 6 lines
 set scroll=6
@@ -7,8 +10,12 @@ set scroll=6
 " not compatible with vi
 set nocompatible
 
-" I scroll sometimes
-set mouse=a
+
+if has('mouse')
+    " I scroll sometimes
+    set mouse=a
+endif
+
 
 " Show mode ("-- INSERT --")
 set showmode
@@ -78,5 +85,7 @@ if v:version >= 700
 endif
 
 
-" Filetype plugin settings
-filetype plugin indent on
+if exists(":filetype")
+    " Filetype plugin settings
+    filetype plugin indent on
+endif
