@@ -105,6 +105,10 @@ endif
 " Plug 'farmergreg/vim-lastplace'
 
 
+" startify is pretty. that's basically it. still evaluating.
+Plug 'mhinz/vim-startify'
+
+
 " Jag har kört utan vim-fugitive ett tag nu,
 " men den gör väldigt stor skillnad till ens workflow,
 " så jag vill ha den.
