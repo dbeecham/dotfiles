@@ -37,8 +37,41 @@ setopt correct
 setopt histverify
 
 # history setting
-setopt histignoredups
-setopt histignorespace
+# I like to search through my history later using 'fc -lf 10000'.
+
+# history size and save history size
+export HISTSIZE=9999999
+export SAVEHIST=$HISTSIZE
+
+# when searching through history, ignore duplicates
+setopt hist_find_no_dups
+
+# this guy ignores duplicate entries in the history file. I can
+# imagine that it slows down the appending of entries, but really,
+# I think I want duplicates in my logs so I know what I was doing.
+#setopt histignoredups
+
+# save commands beginning timestamp (unix timestamp) and duration (seconds) to
+# the history file
+setopt extended_history
+
+
+# this uses fcntl locking instead of some ad-hoc locking (if available). that
+# seems like a good idea to me.
+setopt hist_fcntl_lock
+
+# ignore empty commands (?) 
+# does this include comments? maybe I can use command line comments to guide
+# my logging...
+# setopt histignorespace
+
+# share_history, append_history and inc_append_history are mutually exclusive
+unsetopt share_history
+unsetopt append_history
+
+# this option makes history lines written to file as soon as they are entered
+# (more specifically, when the command has finished).
+setopt inc_append_history_time
 
 # Why is this setting even a thing?!
 setopt interactivecomments
