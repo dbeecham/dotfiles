@@ -100,6 +100,10 @@ Plug 'jpalardy/vim-slime'
 " is a real PITA.
 Plug 'dhruvasagar/vim-table-mode'
 
+" searching for a word, then mistyping, you'll get send back to
+" where you began. I find that pretty annoying.
+Plug 'haya14busa/incsearch.vim'
+
 call plug#end()
 
 endif

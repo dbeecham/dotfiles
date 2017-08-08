@@ -3,8 +3,8 @@ if exists(":let")
 endif
 
 " I'd like to search using -, since / is too slow.
-nmap - /
-nmap _ ?
+nmap - <Plug>(incsearch-forward)
+nmap _ <Plug>(incsarch-backward)
 
 " I think these are useful enough to be included.
 nnoremap <leader>ve :vsplit $MYVIMRC<cr>
