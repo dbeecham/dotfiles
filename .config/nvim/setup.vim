@@ -12,6 +12,12 @@ Plug 'eagletmt/neco-ghc'
 Plug 'vim-syntastic/syntastic'
 
 
+"""
+" LANGUAGES
+"""
+Plug 'jneen/ragel.vim'
+
+
 " I've had issues with ultisnips snippets not showing up on tab completion;
 " adding supertab to fix this.
 Plug 'ervandew/supertab'
