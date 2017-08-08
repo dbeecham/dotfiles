@@ -1,6 +1,5 @@
 " enable syntax highlighting
 if exists(":syntax")
-    " enable syntax highlighting
     syntax enable
 endif
 
