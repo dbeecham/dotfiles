@@ -50,7 +50,12 @@ nnoremap <C-t> :Files<cr>
 nnoremap <leader>l :Lines<cr>
 
 " My brain wants to press enter to expand a snippet, so I'll bind it.
-imap <expr> <cr> pumvisible() ? "<C-l>" : "<cr>"
+" This turned out to be surprisingly annoying. The biggest reason is that it
+" shows a match even if it's complete; i.e. if you're on 
+"     let x = this_long_variabl[e]
+" then pressing enter won't get you a newline, because you match
+" 'this_long_variable'.
+" imap <expr> <cr> pumvisible() ? "<C-l>" : "<cr>"
 
 " Not a big change, but makes life so much easier.
 nnoremap J 5j
