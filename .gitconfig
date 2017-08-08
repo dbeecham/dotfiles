@@ -30,3 +30,5 @@
     move-head-to-ref = symbolic-ref HEAD
     reset-index = reset --mixed HEAD
     move-branch = branch -f
+    where-is-head = symbolic-ref HEAD
+    where-is-head-resolved = rev-parse HEAD
