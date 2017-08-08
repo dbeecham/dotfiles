@@ -80,7 +80,29 @@ endif
 " Probably OK - the builtin functionality would
 " mean some vim config anyway, and it does not open
 " folds.
-Plug 'farmergreg/vim-lastplace'
+" I've replaced this with vim's 'views'. They are
+" pretty cool. Here's how you would use them:
+" You can make a view using :mkview. This will by default create a view in
+" 'viewdir'. Then, you can open up that view using :loadview. This can be
+" automated using an autocmd group (augroup) like this:
+"     augroup myview
+"         autocmd!
+"         autocmd BufWinLeave *.py mkview
+"         autocmd BufWinEnter *.py silent! loadview
+"     augroup END
+" NOTE: 'viewoptions' control what get's saved in a view. This can include the
+" 'options' key, which will also save your key maps! I find this pretty wierd;
+" then, when you change your binds in .vimrc, they won't apply in
+" already-opened files. You can fix this behaviour by setting
+"     set viewoptions-=options
+"
+" Another nifty feature is vim's sessions. They can be created using
+" :mksession. That will create a Session.vim in the current directory. Then,
+" you can run 'vim -S Session.vim' to open up that session again - complete
+" with tabs, window splits, function definitions and everything else you could
+" wish. One important note though: vim sessions create views as well, and
+" thus also 'suffer' from the above 'options saves keymaps' problem.
+" Plug 'farmergreg/vim-lastplace'
 
 
 " Jag har kört utan vim-fugitive ett tag nu,
