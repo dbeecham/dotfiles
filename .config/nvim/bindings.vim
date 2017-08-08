@@ -66,3 +66,10 @@ nnoremap J 5j
 nnoremap K 5k
 vnoremap J 5j
 vnoremap K 5k
+
+
+" <C-\> is impossible on a Swedish keyboard, which makes pressing <C-\><C-N>
+" to exit terminal mode in neovim very hard.
+if has("nvim")
+    tnoremap <C-x> <C-\><C-n>
+endif
