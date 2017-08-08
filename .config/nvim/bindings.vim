@@ -18,7 +18,23 @@ nnoremap <cr> :nohlsearch<cr>
 
 " Go to tag under cursor
 " C-] is impossible on swedish keyboard
+" I'm not sure about this one either. I've gotten the habit of using 'gt' to
+" 'go to tag', but I've also got the habit of using it to switch tab. I place
+" preference in built-in shortcuts, so I'll try to alter my habits here.
+" nnoremap gt <C-]>
 nnoremap <leader>t <C-]>
+
+" Tag search. My brain has gotten used to this, so might
+" as well.
+" Here too, I need to change my habits. I used to use <leader>t to 'search
+" tag', but now I need it for 'go to tag'. <leader>T is a natural extension
+" though, this might be natural enough that I get used to it quickly.
+nnoremap <leader>T :Tags<cr>
+
+nnoremap <A-o> :tabnext<cr>
+nnoremap <A-i> :tabprev<cr>
+
+
 
 " Ultisnips is very useful.
 let g:UltiSnipsExpandTrigger="<C-l>"
