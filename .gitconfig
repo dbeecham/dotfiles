@@ -32,3 +32,8 @@
     move-branch = branch -f
     where-is-head = symbolic-ref HEAD
     where-is-head-resolved = rev-parse HEAD
+
+# I had an issue where I couldn't fetch from some repo, and this fixed that
+# issue. I don't remember what repo it was, or what the error message was.
+[http]
+	sslverify = true
