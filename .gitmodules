@@ -10,3 +10,6 @@
 [submodule ".zsh/antigen"]
 	path = .zsh/antigen
 	url = https://github.com/zsh-users/antigen
+[submodule ".zsh/zsh-histdb"]
+	path = .zsh/zsh-histdb
+	url = git@github.com:larkery/zsh-histdb
