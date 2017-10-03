@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if test "$1" = ""; then
+    sqlite3 ~/.histdb/zsh-history.db "select datetime(history.start_time, 'unixepoch'), commands.argv from history inner join commands on command_id = commands.rowid where history.start_time > strftime('%s', 'now', '-1 day');";
+else
+    sqlite3 ~/.histdb/zsh-history.db "select datetime(history.start_time, 'unixepoch'), commands.argv from history inner join commands on command_id = commands.rowid where history.start_time > strftime('%s', '$1') and history.start_time < strftime('%s', '$1', '+1 day');";
+fi
+
