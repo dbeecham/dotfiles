@@ -5,3 +5,5 @@ bin/mbuild
 bin/mcc
 bin/mex
 bin/deploytool
+.config/nvim/plugged
+.config/nvim/view
