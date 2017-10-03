@@ -306,6 +306,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, }, ",", function () awful.screen.focus(1) end, { description = "focus the first screen", group = "screen" }),
     awful.key({ modkey, }, ".", function () awful.screen.focus(2) end, { description = "focus the second screen", group = "screen" }),
     awful.key({ modkey, }, "-", function () awful.screen.focus(3) end, { description = "focus the third screen", group = "screen" }),
+    awful.key({ modkey, }, "/", function () awful.screen.focus(3) end, { description = "focus the third screen", group = "screen" }),
     awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
               {description = "focus the next screen", group = "screen"}),
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
@@ -328,6 +329,9 @@ globalkeys = gears.table.join(
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
+
+    awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn("amixer set Master 2+") end),
+    awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn("amixer set Master 2-") end),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
