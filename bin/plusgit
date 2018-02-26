@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+clone_repo() {
+    RESULT=`echo "$@" \
+        | sed -E "/^[[:alnum:]_\.-]+\/[[:alnum:]_\.-]+\$/{ s/^/git+ssh:\/\/git@plusgit.com\// }" \
+        | sed -E "/^[[:alnum:]_\.-]+\$/{s/^/git+ssh:\/\/git@plusgit.com\/dbe\// } " `
+    echo "Cloning ${RESULT}..."
+    git clone ${RESULT}
+}
+
+if test -z "$@"; then
+    echo "Need a repo to clone as argument."
+    exit 1
+fi
+
+clone_repo "$@"
