@@ -31,4 +31,4 @@ sudo unshare -m sh -c "echo 'Mounting local overlay...' && \
     mount -o bind /dev overlay/mnt/dev && \
     mount -o bind /dev/pts overlay/mnt/dev/pts && \
     echo 'chrooting...' && \
-    chroot overlay/mnt sh -c 'export action=\"(chroot) \"; cd $(pwd) && sudo -E -u $(whoami) $SHELL'"
+    sudo chroot overlay/mnt sh -c 'export action=\"(chroot) \"; cd $(pwd) && sudo -E -u $(whoami) $SHELL'"
