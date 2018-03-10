@@ -11,4 +11,4 @@ zplug "hcgraf/zsh-sudo"
 zplug "clvv/fasd"
 # antigen theme fishy
 
-zplug load --verbose
+zplug load
