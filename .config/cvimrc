@@ -1,0 +1,50 @@
+" read config from filesystem
+let configpath = '/home/dbe/.config/cvimrc'
+let homedirectory = '/home/dbe'
+set localconfig
+
+let mapleader = ","
+
+" use link text in hints
+set numerichints
+set typelinkhints
+
+" dont let sites focus inputs automatically
+set noautofocus
+
+" automatically hide cursor when scrolling
+set autohidecursor
+
+" search using -
+map - /
+
+" faster scroll using j/k
+let scrollstep=300
+
+" page down, up using C-d, C-u
+map <C-d> scrollPageDown
+map <C-u> scrollPageUp
+
+" google shortcut
+map <Leader>g :open google<Space>
+map <Leader>G :tabnew google<Space>
+
+" map to wiki
+map <Leader>w :tabnew https://github.com/dbeecham/wiki<CR>
+map gw :tabnew https://github.com/dbeecham/wiki<CR>
+
+" map to home
+map <Leader>h :tabnew https://github.com/dbeecham/dbeecham/<CR>
+map gh :tabnew https://github.com/dbeecham/dbeecham/<CR>
+
+" go back with <leader><leader>
+map <Leader><Leader> goBack
+
+" I have this in my brain still from vimperator
+map <C-o> goBack
+
+" alt-i, alt-o for next, previous tab
+map <A-i> previousTab
+map <A-o> nextTab
+
+map d closeTab
