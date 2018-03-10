@@ -16,3 +16,6 @@
 [submodule "bin/checksec.sh"]
 	path = bin/checksec.sh
 	url = git@github.com:dbeecham/checksec.sh
+[submodule "bin/_fasd"]
+	path = bin/_fasd
+	url = git@github.com:clvv/fasd
