@@ -1,11 +1,16 @@
 source ~/.zsh/setup.zsh
 source ~/.zsh/environment.zsh
 source ~/.zsh/functions.zsh
+source ~/.zsh/widgets.zsh
 #source ~/.zsh/prompt_256.zsh
 #source ~/.zsh/ohmy.zsh
 source ~/.zsh/aliases.zsh
+source ~/.zsh/binds.zsh
+source ~/.zsh/fasd.zsh
 
 source ~/.zsh/zsh-histdb/sqlite-history.zsh
+
+source ~/.zsh/themes/fishy.zsh-theme
 
 # For some reason, oh-my-zsh overwrites some environment variables.
 # I don't know why it does this, and I'm not sure I'm safe sourcing
@@ -18,7 +23,7 @@ export LESS="-FXRS"
 # airline)
 #source ~/.zsh/promptline.sh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
-unalias d
+# unalias d

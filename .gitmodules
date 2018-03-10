@@ -19,3 +19,6 @@
 [submodule "bin/_fasd"]
 	path = bin/_fasd
 	url = git@github.com:clvv/fasd
+[submodule ".zsh/zplug"]
+	path = .zsh/zplug
+	url = https://github.com/zplug/zplug.git
