@@ -48,3 +48,5 @@ map <A-i> previousTab
 map <A-o> nextTab
 
 map d closeTab
+
+imap <C-o> editWithVim
