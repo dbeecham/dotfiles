@@ -37,3 +37,5 @@
 # issue. I don't remember what repo it was, or what the error message was.
 [http]
 	sslverify = true
+[color]
+	ui = auto
