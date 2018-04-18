@@ -22,3 +22,7 @@
 [submodule ".zsh/zplug"]
 	path = .zsh/zplug
 	url = https://github.com/zplug/zplug.git
+[submodule "vendor/repo"]
+	path = vendor/repo
+	url = https://android.googlesource.com/tools/repo
+	branch = master
