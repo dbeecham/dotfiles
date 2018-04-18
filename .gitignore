@@ -79,3 +79,5 @@ bin/deploytool
 .config/gtk-3.0
 .config/compiz-1
 
+# private files
+.zsh/private-aliases.zsh
