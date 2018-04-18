@@ -5,6 +5,9 @@ source ~/.zsh/widgets.zsh
 #source ~/.zsh/prompt_256.zsh
 #source ~/.zsh/ohmy.zsh
 source ~/.zsh/aliases.zsh
+if test -r ~/.zsh/private-aliases.zsh; then
+	source ~/.zsh/private-aliases.zsh
+fi
 source ~/.zsh/binds.zsh
 source ~/.zsh/fasd.zsh
 
