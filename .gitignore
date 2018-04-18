@@ -18,6 +18,7 @@ bin/deploytool
 # I don't want Chrome in my dotfiles - it syncs just fine using my google
 # account.
 .config/google-chrome
+.config/chromium
 
 # Does thunar need configurations too?
 .config/Thunar
@@ -46,9 +47,32 @@ bin/deploytool
 # CURA is cool and all, but I don't want it in my dotfiles.
 .config/cura
 
+# I guess this is Synergy 2 config? Let's not right now.
+.config/Synergy
+
+# Insomnia is also cool, but I'm not sure why I'd want it in my dotfiles.
+.config/Insomnia
+
+# Same thing with calibre
+.config/calibre
+
+# I might try ONI some day. Not today tho, it's not mature enough.
+.config/oni
+
+# ...and qterminal
+.config/qterminal.org
+
 # QT. Come on. Really?
 .config/QtProject.conf
 .config/Trolltech.conf
+.config/kdeglobals
+
+# what the hell, konsole store sessions in .config? holy hell
+.config/session
+
+# this file doesn't contain... anything really. Maybe I do want to store
+# some konsole settings, but it's not apparent how to do that.
+.config/konsolerc
 
 # fuck gnome/ubuntu apps tho
 .config/eog
@@ -57,11 +81,14 @@ bin/deploytool
 .config/gnome-control-center
 .config/nautilus
 .config/totem
+.config/libaccounts-glib
+.config/dconf
 
 # what even is this?! why is this in my .config folder?!
 .config/user-dirs.locale
 .config/user-dirs.dirs
 .config/monitors.xml
+.config/mimeapps.list
 
 # other stuff I don't want in my dotfiles.
 .config/pulse
@@ -79,5 +106,9 @@ bin/deploytool
 .config/gtk-3.0
 .config/compiz-1
 
+# htop config isn't even human changeable...
+.config/htop
+
 # private files
 .zsh/private-aliases.zsh
+bin/blixt
