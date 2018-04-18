@@ -1,9 +1,81 @@
-.netrwhist
+# temporary files
+*~
+
+# vim installed plugins. They will install from vim config.
 .vim/plugged
+.config/nvim/plugged
+
+# vim's views
+.config/nvim/view
+
+# MATLAB installs these. I don't want them in my dotfiles.
 bin/matlab
 bin/mbuild
 bin/mcc
 bin/mex
 bin/deploytool
-.config/nvim/plugged
-.config/nvim/view
+
+# I don't want Chrome in my dotfiles - it syncs just fine using my google
+# account.
+.config/google-chrome
+
+# Does thunar need configurations too?
+.config/Thunar
+
+# No history in my dotfiles!
+.config/pgcli/history
+.config/pgcli/log
+.config/ranger/history
+.config/ranger/tagged
+.netrwhist
+
+# Don't know what Wireshark needs in terms of configuration files...
+.config/wireshark
+
+# Not a sublime text/atom/vs code user. Might check this out in the future.
+.config/sublime-text-3
+.config/Atom
+.config/Code
+
+# Don't want this in my dotfiles.
+.config/VirtualBox
+
+# If I do use evolution, I might consider checking this folder out.
+.config/evolution
+
+# CURA is cool and all, but I don't want it in my dotfiles.
+.config/cura
+
+# QT. Come on. Really?
+.config/QtProject.conf
+.config/Trolltech.conf
+
+# fuck gnome/ubuntu apps tho
+.config/eog
+.config/evince
+.config/unity
+.config/gnome-control-center
+.config/nautilus
+.config/totem
+
+# what even is this?! why is this in my .config folder?!
+.config/user-dirs.locale
+.config/user-dirs.dirs
+.config/monitors.xml
+
+# other stuff I don't want in my dotfiles.
+.config/pulse
+.config/skypeforlinux
+.config/teamviewer
+.config/xfce4
+.config/FreeCAD
+.config/GitKraken
+.config/SEGGER
+.config/RescueTime.com
+.config/Typora
+.config/audacious
+.config/d-feet
+.config/gtk-2.0
+.config/gtk-3.0
+.config/compiz-1
+
