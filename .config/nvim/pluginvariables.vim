@@ -2,6 +2,16 @@
 
 if exists(":let")
 
+" netrw settings
+" use tree view
+let g:netrw_liststyle=3
+" netrw can occupy 20% of vim window
+let g:netrw_winsize=20
+" disable banner
+let g:netrw_banner = -1
+" make netrw split to 'open previous window' when opening file
+let g:netrw_browse_split = 1
+
 " Set up slime to use tmux instead of screen which is default.
 let g:slime_target = "tmux"
 
