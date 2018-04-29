@@ -46,6 +46,8 @@
 	tool = vimdiff
 [difftool]
 	prompt = false
+
+# this makes it possible to use :cquit to quit a 'git difftool'
 	trustExitCode = true
 [mergetool]
 	trustExitCode = true
