@@ -10,7 +10,7 @@ let g:netrw_winsize=20
 " disable banner
 let g:netrw_banner = -1
 " make netrw split to 'open previous window' when opening file
-let g:netrw_browse_split = 1
+let g:netrw_browse_split = 4
 
 " Set up slime to use tmux instead of screen which is default.
 let g:slime_target = "tmux"
