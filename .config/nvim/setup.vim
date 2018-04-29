@@ -12,11 +12,27 @@ Plug 'eagletmt/neco-ghc'
 Plug 'vim-syntastic/syntastic'
 
 
+" Tag bars is cool.
+Plug 'majutsushi/tagbar'
+" markdown in tag bar is also cool.
+Plug 'lvht/tagbar-markdown'
+
+" I tried these addons for a bit; I'm not entirely sure that they gave me
+" anything. :mksession Session.vim and 'nvim -S Session.vim' gets me very far.
+"Plug 'tpope/vim-obsession'
+"Plug 'dhruvasagar/vim-prosession'
+"Plug 'thaerkh/vim-workspace'
+
+
 """
 " LANGUAGES
 """
-Plug 'jneen/ragel.vim'
+Plug 'andremedeiros/ragel.vim'
 
+
+" I could not get syntax highlighting in code blocks in markdown to work in
+" vim. This plugin solves that problem for me.
+Plug 'tpope/vim-markdown'
 
 " I've had issues with ultisnips snippets not showing up on tab completion;
 " adding supertab to fix this.
@@ -24,36 +40,45 @@ Plug 'ervandew/supertab'
 
 " To ease installation of vim/nvim, this plugin can install python libraries
 " automatically.
-Plug 'roxma/python-support.nvim'
+"Plug 'roxma/python-support.nvim'
 
 " we need neovim python library on neovim
-if has('nvim')
-    let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'neovim')
-    let g:python_support_python2_requirements = add(get(g:,'python_support_python3_requirements',[]),'neovim')
-endif
+"if has('nvim')
+"    let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'neovim')
+"    let g:python_support_python2_requirements = add(get(g:,'python_support_python3_requirements',[]),'neovim')
+"endif
 
 " Trying this out as an alternative to YouCompleteMe
 " YouCompleteMe is great, but it's a bit big, and takes a bit too long to
 " set up.
-Plug 'roxma/nvim-completion-manager'
+"Plug 'roxma/nvim-completion-manager'
 
 " nvim-completion-manager has some python requirements...
 
-" for python completions
-let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'jedi')
-" language specific completions on markdown file
-let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'mistune')
-" utils, optional
-let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'psutil')
-let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'setproctitle')
+"" for python completions
+"let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'jedi')
+"" language specific completions on markdown file
+"let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'mistune')
+"" utils, optional
+"let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'psutil')
+"let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'setproctitle')
 
 
 " nvim-completion-manager has support for vim, but requires vim 8 with
 " has('python') or has('python3'), and also requires the following plugin:
 " Requires vim8 with has('python') or has('python3')
 " Requires the installation of msgpack-python. (pip install msgpack-python)
-if !has('nvim')
-    Plug 'roxma/vim-hug-neovim-rpc'
+"if !has('nvim')
+"    Plug 'roxma/vim-hug-neovim-rpc'
+"endif
+
+" These plugins only work with nvim
+if has('nvim')
+    Plug 'prabirshrestha/async.vim'
+    Plug 'prabirshrestha/vim-lsp'
+    Plug 'prabirshrestha/asyncomplete.vim'
+    Plug 'prabirshrestha/asyncomplete-tags.vim'
+    Plug 'prabirshrestha/asyncomplete-lsp.vim'
 endif
 
 " Highlight marks in gutter. This makes marks usable, basically.
@@ -112,7 +137,8 @@ endif
 
 
 " startify is pretty. that's basically it. still evaluating.
-Plug 'mhinz/vim-startify'
+" I'm not sure I got anything out of using startify. Just bloat.
+"Plug 'mhinz/vim-startify'
 
 
 " Jag har kört utan vim-fugitive ett tag nu,
