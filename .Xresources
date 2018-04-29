@@ -5,8 +5,9 @@ URxvt.geometry:                 90x30
 URxvt.cursorUnderline:          false
 URxvt.cursorBlink:              true
 URxvt.pointerBlank:             true
-URxvt.font:                     xft:PragmataPro:size=12
-URxvt.boldFont:                 xft:PragmataPro:size=12
+URxvt.font:                     xft:Fira Code:size=12
+URxvt.boldFont:                 xft:Fira Code:size=12
+URxvt.letterSpace:              true
 Xft.autohint:                   1
 Xft.lcdfilter:                  lcddefault
 Xft.hintstyle:                  hintslight
