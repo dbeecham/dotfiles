@@ -12,6 +12,14 @@ Plug 'eagletmt/neco-ghc'
 Plug 'vim-syntastic/syntastic'
 
 
+" vim-surround does make a difference.
+" press 'ysiw]' to add surrounds.
+" press 'cs])' to change surround
+" press 'ds]' to delete surround
+" A guide is available here: https://github.com/tpope/vim-surround
+Plug 'tpope/vim-surround'
+
+
 " Tag bars is cool.
 Plug 'majutsushi/tagbar'
 " markdown in tag bar is also cool.
