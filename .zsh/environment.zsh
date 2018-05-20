@@ -2,10 +2,10 @@ if test "$COLORTERM" = "gnome-terminal" -o "$TERM" = "rxvt-unicode" -o "$TERM" =
     export TERM="xterm-256color"
 fi
 
-if test -r ~/.dark -a "$(cat ~/.dark)" = "0"; then
-    export DARK=1
-else
+if test -r ~/.light; then
     export DARK=0
+else
+    export DARK=1
 fi
 
 C=$(tput colors)
