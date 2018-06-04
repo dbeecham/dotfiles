@@ -26,4 +26,18 @@ let g:slime_paste_file = "$HOME/.slime_paste"
 " <tm_prefix>m starts table mode
 let g:table_mode_map_prefix = "<Leader>m"
 
+" This is here to make table mode do rst tables.
+" TODO: move this out to a filetype-specific place.
+let g:table_mode_corner_corner='+'
+let g:table_mode_header_fillchar='='
+
+" dont use cache dir for gen_tags - it puts the ctags in
+" ~/.cache/tags_dir/something/prj_tags, but I havent looked into getting fzf
+" to find this file.
+let g:gen_tags#use_cache_dir = 0
+
+" Use syntax highlighting in in code blocks in markdown
+let g:markdown_fenced_languages = ['c']
+let g:markdown_minlines = 1000
+
 endif
