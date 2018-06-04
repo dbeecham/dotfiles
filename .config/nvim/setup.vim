@@ -32,6 +32,10 @@ Plug 'lvht/tagbar-markdown'
 "Plug 'thaerkh/vim-workspace'
 
 
+" I guess this is useful enough; <ctrl-w l> and so on is, I guess, tough
+" enough to do quickly... not sure.
+Plug 'christoomey/vim-tmux-navigator'
+
 """
 " LANGUAGES
 """
