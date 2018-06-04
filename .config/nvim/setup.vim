@@ -36,6 +36,7 @@ Plug 'lvht/tagbar-markdown'
 " LANGUAGES
 """
 Plug 'andremedeiros/ragel.vim'
+Plug 'LnL7/vim-nix'
 
 
 " I could not get syntax highlighting in code blocks in markdown to work in
