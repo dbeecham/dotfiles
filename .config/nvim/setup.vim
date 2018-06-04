@@ -100,25 +100,32 @@ Plug 'kshenoy/vim-signature'
 " Trying this out as an alternative for vim-easytags. This is supposedly
 " asynchronous by default, has support for nvim-completion-manager,
 " and gives me a reason to try gtags.
-if executable('global')
-    " disable ctags
-    let g:loaded_gentags#ctags = 1
-
-    " enable gtags
-    let g:loaded_gentags#gtags = 0
-
-    " enable gen_tags plugin
-    Plug 'jsfaint/gen_tags.vim'
-elseif executable('ctags')
-    " disable ctags
+" So, I tried this for a while; I have some reason to not use gtags though,
+" which IIRC has to do with language support. Then again, I remember trying
+" global with ctags parser. I'm not sure at all about this...
+"if executable('global')
+"    " disable ctags
+"    let g:loaded_gentags#ctags = 1
+"
+"    " enable gtags
+"    let g:loaded_gentags#gtags = 0
+"
+"    " enable gen_tags plugin
+"    Plug 'jsfaint/gen_tags.vim'
+"elseif executable('ctags')
+if executable('ctags')
+    " enable ctags
     let g:loaded_gentags#ctags = 0
 
-    " enable gtags
+    " disable gtags
     let g:loaded_gentags#gtags = 1
 
     " enable gen_tags plugin
     Plug 'jsfaint/gen_tags.vim'
 endif
+
+" testing this cscope plugin
+Plug 'brookhong/cscope.vim'
 
 " Remembers and restores last cursor position.
 " Probably OK - the builtin functionality would
