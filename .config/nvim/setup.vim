@@ -6,9 +6,29 @@ if exists("g:loaded_plug")
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'flazz/vim-colorschemes'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+
+
+" These two are deps for vim-snipmate
+Plug 'marcweber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+
+" Okay, so I've been a bit back and forth on vim-snipmate,
+" ultisnips, YouCompleteMe, deoplete, neosnippet, and all that.
+" Currently my stance is that Python can be a bit of a bitch to get
+" working correctly; in some instances, it's just not compiled in, in
+" other instances, libraries are in wierd places (nixos) and need very
+" special voodoo black magic to get working. So I would prefer to use a
+" VimL-only solution - which vim-snipmate is. Also, vim-snipmate seems to
+" 'just work', which is great.
+Plug 'garbas/vim-snipmate'
+
+" My snippets. I like my snippets.
+Plug 'dbeecham/vim-snippets'
+
+" TODO: document this
 Plug 'eagletmt/neco-ghc'
+
+" TODO: see how this fares with language servers...
 Plug 'vim-syntastic/syntastic'
 
 

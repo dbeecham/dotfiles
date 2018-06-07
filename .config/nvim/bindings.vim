@@ -39,11 +39,13 @@ nnoremap <A-i> :tabprev<cr>
 
 
 " Ultisnips is very useful.
-if exists(":let")
-    let g:UltiSnipsExpandTrigger="<C-l>"
-    let g:UltiSnipsJumpForwardTrigger="<C-j>"
-    let g:UltiSnipsJumpBackwardTrigger="<C-k>"
-endif
+" See setup.vim on this. I might not use Ultisnips any more; it's replaced by
+" vim-snipmate.
+"if exists(":let")
+"    let g:UltiSnipsExpandTrigger="<C-l>"
+"    let g:UltiSnipsJumpForwardTrigger="<C-j>"
+"    let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+"endif
 
 " So is fzf
 nnoremap <leader>f :Files<cr>
