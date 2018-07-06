@@ -26,3 +26,6 @@
 	path = vendor/repo
 	url = https://android.googlesource.com/tools/repo
 	branch = master
+[submodule "vendor/runcached"]
+	path = vendor/runcached
+	url = git@github.com:dbeecham/runcached
