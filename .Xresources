@@ -24,6 +24,8 @@ URxvt.scrollBar:                true
 URxvt.scrollBar_right:          true
 URxvt.foreground:                   #e8e5e5
 URxvt.background:                   #5b5a55
+URxvt.tintColor:                    #5b5a55
+URxvt.transparent: false
 URxvt.cursorColor:                  #bfbfbf
 URxvt.color0:                       #000000
 URxvt.color8:                       #808080
@@ -45,7 +47,7 @@ URxvt.color7:                       #dcdccc
 URxvt.color15:                      #eeeeee
 
 URxvt.fading: 20
-URxvt.faceColor: #000000
+URxvt.fadeColor: #000000
 
 URxvt.saveLines: 20000
 

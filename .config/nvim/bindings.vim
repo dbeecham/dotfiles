@@ -69,6 +69,20 @@ nnoremap K 5k
 vnoremap J 5j
 vnoremap K 5k
 
+" for fzf_ext cscope
+nnoremap <silent> <Leader>ca :call Cscope('0', expand('<cword>'))<CR>
+nnoremap <silent> <Leader>cc :call Cscope('1', expand('<cword>'))<CR>
+nnoremap <silent> <Leader>cd :call Cscope('2', expand('<cword>'))<CR>
+nnoremap <silent> <Leader>ce :call Cscope('3', expand('<cword>'))<CR>
+nnoremap <silent> <Leader>cf :call Cscope('4', expand('<cword>'))<CR>
+nnoremap <silent> <Leader>cg :call Cscope('6', expand('<cword>'))<CR>
+nnoremap <silent> <Leader>ci :call Cscope('7', expand('<cword>'))<CR>
+nnoremap <silent> <Leader>cs :call Cscope('8', expand('<cword>'))<CR>
+nnoremap <silent> <Leader>ct :call Cscope('9', expand('<cword>'))<CR>
+
+" for brookhong/cscope
+nnoremap <leader>ca :call CscopeFindInteractive(expand('<cword>'))<CR>
+nnoremap <leader>l :call ToggleLocationList()<CR>
 
 " <C-\> is impossible on a Swedish keyboard, which makes pressing <C-\><C-N>
 " to exit terminal mode in neovim very hard.
