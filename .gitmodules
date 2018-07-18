@@ -26,3 +26,6 @@
 [submodule "bin/sources/fasd"]
 	path = bin/sources/fasd
 	url = git@github.com:clvv/fasd
+[submodule "zsh/.zsh/zplug"]
+	path = zsh/.zsh/zplug
+	url = https://github.com/zplug/zplug
