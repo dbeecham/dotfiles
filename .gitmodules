@@ -1,31 +1,28 @@
-[submodule ".tmux/tmux-scroll-copy-mode"]
-	path = .tmux/tmux-scroll-copy-mode
+[submodule "tmux/.tmux/tmux-scroll-copy-mode"]
+	path = tmux/.tmux/tmux-scroll-copy-mode
 	url = git://github.com/NHDaly/tmux-scroll-copy-mode
-[submodule ".zsh/zsh-syntax-highlighting"]
-	path = .zsh/zsh-syntax-highlighting
-	url = git://github.com/zsh-users/zsh-syntax-highlighting
-[submodule ".zsh/oh-my-zsh"]
-	path = .zsh/oh-my-zsh
-	url = git://github.com/robbyrussell/oh-my-zsh
-[submodule ".zsh/antigen"]
-	path = .zsh/antigen
-	url = https://github.com/zsh-users/antigen
-[submodule ".zsh/zsh-histdb"]
-	path = .zsh/zsh-histdb
-	url = git@github.com:larkery/zsh-histdb
-[submodule "bin/checksec.sh"]
-	path = bin/checksec.sh
-	url = git@github.com:dbeecham/checksec.sh
-[submodule "bin/_fasd"]
-	path = bin/_fasd
-	url = git@github.com:clvv/fasd
-[submodule ".zsh/zplug"]
-	path = .zsh/zplug
-	url = https://github.com/zplug/zplug.git
-[submodule "vendor/repo"]
+[submodule "bin/sources/repo"]
 	path = vendor/repo
 	url = https://android.googlesource.com/tools/repo
 	branch = master
-[submodule "vendor/runcached"]
+[submodule "bin/sources/runcached"]
 	path = vendor/runcached
 	url = git@github.com:dbeecham/runcached
+[submodule "zsh/.zsh/zsh-syntax-highlighting"]
+	path = zsh/.zsh/zsh-syntax-highlighting
+	url = git://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "zsh/.zsh/oh-my-zsh"]
+	path = zsh/.zsh/oh-my-zsh
+	url = git://github.com/robbyrussell/oh-my-zsh
+[submodule "zsh/.zsh/antigen"]
+	path = zsh/.zsh/antigen
+	url = https://github.com/zsh-users/antigen
+[submodule "zsh/.zsh/zsh-histdb"]
+	path = zsh/.zsh/zsh-histdb
+	url = git@github.com:larkery/zsh-histdb
+[submodule "bin/bin/checksec.sh"]
+	path = bin/bin/checksec.sh
+	url = git@github.com:dbeecham/checksec.sh
+[submodule "bin/sources/fasd"]
+	path = bin/sources/fasd
+	url = git@github.com:clvv/fasd

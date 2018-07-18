@@ -1,17 +1,9 @@
 git submodule init
 git submodule update
-flytta esc till caps lock
- - setxkbmap se -option caps:swapescape
-ln -s dotfiles/{*}
+stow <stuff>
 installera ttf-ubuntu-fonts (för .Xdefaults)
 installera zsh
-kör .zsh/setup.sh
-echo 1/0 > .dark
 installera exuberant-ctags
 installera fzf
-lägg till ctrl-k som fzf-file-widget
 vim pluginstall
-installera node och npm och rust
-sudo apt-get install python-dev libxml2-dev libxslt-dev
-cd .vim/plugged/YouCompleteMe && ./install.py --clang-completer --tern-completer --racer-completer
 install runcached, copy to /usr/local/bin, symlink to /usr/local/bin/c
