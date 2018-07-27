@@ -46,6 +46,15 @@ set showcmd
 " Let vim set title
 set title
 
+" min width for current window
+set winwidth=80
+" min width, not current window
+set winminwidth=20
+" min height for current window
+set winheight=12
+" min height, not current window
+set winminheight=4
+
 " Emacs-style, Bash-like tab completion
 set wildmode=longest:full,full
 set wildmenu
