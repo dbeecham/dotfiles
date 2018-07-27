@@ -8,4 +8,4 @@ source ~/.config/nvim/bindings.vim
 source ~/.config/nvim/abbreviations.vim
 
 
-silent! colorscheme phd
+silent! colorscheme lunix-modern-256
