@@ -25,6 +25,12 @@ Plug 'garbas/vim-snipmate'
 " My snippets. I like my snippets.
 Plug 'dbeecham/vim-snippets'
 
+" I've been back-and-forth with NERDTree, but I'm trying it again on the
+" basis that NERDTree might keep it's width fixed. netrw has the
+" g:netrw_width-setting, but it doesn't work along with winwidth, and
+" automatic resize on window close. NERDTree's width is always fixed.
+Plug 'scrooloose/nerdtree'
+
 " TODO: document this
 Plug 'eagletmt/neco-ghc'
 
