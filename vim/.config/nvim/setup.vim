@@ -31,6 +31,9 @@ Plug 'dbeecham/vim-snippets'
 " automatic resize on window close. NERDTree's width is always fixed.
 Plug 'scrooloose/nerdtree'
 
+" Trying this out...
+Plug 'mhinz/vim-signify'
+
 " TODO: document this
 Plug 'eagletmt/neco-ghc'
 
