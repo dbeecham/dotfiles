@@ -15,6 +15,8 @@ if has('mouse')
     set mouse=a
 endif
 
+" Show fold information in gutter
+set foldcolumn=1
 
 " Show mode ("-- INSERT --")
 set showmode
