@@ -79,7 +79,7 @@ set isfname-==
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class
 
-" number on by default
+" number off by default
 set nonumber
 
 " and relative numbers if support exists
