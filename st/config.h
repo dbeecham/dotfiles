@@ -52,7 +52,8 @@
 #define COLOR_GRULLO "#a69888"
 #define COLOR_QUARTZ "#4c4647"
 #define COLOR_JET "#383435"
-#define COLOR_LICORICE "#191214"
+#define COLOR_LICORICE "#191615"
+#define COLOR_EERIE_BLACK "#1e1b1b"
 
 
 /* blacks */
@@ -150,7 +151,7 @@ unsigned int alpha = 0xff;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	/* black = */ COLOR_LIQORICE,
+	/* black = */ COLOR_EERIE_BLACK,
 	/* red = */ COLOR_UNBLEACHED_SILK,
 	/* green = */ COLOR_MAGIC_MINT,
 	/* yellow = */ COLOR_BLOND,
