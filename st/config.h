@@ -1,11 +1,73 @@
 /* See LICENSE file for copyright and license details. */
 
+
+/* Some whites */
+#define COLOR_EGGSHELL "#edf0da"
+#define COLOR_BEIGE "#eff2dc"
+#define COLOR_OLD_LACE "#f9fce5"
+#define COLOR_COSMIC_LATTE "#fbffe8"
+#define COLOR_HONEYDEW "#edffec"
+
+#define COLOR_KHAKI "#c7ac92"
+
+#define COLOR_DARK_VANILLA "#d1c6ad"
+
+#define COLOR_CHAMPAGNE_PINK "#f4d8cd"
+#define COLOR_UNBLEACHED_SILK "#fcdfd4"
+#define COLOR_SEASHELL "#f7f7ed"
+#define COLOR_BABY_POWDER "#FFFFF9"
+
+
+/* greens */
+#define COLOR_TEA_GREEN_1 "#c2eabd"
+#define COLOR_TEA_GREEN_2 "#dcf2b0"
+#define COLOR_PEARL_AQUA "#78e2c2"
+#define COLOR_NYANZA "#dff2d8"
+#define COLOR_AQUAMARINE "#7AF9B8"
+#define COLOR_MAGIC_MINT "#9cf4c7"
+
+
+/* reds */
+#define COLOR_SUNSET_ORANGE "#fe5f55"
+#define COLOR_APRICOT "#FCC7B3"
+#define COLOR_WHEAT "#F2DEB5"
+#define COLOR_PAPAYA_WHIP "#FFEFD1"
+
+/* magentas */
+#define COLOR_SHAMPOO "#F2D0F2"
+#define COLOR_ELECTRIC_LAVENDER "#F1C4FF"
+
+
+/* blues */
+#define COLOR_AZUREISH_WHITE "#d6efff"
+#define COLOR_POWDER_BLUE "#B3DDF9"
+#define COLOR_WINTER_WIZARD "#9BD7FF"
+
+/* yellows */
+#define COLOR_BLOND "#FFECBC"
+#define COLOR_CANARY "#FFEDA0"
+
+/* browns */
+#define COLOR_DAVYS_GREY "#5a5353"
+#define COLOR_GRULLO "#a69888"
+#define COLOR_QUARTZ "#4c4647"
+#define COLOR_JET "#383435"
+#define COLOR_LICORICE "#191214"
+
+
+/* blacks */
+#define COLOR_RICH_BLACK "#050517"
+#define COLOR_RAISIN_BLACK "#231f20"
+#define COLOR_JUNGLE_GREEN "#1f2421"
+#define COLOR_NICKEL "#6b6d76"
+
+
 /*
  * appearance
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "mononoki Nerd Font Mono:style=Regular:pixelsize=14:antialias=true:autohint=true";
+static char *font = "mononoki Nerd Font Mono:style=Regular:pixelsize=16:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -88,24 +150,24 @@ unsigned int alpha = 0xff;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	/* black = */ COLOR_LIQORICE,
+	/* red = */ COLOR_UNBLEACHED_SILK,
+	/* green = */ COLOR_MAGIC_MINT,
+	/* yellow = */ COLOR_BLOND,
+	/* blue = */ COLOR_POWDER_BLUE,
+	/* magenta = */ COLOR_SHAMPOO,
+	/* cyan = */ COLOR_WHEAT,
+	/* white = */ COLOR_SEASHELL,
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	/* light black = */ COLOR_JET,
+	/* light red = */ COLOR_APRICOT,
+	/* light green = */ COLOR_AQUAMARINE,
+	/* light yellow = */ COLOR_CANARY,
+	/* light blue = */ COLOR_WINTER_WIZARD,
+	/* light magenta = */ COLOR_ELECTRIC_LAVENDER,
+	/* light cyan = */ COLOR_PAPAYA_WHIP,
+	/* light white = */ COLOR_BABY_POWDER,
 
 	[255] = 0,
 
@@ -121,7 +183,7 @@ static const char *colorname[] = {
  * foreground, background, cursor, reverse cursor
  */
 unsigned int defaultfg = 7;
-unsigned int defaultbg = 257;
+unsigned int defaultbg = 0;
 static unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 
