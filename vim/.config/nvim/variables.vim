@@ -80,11 +80,11 @@ set isfname-==
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class
 
 " number on by default
-set number
+set nonumber
 
 " and relative numbers if support exists
 if v:version >= 703
-    set relativenumber
+    set norelativenumber
 endif
 
 " When displaying line numbers, don't use an annoyingly wide number column. This
