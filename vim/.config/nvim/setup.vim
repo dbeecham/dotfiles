@@ -30,6 +30,7 @@ Plug 'dbeecham/vim-snippets'
 " g:netrw_width-setting, but it doesn't work along with winwidth, and
 " automatic resize on window close. NERDTree's width is always fixed.
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Trying this out...
 Plug 'mhinz/vim-signify'
