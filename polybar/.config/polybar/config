@@ -1,0 +1,137 @@
+[colors]
+semitransparent = #5a000000
+invisible = #0000
+red = #ff0000
+
+[bar/top]
+monitor = eDP-1
+width = 100%
+height = 35
+offset-x = 0
+offset-y = 0
+radius = 0
+padding-left = 0
+padding-right = 0
+module-margin = 0
+underline-size = 2
+underline-color = #eee
+
+wm-restack = bspwm
+
+font-0 = "Noto Sans CJK SC:pixelsize=12;0"
+font-1 = "Hack Nerd Font:pixelsize=10;2"
+
+background = ${colors.semitransparent}
+foreground = #ffffff
+
+modules-left = bspwm
+modules-center = 
+modules-right = battery volume date
+
+
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = true
+format = <label-state> <label-mode>
+label-focused = %icon%
+label-focused-padding = 4
+label-focused-background = #88000000
+label-focused-underline = #ddd
+label-focused-foreground = #ffffff
+label-focused-font = 2
+label-occupied = %icon%
+label-occupied-padding = 4
+label-occupied-font = 2
+label-empty = %icon%
+label-empty-font = 2
+label-empty-padding = 4
+ws-icon-0 = I;
+ws-icon-1 = II;
+ws-icon-2 = III;
+ws-icon-3 = IV;
+ws-icon-4 = V;
+ws-icon-default = 
+
+
+
+[module/cpu]
+type = internal/cpu
+format = <label> <ramp-coreload>
+ramp-coreload-font = 3
+ramp-coreload-5-foreground = ${colors.red}
+ramp-coreload-6-foreground = ${colors.red}
+ramp-coreload-7-foreground = ${colors.red}
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
+
+[module/date]
+type = internal/date
+label = %date% %time%
+date = %a %b %d,
+time = %H:%M
+format-background = #88000000
+format-padding = 3
+
+format =    <label>
+
+[module/battery]
+type = internal/battery
+full-at = 99
+battery = BAT0
+adapter = AC
+poll-interval = 5
+format-charging = <animation-charging>  <label-charging>
+format-discharging = <ramp-capacity>  <label-discharging>
+format-full = <ramp-capacity>  <label-full>
+label-charging = %percentage%
+label-discharging = %percentage%
+label-full = %percentage%
+format-charging-padding = 3
+format-discharging-padding = 3
+format-full-padding = 3
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+[module/temperature]
+type = internal/temperature
+
+[module/volume]
+type = internal/volume
+format-volume = <ramp-volume>  <label-volume>
+format-muted = <label-muted>
+label-volume = %percentage%
+label-muted =   muted
+label-muted-foreground = #aaa
+format-volume-padding = 3
+format-muted-padding = 3
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-headphones-0 = 
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+enable-scroll = true
+format = <ramp> <label>
+label = %percentage%
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
