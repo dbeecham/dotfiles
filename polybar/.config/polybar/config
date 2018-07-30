@@ -45,11 +45,12 @@ label-occupied-font = 2
 label-empty = %icon%
 label-empty-font = 2
 label-empty-padding = 4
-ws-icon-0 = I;
-ws-icon-1 = II;
-ws-icon-2 = III;
-ws-icon-3 = IV;
-ws-icon-4 = V;
+ws-icon-0 = iota;
+ws-icon-1 = gamma;
+ws-icon-2 = mu;
+ws-icon-3 = delta;
+ws-icon-4 = lambda;
+ws-icon-5 = kappa;
 ws-icon-default = 
 
 
