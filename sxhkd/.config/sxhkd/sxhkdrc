@@ -86,8 +86,8 @@ super + {_,shift + }{1-9,0}
 
 
 # select monitor
-super + {minus,period,comma}
-    bspc monitor -f {"^3","^2","^1"}
+super + {slash,minus,period,comma}
+    bspc monitor -f {"^3","^3","^2","^1"}
 
 #
 # preselect
