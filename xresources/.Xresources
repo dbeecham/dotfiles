@@ -7,7 +7,6 @@ URxvt.cursorBlink:              true
 URxvt.pointerBlank:             true
 URxvt.font:                     xft:Fira Code:size=12
 URxvt.boldFont:                 xft:Fira Code:size=12
-URxvt.letterSpace:              true
 Xft.autohint:                   1
 Xft.lcdfilter:                  lcddefault
 Xft.hintstyle:                  hintslight
@@ -51,5 +50,5 @@ URxvt.fadeColor: #000000
 
 URxvt.saveLines: 20000
 
-Xcursor.theme: core
-Xcursor.size: 32
+Xcursor.theme: glass
+Xcursor.size: 16
