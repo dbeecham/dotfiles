@@ -21,23 +21,23 @@ endfunction
 function! CscopeQuery(option)
   call inputsave()
   if a:option == '0'
-    let query = input('Assignments to: ')
+    let query = input('(s) C Symbol: ')
   elseif a:option == '1'
-    let query = input('Functions calling: ')
+    let query = input('(d) Function definition: ')
   elseif a:option == '2'
-    let query = input('Functions called by: ')
+    let query = input('(x) Functions called by: ')
   elseif a:option == '3'
-    let query = input('Egrep: ')
+    let query = input('(c) Functions calling: ')
   elseif a:option == '4'
-    let query = input('File: ')
+    let query = input('(t) Text: ')
   elseif a:option == '6'
-    let query = input('Definition: ')
+    let query = input('(e) Egrep: ')
   elseif a:option == '7'
-    let query = input('Files #including: ')
+    let query = input('(f) File: ')
   elseif a:option == '8'
-    let query = input('C Symbol: ')
+    let query = input('(i) Including: ')
   elseif a:option == '9'
-    let query = input('Text: ')
+    let query = input('(t) Assignments: ')
   else
     echo "Invalid option!"
     return
