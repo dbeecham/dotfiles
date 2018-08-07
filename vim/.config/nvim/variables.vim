@@ -62,7 +62,7 @@ set wildmode=longest:full,full
 set wildmenu
 
 " Same with ctrln, ctrlp
-set completeopt=longest,menu
+set completeopt=longest,menu,preview
 
 " Keep a viminfo file
 set viminfo='20,\"500   " Keep a .viminfo file.
