@@ -122,6 +122,9 @@ if has('nvim')
     Plug 'prabirshrestha/asyncomplete.vim'
     Plug 'prabirshrestha/asyncomplete-tags.vim'
     Plug 'prabirshrestha/asyncomplete-lsp.vim'
+    Plug 'prabirshrestha/asyncomplete-file.vim'
+    Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
+    Plug 'yami-beta/asyncomplete-omni.vim'
 endif
 
 " Highlight marks in gutter. This makes marks usable, basically.
