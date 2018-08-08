@@ -37,6 +37,11 @@ nnoremap <A-o> :tabnext<cr>
 nnoremap <A-i> :tabprev<cr>
 
 
+" Enabling NERDTree over and over is a bit of a pain, same with the tagbar.
+" You can't save them with mksession either, so it's definitely worth it.
+nnoremap <leader>x :NERDTreeToggle<cr>
+nnoremap <leader>T :TagbarToggle<cr>
+
 
 " Ultisnips is very useful.
 " See setup.vim on this. I might not use Ultisnips any more; it's replaced by
