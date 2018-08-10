@@ -52,6 +52,12 @@ nnoremap <leader>T :TagbarToggle<cr>
 "    let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 "endif
 
+" vim-snipmate can't expand on <tab> since vim-lsp expands on tab.
+imap <C-y> <Plug>snipMateNextOrTrigger
+smap <C-y> <Plug>snipMateNextOrTrigger
+imap <C-6> <Plug>snipMateBack
+smap <C-6> <Plug>snipMateBack
+
 " So is fzf
 nnoremap <leader>f :Files<cr>
 nnoremap <C-t> :Files<cr>
