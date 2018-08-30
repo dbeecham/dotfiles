@@ -53,10 +53,10 @@ nnoremap <leader>T :TagbarToggle<cr>
 "endif
 
 " vim-snipmate can't expand on <tab> since vim-lsp expands on tab.
-imap <C-y> <Plug>snipMateNextOrTrigger
-smap <C-y> <Plug>snipMateNextOrTrigger
-imap <C-6> <Plug>snipMateBack
-smap <C-6> <Plug>snipMateBack
+imap <C-l> <Plug>snipMateNextOrTrigger
+smap <C-l> <Plug>snipMateNextOrTrigger
+imap <C-y> <Plug>snipMateBack
+smap <C-y> <Plug>snipMateBack
 
 " So is fzf
 nnoremap <leader>f :Files<cr>
