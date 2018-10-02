@@ -14,40 +14,40 @@ let c_gnu = 1
 """"""
 " SYNTAX HIGHLIGHTING
 """"""""""""""""""""""""
-hi Constant         cterm=NONE         	    ctermfg=149         ctermbg=NONE
+hi Constant         cterm=NONE         	    ctermfg=3      ctermbg=NONE
 hi String           cterm=NONE              ctermfg=230         ctermbg=NONE
 hi Character        cterm=NONE              ctermfg=149         ctermbg=NONE
 hi Number           cterm=NONE              ctermfg=208         ctermbg=NONE
 hi Boolean          cterm=NONE              ctermfg=208         ctermbg=NONE
 hi Float            cterm=NONE              ctermfg=208         ctermbg=NONE
-hi Comment          cterm=NONE	            ctermfg=241         ctermbg=NONE
+hi Comment          cterm=NONE	            ctermfg=10         ctermbg=NONE
 
 hi Identifier       cterm=NONE              ctermfg=15          ctermbg=NONE
 hi Function         cterm=NONE              ctermfg=15          ctermbg=NONE
 
-hi Statement        cterm=bold              ctermfg=149         ctermbg=NONE
-hi Conditional      cterm=bold              ctermfg=3         ctermbg=NONE
-hi Repeat           cterm=bold              ctermfg=149         ctermbg=NONE
+hi Statement        cterm=bold              ctermfg=1         ctermbg=NONE
+hi Conditional      cterm=bold              ctermfg=4         ctermbg=NONE
+hi Repeat           cterm=bold              ctermfg=4         ctermbg=NONE
 hi Label            cterm=bold              ctermfg=149         ctermbg=NONE
-hi Operator         cterm=NONE              ctermfg=149         ctermbg=NONE
+hi Operator         cterm=NONE              ctermfg=1         ctermbg=NONE
 hi Keyword          cterm=bold              ctermfg=15         ctermbg=NONE
 hi Exception        cterm=NONE              ctermfg=170         ctermbg=NONE
 
-hi PreProc          cterm=NONE              ctermfg=14         ctermbg=NONE
-hi Include          cterm=NONE              ctermfg=14         ctermbg=NONE
-hi Define           cterm=NONE              ctermfg=14         ctermbg=NONE
+hi PreProc          cterm=NONE              ctermfg=243         ctermbg=NONE
+hi Include          cterm=NONE              ctermfg=243         ctermbg=NONE
+hi Define           cterm=NONE              ctermfg=243         ctermbg=NONE
 
-hi Macro            cterm=NONE              ctermfg=14         ctermbg=NONE
-hi PreCondit        cterm=NONE              ctermfg=14         ctermbg=NONE
+hi Macro            cterm=NONE              ctermfg=245         ctermbg=NONE
+hi PreCondit        cterm=NONE              ctermfg=245         ctermbg=NONE
 
-hi Type             cterm=NONE              ctermfg=9         ctermbg=NONE
-hi StorageClass     cterm=NONE              ctermfg=9         ctermbg=NONE
-hi Structure        cterm=NONE              ctermfg=9         ctermbg=NONE
-hi Typedef          cterm=NONE              ctermfg=149         ctermbg=NONE
+hi Type             cterm=NONE              ctermfg=12         ctermbg=NONE
+hi StorageClass     cterm=NONE              ctermfg=12         ctermbg=NONE
+hi Structure        cterm=NONE              ctermfg=12         ctermbg=NONE
+hi Typedef          cterm=NONE              ctermfg=12         ctermbg=NONE
 
 hi Special          cterm=NONE              ctermfg=15          ctermbg=NONE
 hi SpecialChar      cterm=NONE              ctermfg=15          ctermbg=NONE
-hi Tag              cterm=NONE              ctermfg=149         ctermbg=NONE
+hi Tag              cterm=NONE              ctermfg=1         ctermbg=NONE
 hi Delimiter        cterm=NONE              ctermfg=15          ctermbg=NONE
 hi SpecialComment   cterm=NONE              ctermfg=15          ctermbg=NONE
 hi Debug            cterm=NONE              ctermfg=15          ctermbg=NONE
@@ -81,9 +81,9 @@ hi MatchParen       cterm=bold              ctermfg=0           ctermbg=149
 hi ModeMsg          cterm=NONE              ctermfg=15          ctermbg=NONE
 hi MoreMsg          cterm=NONE              ctermfg=149         ctermbg=NONE
 hi NonText          cterm=bold              ctermfg=239         ctermbg=NONE
-hi Normal           cterm=NONE              ctermfg=253         ctermbg=NONE
+hi Normal           cterm=NONE              ctermfg=254         ctermbg=NONE
 hi Question         cterm=NONE              ctermfg=149         ctermbg=NONE
-hi SpecialKey       cterm=NONE              ctermfg=149         ctermbg=NONE
+hi SpecialKey       cterm=NONE              ctermfg=250         ctermbg=NONE
 hi Title            cterm=NONE              ctermfg=170         ctermbg=NONE
 hi VertSplit        cterm=reverse           ctermfg=0	        ctermbg=240
 hi WarningMsg       cterm=NONE              ctermfg=9           ctermbg=NONE
@@ -143,8 +143,11 @@ hi FoldColumn       cterm=NONE              ctermfg=8          ctermbg=NONE
 """"""
 " SEARCH
 """"""""""""""""""""""""
-hi IncSearch        cterm=NONE              ctermfg=15          ctermbg=149
-hi Search           cterm=NONE              ctermfg=15          ctermbg=149
+hi IncSearch        cterm=bold              ctermfg=0          ctermbg=11
+hi Search           cterm=bold              ctermfg=11         ctermbg=NONE
+
+
+hi Conceal          cterm=NONE              ctermfg=12         ctermbg=NONE
 
 
 "vim: sw=4
