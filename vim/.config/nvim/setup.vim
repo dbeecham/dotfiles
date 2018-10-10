@@ -158,7 +158,9 @@ if executable('ctags')
 endif
 
 " testing this cscope plugin
-Plug 'brookhong/cscope.vim'
+if executable('cscope')
+    Plug 'brookhong/cscope.vim'
+endif
 
 " Remembers and restores last cursor position.
 " Probably OK - the builtin functionality would
