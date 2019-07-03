@@ -49,9 +49,14 @@
 
 # this makes it possible to use :cquit to quit a 'git difftool'
 	trustExitCode = true
-[mergetool]
+[mergetool "nvim"]
+    cmd = nvim -f -c \"Gvdiff\" \"$MERGED\"
 	trustExitCode = true
 	prompt = false
 [merge]
-	tool = vimdiff
+	tool = nvim
 	conflictstyle = diff3
+	prompt = false
+[credential]
+	helper = !aws codecommit credential-helper $@
+	UseHttpPath = true
