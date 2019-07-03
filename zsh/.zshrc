@@ -5,10 +5,21 @@ source ~/.zsh/widgets.zsh
 #source ~/.zsh/prompt_256.zsh
 #source ~/.zsh/ohmy.zsh
 source ~/.zsh/aliases.zsh
-if test -r ~/.zsh/private-aliases.zsh; then
-	source ~/.zsh/private-aliases.zsh
-fi
 source ~/.zsh/binds.zsh
+
+
+# This file contains some private variables I use; I currently expect these
+# variables:
+#  * $PLUSPOLE_NATSD_HOST
+#  * $PLUSPOLE_NATSD_PORT
+#  * $PLUSPOLE_NATSD_USER
+#  * $PLUSPOLE_NATSD_PASS
+#  * $PUSHOVER_API_TOKEN
+#  * $PUSHOVER_USER_KEY
+if test -r ~/.zsh/private.zsh; then
+	source ~/.zsh/private.zsh
+fi
+
 source ~/.zsh/fasd.zsh
 
 source ~/.zsh/zsh-histdb/sqlite-history.zsh
