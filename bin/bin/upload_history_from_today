@@ -1,0 +1,5 @@
+#!/bin/sh
+
+TODAY="$(date +'%Y-%m-%d')"
+install -d /home/dbe/Dropbox/timeline/$TODAY
+/home/dbe/bin/history_from $TODAY > /home/dbe/Dropbox/timeline/$TODAY/cmd_history.`hostname`.txt

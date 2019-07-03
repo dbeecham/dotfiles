@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sqlite3 ~/.histdb/zsh-history.db "select datetime(history.start_time, 'unixepoch'), commands.argv from history inner join commands on command_id = commands.rowid where commands.argv like '%$@%' order by history.start_time desc limit 1000;";
+

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+JLinkExe -device ATSAMA5D27 -if JTAG -speed 4000kHz -jtagconf -1,-1 -autoconnect 1

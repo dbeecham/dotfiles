@@ -1,0 +1,36 @@
+#!/bin/bash
+
+DISK=/dev/disk/by-id/usb-RPi-MSD-_0001_ecbcd751-0:0
+
+main() {
+    sudo -u dbe notify-send "Flashing BCM2708..." 2>&1 | logger -t bcmboot
+
+    # Disk does not exist yet, run rpiboot.
+    if test ! -e ${DISK}; then
+        sh -c "cd /home/dbe/sources/usbboot; timeout --kill-after=12s 10s ./rpiboot" 2>&1 | logger -t bcmboot
+        RET=$?
+        if test $RET -ne 0; then
+            sudo -u dbe notify-send --urgency=critical --category=device.error "rpiboot failed w/ code $RET" 2>&1 | logger -t bcmboot
+            exit 1
+        fi
+    fi
+
+    # We don't have write access to the disk.
+    if test ! -w ${DISK}; then
+        sudo -u dbe notify-send --urgency=critical --category=device.error "don't have write access to ${DISK}" 2>&1 | logger -t bcmboot
+        exit 1
+    fi
+
+
+    pv -n /home/dbe/sources/buildroot/output/images/sdcard.img > >(dd of=/dev/disk/by-id/usb-RPi-MSD-_0001_ecbcd751-0:0) 2> >(while read line; do sudo -u dbe notify-send -h int:value:$line --expire-time=1 "Copying..."; done) | logger -t bcmboot
+    RET=$?
+    if test $RET -ne 0; then
+        sudo -u dbe notify-send --urgency=critical --category=device.error "pv | dd failed w/ code $RET"
+        exit 1
+    fi
+
+    sudo -u dbe notify-send "BCM2708 flashed successfully!"
+
+}
+
+main $@ &

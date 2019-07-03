@@ -1,1 +1,0 @@
-setxkbmap se -variant nodeadkeys -option caps:escape

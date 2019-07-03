@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -eu
+
+printf "CONNECT {\"user\":\"${PLUSPOLE_NATSD_USER}\",\"pass\":\"${PLUSPOLE_NATSD_PASS}\"}\r\nPUB pp.dbe.blixt 1\r\n1\r\n' | nc ${PLUSPOLE_NATSD_HOST} ${PLUSPOLE_NATSD_PORT}

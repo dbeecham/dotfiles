@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+xrandr --output DisplayPort-0 --mode 1920x1080 --pos 0x1080 --output DVI-1 --pos 0x0 --output DisplayPort-2 --rotate left --pos 1920x240
