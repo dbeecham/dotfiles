@@ -6,7 +6,7 @@
 vim/.config/nvim/plugged
 
 # vim's views
-.config/nvim/view
+vim/.config/nvim/view
 
 # MATLAB installs these. I don't want them in my dotfiles.
 bin/bin/matlab
