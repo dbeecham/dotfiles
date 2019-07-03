@@ -118,3 +118,6 @@ ranger/.config/ranger/tagged
 
 # private files
 zsh/.zsh/private.zsh
+
+# I dont think these are necessary
+fonts/**/.uuid
