@@ -104,6 +104,11 @@ if test -e ~/.nix-profile/etc/profile.d/nix.sh; then
     source ~/.nix-profile/etc/profile.d/nix.sh
 fi
 
+# add local plejd to nix repos
+if test -d ${HOME}/plejd-nixpkgs; then
+    export NIX_PATH=$NIX_PATH:plejd=${HOME}/plejd-nixpkgs/
+fi
+
 # Makes sure less displays escape characters right.
 export LESS="-FXRS"
 
