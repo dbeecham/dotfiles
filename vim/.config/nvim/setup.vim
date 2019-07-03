@@ -20,10 +20,15 @@ Plug 'tomtom/tlib_vim'
 " special voodoo black magic to get working. So I would prefer to use a
 " VimL-only solution - which vim-snipmate is. Also, vim-snipmate seems to
 " 'just work', which is great.
-Plug 'garbas/vim-snipmate'
+" Unfortunately, it does not work along with vim-asyncomplete; neither
+" 'snipmateTrigger' nor 'snipmateNextOrTrigger' expands correctly - it only
+" steps downward in the asyncomplete-list. Maybe neosnippet does it correctly?
+" Plug 'garbas/vim-snipmate'
+Plug 'Shougo/neosnippet.vim'
 
 " My snippets. I like my snippets.
-Plug 'dbeecham/vim-snippets'
+"Plug 'dbeecham/vim-snippets'
+Plug 'dbeecham/neosnippet-snippets'
 
 " I've been back-and-forth with NERDTree, but I'm trying it again on the
 " basis that NERDTree might keep it's width fixed. netrw has the
@@ -69,7 +74,6 @@ Plug 'christoomey/vim-tmux-navigator'
 """
 " LANGUAGES
 """
-Plug 'andremedeiros/ragel.vim'
 Plug 'LnL7/vim-nix'
 
 
@@ -120,10 +124,10 @@ if has('nvim')
     Plug 'prabirshrestha/async.vim'
     Plug 'prabirshrestha/vim-lsp'
     Plug 'prabirshrestha/asyncomplete.vim'
-    Plug 'prabirshrestha/asyncomplete-tags.vim'
+    "Plug 'prabirshrestha/asyncomplete-tags.vim'
     Plug 'prabirshrestha/asyncomplete-lsp.vim'
-    Plug 'prabirshrestha/asyncomplete-file.vim'
-    Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
+    "Plug 'prabirshrestha/asyncomplete-file.vim'
+    "Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
     Plug 'yami-beta/asyncomplete-omni.vim'
 endif
 
@@ -159,6 +163,8 @@ endif
 
 " testing this cscope plugin
 Plug 'brookhong/cscope.vim'
+
+Plug 'ap/vim-buftabline'
 
 " Remembers and restores last cursor position.
 " Probably OK - the builtin functionality would
