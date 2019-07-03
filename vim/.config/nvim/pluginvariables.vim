@@ -21,6 +21,11 @@ let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
 
 
+" Tell neosnippet about my snippets
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#neosnippets_directory='~/.vim/plugged/vim-snippets/snippets'
+
+
 " if table mode uses <leader>t, then <leader>t is slow, because it's waiting
 " for possible input...
 " <tm_prefix>m starts table mode
@@ -28,8 +33,8 @@ let g:table_mode_map_prefix = "<Leader>m"
 
 " This is here to make table mode do rst tables.
 " TODO: move this out to a filetype-specific place.
-let g:table_mode_corner_corner='+'
-let g:table_mode_header_fillchar='='
+let g:table_mode_corner_corner='|'
+"let g:table_mode_header_fillchar='='
 
 " dont use cache dir for gen_tags - it puts the ctags in
 " ~/.cache/tags_dir/something/prj_tags, but I havent looked into getting fzf
