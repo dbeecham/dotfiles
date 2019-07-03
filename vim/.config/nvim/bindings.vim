@@ -40,7 +40,7 @@ nnoremap <A-i> :tabprev<cr>
 " Enabling NERDTree over and over is a bit of a pain, same with the tagbar.
 " You can't save them with mksession either, so it's definitely worth it.
 nnoremap <leader>x :NERDTreeToggle<cr>
-nnoremap <leader>T :TagbarToggle<cr>
+nnoremap <leader>X :TagbarToggle<cr>
 
 
 " Ultisnips is very useful.
@@ -53,18 +53,25 @@ nnoremap <leader>T :TagbarToggle<cr>
 "endif
 
 " vim-snipmate can't expand on <tab> since vim-lsp expands on tab.
-imap <C-l> <Plug>snipMateNextOrTrigger
-smap <C-l> <Plug>snipMateNextOrTrigger
-imap <C-y> <Plug>snipMateBack
-smap <C-y> <Plug>snipMateBack
+imap <C-y> <Plug>(neosnippet_expand_or_jump)
+smap <C-y> <Plug>(neosnippet_expand_or_jump)
+xmap <C-x> <Plug>(neosnippet_expand_target)
+"imap <C-6> <Plug>snipMateBack
+"smap <C-6> <Plug>snipMateBack
 
 " So is fzf
 nnoremap <leader>f :Files<cr>
 nnoremap <C-t> :Files<cr>
+nnoremap <leader>b :Buffers<cr>
 
 " I've been using this for a while now, and grown to use it. It makes a
 " difference when tags are not available.
 nnoremap <leader>l :Lines<cr>
+
+
+" Trying this out as a quick-fold-this-function in C
+nnoremap <leader>F V$%j%zfzz
+
 
 " My brain wants to press enter to expand a snippet, so I'll bind it.
 " This turned out to be surprisingly annoying. The biggest reason is that it
