@@ -110,5 +110,4 @@ bin/deploytool
 .config/htop
 
 # private files
-.zsh/private-aliases.zsh
-bin/blixt
+.zsh/private.zsh
