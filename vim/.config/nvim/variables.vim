@@ -39,6 +39,9 @@ set hlsearch
 set ignorecase
 set smartcase
 
+" Some concealing
+set conceallevel=2
+
 " Allow backspace over eol,tabs
 set backspace=2
 
