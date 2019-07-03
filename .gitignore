@@ -3,17 +3,24 @@
 
 # vim installed plugins. They will install from vim config.
 .vim/plugged
-.config/nvim/plugged
+vim/.config/nvim/plugged
 
 # vim's views
 .config/nvim/view
 
 # MATLAB installs these. I don't want them in my dotfiles.
-bin/matlab
-bin/mbuild
-bin/mcc
-bin/mex
-bin/deploytool
+bin/bin/matlab
+bin/bin/mbuild
+bin/bin/mcc
+bin/bin/mex
+bin/bin/deploytool
+
+# fzf installs on its own i think... will evaluate
+bin/bin/fzf
+bin/bin/fzf-tmux
+
+# nah to sam-ba
+bin/bin/sam-ba
 
 # I don't want Chrome in my dotfiles - it syncs just fine using my google
 # account.
@@ -26,8 +33,8 @@ bin/deploytool
 # No history in my dotfiles!
 .config/pgcli/history
 .config/pgcli/log
-.config/ranger/history
-.config/ranger/tagged
+ranger/.config/ranger/history
+ranger/.config/ranger/tagged
 .netrwhist
 
 # Don't know what Wireshark needs in terms of configuration files...
