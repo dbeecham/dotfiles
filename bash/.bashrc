@@ -6,3 +6,5 @@ fi
 source ~/.bash/environment.bash
 source ~/.bash/functions.bash
 source ~/.bash/aliases.bash
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
