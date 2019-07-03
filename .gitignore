@@ -117,4 +117,4 @@ ranger/.config/ranger/tagged
 .config/htop
 
 # private files
-.zsh/private.zsh
+zsh/.zsh/private.zsh
