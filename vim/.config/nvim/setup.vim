@@ -162,7 +162,9 @@ if executable('ctags')
 endif
 
 " testing this cscope plugin
-Plug 'brookhong/cscope.vim'
+if executable('cscope')
+    Plug 'brookhong/cscope.vim'
+endif
 
 Plug 'ap/vim-buftabline'
 
