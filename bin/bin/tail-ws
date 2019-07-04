@@ -1,0 +1,31 @@
+#!/bin/sh
+
+set -eu
+
+readonly PROGNAME=$(basename $0)
+readonly ARGS="$@"
+
+usage() {
+    printf "usage: ${PROGNAME} pcap-file\n"
+}
+
+
+live_pcap_tail() {
+    tail -f -n +1 ${1} \
+        | tshark -i - -Y websocket.payload -E occurrence=l -T fields -e text
+}
+
+
+main() {
+
+    readonly pcapfile=${1:-}
+    if test "$pcapfile" = ""; then
+        usage
+        exit 1
+    fi
+
+    live_pcap_tail "$pcapfile"
+
+}
+
+main "$@"
