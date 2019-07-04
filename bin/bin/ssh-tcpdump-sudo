@@ -1,0 +1,24 @@
+#!/bin/sh
+
+set -eu
+
+readonly PROGNAME=$(basename $0)
+
+usage() {
+    printf "USAGE: ${PROGNAME} host\n"
+    printf "example: ${PROGNAME} admin@10.0.0.1 > log.pcap\n"
+}
+
+ssh_tcpdump() {
+    ssh ${1} sudo tcpdump -npi eth0 -U -s0 -w - 'not port 22'
+}
+
+main() {
+    if test "${1:-}" = ""; then
+        usage
+        exit 1
+    fi
+
+    ssh_tcpdump "${1}"
+}
+main "$@"

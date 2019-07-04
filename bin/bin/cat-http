@@ -1,0 +1,30 @@
+#!/bin/sh
+
+set -eu
+
+readonly PROGNAME=$(basename $0)
+readonly ARGS="$@"
+
+usage() {
+    printf "usage: ${PROGNAME} pcap-file\n"
+}
+
+
+cat_pcap_http() {
+    tcpick -C -yP -r ${1}
+}
+
+
+main() {
+
+    readonly pcapfile=${1:-}
+    if test "$pcapfile" = ""; then
+        usage
+        exit 1
+    fi
+
+   cat_pcap_http "$pcapfile"
+
+}
+
+main "$@"
