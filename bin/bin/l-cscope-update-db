@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+set -eu
+
+cscope_update_db() {
+    cscope -b -q -k
+}
+
+main() {
+    cscope_update_db
+}
+main "$@"
