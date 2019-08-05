@@ -20,7 +20,9 @@ if test -r ~/.zsh/private.zsh; then
 	source ~/.zsh/private.zsh
 fi
 
-source ~/.zsh/fasd.zsh
+# I never got around to learn fasd, and when I'm not using it, it just slows
+# down my shell. Some day, I'll learn how fasd works and actually use it.
+#source ~/.zsh/fasd.zsh
 
 source ~/.zsh/zsh-histdb/sqlite-history.zsh
 
