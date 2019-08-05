@@ -134,3 +134,9 @@ nnoremap <silent> <Leader>cat :call CscopeQuery('9')<CR>
 if has("nvim")
     tnoremap <C-x> <C-\><C-n>
 endif
+
+" lets try these out...
+nnoremap ö :cprev<cr>
+nnoremap Ö :cfirst<cr>
+nnoremap ä :cnext<cr>
+nnoremap Ä :clast<cr>
