@@ -25,6 +25,9 @@ let g:slime_paste_file = "$HOME/.slime_paste"
 let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#neosnippets_directory='~/.vim/plugged/vim-snippets/snippets'
 
+" I dont care about cscope updating my db
+let g:cscope_silent = 1
+
 
 " if table mode uses <leader>t, then <leader>t is slow, because it's waiting
 " for possible input...
