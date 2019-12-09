@@ -8,9 +8,10 @@ if test "$(hostname)" = "pp-lap-dbe"; then
     bspc monitor eDP-1 -d iota gamma mu delta lambda kappa
     bspc monitor HDMI-2 -d iota gamma mu delta lambda kappa
 elif test "$(hostname)" = "pp-ws-dbe"; then
-    xrandr --output HDMI-0 --mode 1920x1080 --pos 0x1080 --output DVI-D-0 --pos 0x0 --output DP-1 --mode 1920x1080 --rotate left --pos 1920x240
+    ${HOME}/bin/setup-screens
+    #xrandr --output HDMI-0 --mode 1920x1080 --pos 0x1080 --output DVI-D-0 --pos 0x0 --output DP-1 --mode 1920x1080 --rotate left --pos 1920x240
     bspc monitor DVI-1 -d iota gamma mu delta lambda kappa
-    bspc monitor DisplayPort-2 -d iota gamma mu delta lambda kappa
+    bspc monitor DisplayPort-1 -d iota gamma mu delta lambda kappa
     bspc monitor DisplayPort-0 -d iota gamma mu delta lambda kappa
     feh --bg-center /home/dbe/Dropbox/bgs/light/173.jpg /home/dbe/Dropbox/bgs/light/94.jpg /home/dbe/Dropbox/bgs/light/Lake\ Tahoe\ Colors.jpg
     polybar work1 &
