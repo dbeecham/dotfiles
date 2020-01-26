@@ -29,3 +29,6 @@
 [submodule "zsh/.zsh/zplug"]
 	path = zsh/.zsh/zplug
 	url = https://github.com/zplug/zplug
+[submodule "bin/bin/sources/unrandom"]
+	path = bin/bin/sources/unrandom
+	url = git@github.com:dbeecham/unrandom
