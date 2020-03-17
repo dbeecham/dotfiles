@@ -3,13 +3,20 @@
 " For C:
 "   * bear make -B
 
-let g:lsp_signs_enabled = 1
+" echo diagnostics when cursor is over an error
 let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_highlights_enabled = 1
+let g:lsp_textprop_enabled = 1
+let g:lsp_virtual_text_enabled = 0
+let g:lsp_signs_enabled = 1
+let g:lsp_highlight_references_enabled = 1
+let g:lsp_signs_error = {'text': 'XX'}
+
 "let g:lsp_log_verbose = 1
 "let g:lsp_log_file = expand('~/vim-lsp.log')
 "let g:asyncomplete_log_file = expand('~/asyncomplete.log')
-"
-"
+
+
 if executable('ccls')
    au User lsp_setup call lsp#register_server({
       \ 'name': 'ccls',

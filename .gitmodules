@@ -53,3 +53,6 @@
 [submodule "vim/.config/nvim/pack/completion/start/vim-snippets"]
 	path = vim/.config/nvim/pack/completion/start/vim-snippets
 	url = git@github.com:dbeecham/vim-snippets
+[submodule "vim/.config/nvim/pack/tagbar/start/vista.vim"]
+	path = vim/.config/nvim/pack/tagbar/start/vista.vim
+	url = git@github.com:liuchengxu/vista.vim
