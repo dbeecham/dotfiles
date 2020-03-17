@@ -16,7 +16,7 @@ nnoremap <leader><leader> <c-^>
 
 " Clear search buffer when hitting return
 " Also a pretty trivial thing, so I'll allow it.
-nnoremap <cr> :nohlsearch<cr>
+nnoremap <cr> :nohlsearch<cr>:pclose<cr>
 
 " Go to tag under cursor
 " C-] is impossible on swedish keyboard
@@ -46,16 +46,16 @@ nnoremap <leader>X :TagbarToggle<cr>
 " Ultisnips is very useful.
 " See setup.vim on this. I might not use Ultisnips any more; it's replaced by
 " vim-snipmate.
-"if exists(":let")
-"    let g:UltiSnipsExpandTrigger="<C-l>"
-"    let g:UltiSnipsJumpForwardTrigger="<C-j>"
-"    let g:UltiSnipsJumpBackwardTrigger="<C-k>"
-"endif
+if exists(":let")
+    let g:UltiSnipsExpandTrigger="<C-y>"
+    let g:UltiSnipsJumpForwardTrigger="<C-j>"
+    let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+endif
 
 " vim-snipmate can't expand on <tab> since vim-lsp expands on tab.
-imap <C-y> <Plug>(neosnippet_expand_or_jump)
-smap <C-y> <Plug>(neosnippet_expand_or_jump)
-xmap <C-x> <Plug>(neosnippet_expand_target)
+"imap <C-y> <Plug>(neosnippet_expand_or_jump)
+"smap <C-y> <Plug>(neosnippet_expand_or_jump)
+"xmap <C-x> <Plug>(neosnippet_expand_target)
 "imap <C-6> <Plug>snipMateBack
 "smap <C-6> <Plug>snipMateBack
 

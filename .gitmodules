@@ -32,3 +32,24 @@
 [submodule "bin/bin/sources/unrandom"]
 	path = bin/bin/sources/unrandom
 	url = git@github.com:dbeecham/unrandom
+[submodule "vim/.config/nvim/pack/completion/start/asyncomplete-lsp.vim"]
+	path = vim/.config/nvim/pack/completion/start/asyncomplete-lsp.vim
+	url = git@github.com:prabirshrestha/asyncomplete-lsp.vim
+[submodule "vim/.config/nvim/pack/completion/start/asyncomplete-ultisnips.vim"]
+	path = vim/.config/nvim/pack/completion/start/asyncomplete-ultisnips.vim
+	url = git@github.com:prabirshrestha/asyncomplete-ultisnips.vim
+[submodule "vim/.config/nvim/pack/completion/start/asyncomplete.vim"]
+	path = vim/.config/nvim/pack/completion/start/asyncomplete.vim
+	url = git@github.com:prabirshrestha/asyncomplete.vim
+[submodule "vim/.config/nvim/pack/completion/start/async.vim"]
+	path = vim/.config/nvim/pack/completion/start/async.vim
+	url = git@github.com:prabirshrestha/async.vim
+[submodule "vim/.config/nvim/pack/completion/start/ultisnips"]
+	path = vim/.config/nvim/pack/completion/start/ultisnips
+	url = git@github.com:SirVer/ultisnips
+[submodule "vim/.config/nvim/pack/completion/start/vim-lsp"]
+	path = vim/.config/nvim/pack/completion/start/vim-lsp
+	url = git@github.com:prabirshrestha/vim-lsp
+[submodule "vim/.config/nvim/pack/completion/start/vim-snippets"]
+	path = vim/.config/nvim/pack/completion/start/vim-snippets
+	url = git@github.com:dbeecham/vim-snippets
