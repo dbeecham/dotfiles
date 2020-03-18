@@ -44,6 +44,9 @@ let g:table_mode_corner_corner='|'
 " to find this file.
 let g:gen_tags#use_cache_dir = 0
 
+" let fzf ignore files specified in gitinore
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+
 " Use syntax highlighting in in code blocks in markdown
 let g:markdown_fenced_languages = ['c']
 let g:markdown_minlines = 1000
