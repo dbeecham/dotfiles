@@ -56,3 +56,9 @@
 [submodule "vim/.config/nvim/pack/tagbar/start/vista.vim"]
 	path = vim/.config/nvim/pack/tagbar/start/vista.vim
 	url = git@github.com:liuchengxu/vista.vim
+[submodule "vim/.config/nvim/pack/fzf/start/fzf"]
+	path = vim/.config/nvim/pack/fzf/start/fzf
+	url = git@github.com:junegunn/fzf
+[submodule "vim/.config/nvim/pack/fzf/start/fzf.vim"]
+	path = vim/.config/nvim/pack/fzf/start/fzf.vim
+	url = git@github.com:junegunn/fzf.vim
