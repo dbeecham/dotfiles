@@ -1,0 +1,18 @@
+#!/usr/bin/node
+
+if (process.argv.length !== 3) {
+    console.log('USAGE: nats.request <topic>');
+    process.exit(1);
+}
+
+const NATS = require('nats');
+const nats = NATS.connect();
+
+nats.subscribe(process.argv[2], (msg, reply, topic, sid) => {
+    if (undefined !== reply) {
+        console.log(`${topic} [${reply}]: ${msg}`);
+    } else {
+        console.log(`${topic}: ${msg}`);
+    }
+});
+

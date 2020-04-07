@@ -1,0 +1,19 @@
+#!/usr/bin/node
+
+if (process.argv.length < 3) {
+    console.log('USAGE: nats.request <topic> [<msg>...]');
+    process.exit(1);
+}
+
+const NATS = require('nats');
+const nats = NATS.connect();
+
+nats.on('connect', () => {
+    msg = process.argv.slice(3).join(' ');
+    console.log(process.argv[2]);
+    console.log(msg);
+    nats.publish(process.argv[2], msg);
+    nats.flush();
+    nats.close();
+});
+
