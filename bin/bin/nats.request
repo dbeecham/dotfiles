@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-if (process.argv.length !== 4) {
+if (process.argv.length < 3) {
     console.log('USAGE: nats.request <topic> <message>');
     process.exit(1);
 }
@@ -8,7 +8,8 @@ if (process.argv.length !== 4) {
 const NATS = require('nats');
 const nats = NATS.connect();
 
-nats.request(process.argv[2], process.argv[3], {max:1, timeout:1000}, (msg) => {
+msg = process.argv.slice(3).join(' ');
+nats.request(process.argv[2], msg, {max:1, timeout:1000}, (msg) => {
     if (msg instanceof NATS.NatsError && msg.code === NATS.REQ_TIMEOUT) {
         nats.close();
     } else {
