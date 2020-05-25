@@ -28,6 +28,7 @@
     co = checkout
     t = tag
     rp = rev-parse
+    ls = ls-remote
     move-head-to-commit = reset --soft
     move-head-to-ref = symbolic-ref HEAD
     reset-index = reset --mixed HEAD
