@@ -15,6 +15,8 @@ if executable('ccls')
     nnoremap <silent> <Leader>cs :LspDeclaration<CR>
     " find function Definition
     nnoremap <silent> <Leader>cd :LspDefinition<CR>
+    " Peek definition
+    nnoremap <silent> <Leader>cp :LspPeekDefinition<CR>
     " find functions called by
     nnoremap <silent> <Leader>cx :call Cscope('2', expand('<cword>'))<CR>
     " find functions calling
