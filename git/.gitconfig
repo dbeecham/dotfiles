@@ -1,6 +1,7 @@
 [user]
 	email = daniel@lunix.se
 	name = Daniel Beecham
+    signingkey = 0x82773BBAA355DF28
 [push]
 	default = simple
 [color "status"]
