@@ -51,4 +51,11 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 let g:markdown_fenced_languages = ['c']
 let g:markdown_minlines = 1000
 
+" asyncomplete
+let g:asyncomplete_auto_popup = 1
+"let g:asyncomplete_auto_completeopt = 1
+"set completeopt=menuone,noinsert,noselect,preview
+" automatically close the preview when done
+"autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
 endif
