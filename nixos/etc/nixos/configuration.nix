@@ -4,10 +4,13 @@
 
 { config, pkgs, ... }:
 
-let dotfiles = builtins.fetchGit {
-	url = "git@github.com:dbeecham/dotfiles";
-	rev = "35e8a10bdf1dabc961538cc29758bb113be9aeb5";
-}; in
+let 
+  
+  dotfiles = builtins.fetchGit {
+    url = "git@github.com:dbeecham/dotfiles";
+    rev = "35e8a10bdf1dabc961538cc29758bb113be9aeb5";
+  }; 
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -126,7 +129,7 @@ let dotfiles = builtins.fetchGit {
     uid = 1000;
     shell = pkgs.zsh;
     packages = with pkgs; [ 
-      st rofi polybar
+      rofi polybar
       synergy
       (vim_configurable.override { python = python39; })
       git ag github-cli pass gnupg pinentry-curses ccls cquery shellcheck
@@ -134,11 +137,21 @@ let dotfiles = builtins.fetchGit {
       opensc
       google-chrome
       nodejs python39
+      awscli
+
+      gnumake gcc
+
+      (st.override { 
+        patches = [ /home/dbe/dotfiles/st/st-scrollback-0.8.2.diff ];
+        conf = builtins.readFile /home/dbe/dotfiles/st/config.h; 
+      })
+
     ];
   };
 
   fonts.fonts = with pkgs; [ 
-      ubuntu_font_family mononoki
+    ubuntu_font_family mononoki noto-fonts-cjk
+    nerdfonts # nerdfonts are way too larde - stop using this (i's 2298.5 MiB)
   ];
 
   programs.ssh.startAgent = true;
