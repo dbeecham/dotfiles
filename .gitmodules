@@ -62,3 +62,9 @@
 [submodule "vim/.config/nvim/pack/fzf/start/fzf.vim"]
 	path = vim/.config/nvim/pack/fzf/start/fzf.vim
 	url = git@github.com:junegunn/fzf.vim
+[submodule "vim/.config/nvim/pack/completion/start/neosnippet.vim"]
+	path = vim/.config/nvim/pack/completion/start/neosnippet.vim
+	url = git@github.com:Shougo/neosnippet.vim
+[submodule "vim/.config/nvim/pack/completion/start/neosnippet-snippets"]
+	path = vim/.config/nvim/pack/completion/start/neosnippet-snippets
+	url = git@github.com:dbeecham/neosnippet-snippets
