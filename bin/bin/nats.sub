@@ -1,12 +1,15 @@
-#!/usr/bin/node
+#!/usr/bin/env node
 
 if (process.argv.length !== 3) {
     console.log('USAGE: nats.request <topic>');
     process.exit(1);
 }
 
+const NATS_HOST = process.env['NATS_HOST'] || 'localhost';
+const NATS_PORT = process.env['NATS_PORT'] || '4222';
+
 const NATS = require('nats');
-const nats = NATS.connect();
+const nats = NATS.connect({servers: [`nats://${NATS_HOST}:${NATS_PORT}`]});
 
 nats.subscribe(process.argv[2], (msg, reply, topic, sid) => {
     if (undefined !== reply) {
