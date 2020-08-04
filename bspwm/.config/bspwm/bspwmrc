@@ -9,6 +9,7 @@ if test "$(hostname)" = "pp-lap-dbe"; then
     bspc monitor HDMI-2 -d iota gamma mu delta lambda kappa
 elif test "$(hostname)" = "pp-ws-dbe"; then
     ${HOME}/bin/setup-screens
+    synergys -c ${HOME}/.synergy.conf
     #xrandr --output HDMI-0 --mode 1920x1080 --pos 0x1080 --output DVI-D-0 --pos 0x0 --output DP-1 --mode 1920x1080 --rotate left --pos 1920x240
     bspc monitor DVI-1 -d iota gamma mu delta lambda kappa
     bspc monitor DisplayPort-1 -d iota gamma mu delta lambda kappa
