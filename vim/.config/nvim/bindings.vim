@@ -43,23 +43,25 @@ nnoremap <leader>x :NERDTreeToggle<cr>
 nnoremap <leader>X :TagbarToggle<cr>
 
 
-" Ultisnips is very useful.
-" See setup.vim on this. I might not use Ultisnips any more; it's replaced by
-" vim-snipmate.
-if exists(":let")
-    let g:UltiSnipsExpandTrigger="<C-y>"
-    let g:UltiSnipsJumpForwardTrigger="<C-j>"
-    let g:UltiSnipsJumpBackwardTrigger="<C-k>"
-endif
+" I don't like Ultisnips any more.
+"if exists(":let")
+"    let g:UltiSnipsExpandTrigger="<C-y>"
+"    let g:UltiSnipsJumpForwardTrigger="<C-j>"
+"    let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+"endif
 
-" vim-snipmate can't expand on <tab> since vim-lsp expands on tab.
+" I'm not using vim-snipmate any longer either.
 "imap <C-y> <Plug>(neosnippet_expand_or_jump)
 "smap <C-y> <Plug>(neosnippet_expand_or_jump)
 "xmap <C-x> <Plug>(neosnippet_expand_target)
 "imap <C-6> <Plug>snipMateBack
 "smap <C-6> <Plug>snipMateBack
 
-" So is fzf
+set completeopt=menuone,longest,noselect
+imap <expr><tab> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ? (complete_info().selected == -1 ? "\<C-n>" : "\<Plug>(neosnippet_jump_or_expand)") : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<tab>")
+smap <expr><tab> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+
+" FZF is very useful.
 nnoremap <leader>f :Files<cr>
 nnoremap <C-t> :Files<cr>
 nnoremap <leader>b :Buffers<cr>
