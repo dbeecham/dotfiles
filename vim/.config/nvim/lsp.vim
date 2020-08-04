@@ -33,9 +33,3 @@ let g:lsp_signs_error = {'text': 'XX'}
 "    \ 'priority': 10,
 "    \ 'completor': function('asyncomplete#sources#file#completor')
 "    \ }))
-
-au User lsp_setup call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
-    \ 'name': 'ultisnips',
-    \ 'whitelist': ['*'],
-    \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
-    \ }))
