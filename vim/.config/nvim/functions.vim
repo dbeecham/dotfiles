@@ -5,3 +5,8 @@ function! ProjectByFilename()
     endif
     return split(l:filename, '_')[0]
 endfunction
+
+function! ProjectName()
+    return expand('%:p:t:r')
+    " return ProjectByFilename()
+endfunction
