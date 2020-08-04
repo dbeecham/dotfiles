@@ -68,3 +68,6 @@
 [submodule "vim/.config/nvim/pack/completion/start/neosnippet-snippets"]
 	path = vim/.config/nvim/pack/completion/start/neosnippet-snippets
 	url = git@github.com:dbeecham/neosnippet-snippets
+[submodule "vim/.config/nvim/pack/slime/vim-slime"]
+	path = vim/.config/nvim/pack/slime/vim-slime
+	url = git@github.com:jpalardy/vim-slime
