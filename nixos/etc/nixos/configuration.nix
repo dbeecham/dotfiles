@@ -129,15 +129,24 @@ in
     uid = 1000;
     shell = pkgs.zsh;
     packages = with pkgs; [ 
-      rofi polybar
+      rofi polybar apvlv
       synergy
       (vim_configurable.override { python = python39; })
-      git ag github-cli pass gnupg pinentry-curses ccls cquery shellcheck
-      fzf tmux
+      git github-cli pass gnupg pinentry-curses ccls cquery shellcheck
+      ripgrep ripgrep-all
+      docker-compose
+      fzf fd
+      xsel
+      httpie
+      jq
+      entr
+      tmux minicom
+      sqlite duc
       opensc
       google-chrome
       nodejs python39
       awscli
+
 
       gnumake gcc
 
