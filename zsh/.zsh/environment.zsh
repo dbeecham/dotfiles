@@ -124,6 +124,6 @@ esac
 
 # I like when FZF picks up on .ignore, .gitignore, etc.
 # It's only a couple of environment variables anyway.
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='fd --type d'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="find . \( -path ./sources -o -path ./MATLAB -o -path ./.dropbox-dist -o -path '*/node_modules/*' -o -path '*/.npm/*' -o -path '*/.git/*' \) -prune -o -type d -print 2>/dev/null"

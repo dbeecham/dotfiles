@@ -11,7 +11,6 @@ zplug "ytet5uy4/fzf-widgets"
 #zplug "chisui/zsh-nix-shell"
 
 zplug "hcgraf/zsh-sudo"
-zplug "clvv/fasd"
 # antigen theme fishy
 
 zplug load
