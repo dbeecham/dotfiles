@@ -136,6 +136,7 @@ in
       ripgrep ripgrep-all
       docker-compose
       fzf fd
+      file
       xsel
       httpie
       jq
