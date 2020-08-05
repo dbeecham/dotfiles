@@ -1,17 +1,33 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 let 
   
-  dotfiles = builtins.fetchGit {
-    url = "git@github.com:dbeecham/dotfiles";
-    rev = "35e8a10bdf1dabc961538cc29758bb113be9aeb5";
-  }; 
+#  dotfiles = builtins.fetchGit {
+#    url = "git@github.com:dbeecham/dotfiles";
+#    rev = "35e8a10bdf1dabc961538cc29758bb113be9aeb5";
+#  }; 
+
+  l_gnupg = pkgs.symlinkJoin {
+    name = "gnupg";
+    paths = [ pkgs.gnupg ];
+    buildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram $out/bin/gpg --set SSH_AUTH_SOCK '/run/user/$UID/gnupg/gpg-agent.sock'
+      wrapProgram $out/bin/gpg-agent --set SSH_AUTH_SOCK '/run/user/$UID/gnupg/gpg-agent.sock'
+    '';
+  };
+
 in
 {
+
+  nix.package = pkgs.nixUnstable;
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -78,9 +94,9 @@ in
 
   # List services that you want to enable:
 
-  environment.shellInit = ''
-	export HELLOTHERE="${dotfiles}/hi"
-  '';
+#  environment.shellInit = ''
+#	export HELLOTHERE="${dotfiles}/hi"
+#  '';
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
@@ -132,7 +148,7 @@ in
       rofi polybar apvlv
       synergy
       (vim_configurable.override { python = python39; })
-      git github-cli pass gnupg pinentry-curses ccls cquery shellcheck
+      git github-cli pass l_gnupg pinentry-curses ccls cquery shellcheck
       ripgrep ripgrep-all
       docker-compose
       fzf fd
