@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/usr/bin/env node
 
 if (process.argv.length < 3) {
     console.log('USAGE: nats.request <topic> [<msg>...]');
