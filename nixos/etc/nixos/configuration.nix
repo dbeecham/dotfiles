@@ -168,8 +168,8 @@ in
       gnumake gcc
 
       (st.override { 
-        patches = [ /home/dbe/dotfiles/st/st-scrollback-0.8.2.diff ];
-        conf = builtins.readFile /home/dbe/dotfiles/st/config.h; 
+        patches = [ ../../../st/st-scrollback-0.8.2.diff ];
+        conf = builtins.readFile ../../../st/config.h; 
       })
 
     ];
