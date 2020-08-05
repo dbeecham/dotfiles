@@ -121,3 +121,6 @@ zsh/.zsh/private.zsh
 
 # I dont think these are necessary
 fonts/**/.uuid
+
+# vim swap files
+*.swp
