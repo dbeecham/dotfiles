@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 ix() {
+    set -x
     local opts
     local OPTIND
     [ -f "$HOME/.netrc" ] && opts='-n'
@@ -19,13 +20,13 @@ ix() {
         local filename="$1"
         shift
         [ "$filename" ] && {
-            curl "${opts}" -F f:1=@"$filename" "$*" ix.io/"$id"
+            curl "${opts}" -F f:1=@"$filename" "$*" "http://ix.io/$id"
             return
         }
         echo "^C to cancel, ^D to send."
     fi
 
-    curl "$opts" -F f:1='<-' "$*" ix.io/"$id"
+    curl "$opts" -F f:1='<-' "$*" "http://ix.io/$id"
 }
 
 ix "$@"
