@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+date --utc +"%Y-%m-%dT%H:%M:%S.%N%z"

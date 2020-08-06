@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+ts -i -m "(+%.S)" | TZ=UTC ts "%Y-%m-%dT%H:%M:%.S%z"
