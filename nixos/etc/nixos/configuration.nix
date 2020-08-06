@@ -80,17 +80,19 @@ in
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  #   pinentryFlavor = "gnome3";
-  # };
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryFlavor = "gnome3";
+  };
 
   # List services that you want to enable:
 
-#  environment.shellInit = ''
-#	export HELLOTHERE="${dotfiles}/hi"
-#  '';
+  #export HELLOTHERE="${dotfiles}/hi"
+  # environment has a variables thing as well
+  environment.shellInit = ''
+    export GPG_TTY="$(tty)"
+    gpg-connect-agent /bye
+  '';
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
