@@ -160,6 +160,9 @@ in
       nodejs python39
       awscli
 
+      # for the 'ts' cli utility
+      moreutils
+
       gnumake gcc
 
       inputs.local.packages.x86_64-linux.rip
