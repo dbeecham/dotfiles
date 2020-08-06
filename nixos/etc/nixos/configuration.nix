@@ -1,10 +1,10 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{ pkgs, ... }:
+inputs: { pkgs, ... }:
 
 let
-  l_gnupg = pkgs.symlinkJoin {
+  l_gnupg =  pkgs.symlinkJoin {
     name = "gnupg";
     paths = [ pkgs.gnupg ];
     buildInputs = [ pkgs.makeWrapper ];
@@ -159,6 +159,8 @@ in
       awscli
 
       gnumake gcc
+
+      inputs.local.packages.x86_64-linux.rip
 
       (st.override { 
         patches = [ ../../../st/st-scrollback-0.8.2.diff ];
