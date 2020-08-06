@@ -124,3 +124,6 @@ fonts/**/.uuid
 
 # vim swap files
 *.swp
+
+# nixos result file
+result
