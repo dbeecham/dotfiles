@@ -69,6 +69,14 @@ setopt hist_fcntl_lock
 unsetopt share_history
 unsetopt append_history
 
+# EXTENDED_GLOB "treat the ?#?, ?~? and ?^? characters as part of patterns for
+# filename generation, etc. (An initial unquoted ?~? always produces named
+# directory expansion.)"
+# but I like to be able to write `nix shell nixpkgs#package` so I'm unsetting
+# this. It's also possible to do `disable -p '#'` here, but I'm not using the
+# other functions of extended glob.
+unsetopt EXTENDED_GLOB
+
 # this option makes history lines written to file as soon as they are entered
 # (more specifically, when the command has finished).
 setopt inc_append_history_time
