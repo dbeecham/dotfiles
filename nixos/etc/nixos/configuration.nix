@@ -3,13 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 { pkgs, ... }:
 
-let 
-  
-#  dotfiles = builtins.fetchGit {
-#    url = "git@github.com:dbeecham/dotfiles";
-#    rev = "35e8a10bdf1dabc961538cc29758bb113be9aeb5";
-#  }; 
-
+let
   l_gnupg = pkgs.symlinkJoin {
     name = "gnupg";
     paths = [ pkgs.gnupg ];
