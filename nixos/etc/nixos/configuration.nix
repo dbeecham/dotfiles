@@ -159,6 +159,9 @@ in
       google-chrome
       nodejs python39
       awscli
+      direnv
+
+      socat
 
       # for the 'ts' cli utility
       moreutils
