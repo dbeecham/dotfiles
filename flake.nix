@@ -14,5 +14,13 @@
       ];
     };
 
+    nixosConfigurations.doppy = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        nixpkgs.nixosModules.notDetected
+        (import ./nixos/doppy/configuration.nix inputs)
+      ];
+    };
+
   };
 }
