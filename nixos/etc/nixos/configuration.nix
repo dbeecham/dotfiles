@@ -160,6 +160,7 @@ in
       nodejs python39
       awscli
       direnv
+      cookiecutter
 
       socat
 
