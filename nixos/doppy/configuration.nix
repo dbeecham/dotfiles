@@ -154,7 +154,7 @@ in
 
       gnumake gcc
 
-      inputs.local.packages.x86_64-linux.rip
+      inputs.local.rip
 
       (st.override { 
         patches = [ ../../st/st-scrollback-0.8.2.diff ];

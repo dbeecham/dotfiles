@@ -1,35 +1,6 @@
 {
   "nodes": {
-    "local": {
-      "inputs": {
-        "nixpkgs": "nixpkgs",
-        "rip": "rip"
-      },
-      "locked": {
-        "narHash": "sha256-soQlJrqlv84y/lDb6fd9buBVzHK/rAev5fxnbKJblAg=",
-        "path": "/home/dbe/dotfiles/nixpkgs",
-        "type": "path"
-      },
-      "original": {
-        "id": "local",
-        "type": "indirect"
-      }
-    },
     "nixpkgs": {
-      "locked": {
-        "lastModified": 1596708377,
-        "narHash": "sha256-haZgQeAMFJy4IhTlFlcYImwrzyZqMIVI32IZ/yYGQoc=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "4fe5107376f2ed49a32a2201c0ae39f83b10c3fc",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_2": {
       "locked": {
         "lastModified": 1596240678,
         "narHash": "sha256-BWZglwYwAj4+6+ZaKLHLo0k1p7yXTL7JI6Z17uNeo6k=",
@@ -64,8 +35,8 @@
     },
     "root": {
       "inputs": {
-        "local": "local",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs",
+        "rip": "rip"
       }
     }
   },
