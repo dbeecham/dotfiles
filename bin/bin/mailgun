@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+mailgun() {
+    set -eu
+    local out mailgun_api_key email
+    out=$(pass plejd/mailgun)
+    email="${1}"
+    mailgun_api_key="$(echo "${out}" | grep '^api-key:' | cut -d ' ' -f 2)"
+    unset out
+    http https://api.mailgun.net/v3/address/validate address=="${email}" "Authorization:Basic $(printf "api:${mailgun_api_key}" | base64)"
+
+}
+
+mailgun "$@"
