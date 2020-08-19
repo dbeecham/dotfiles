@@ -161,6 +161,7 @@ in
       awscli
       direnv
       cookiecutter
+      kubectl
 
       socat
 
