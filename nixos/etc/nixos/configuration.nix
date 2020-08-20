@@ -162,8 +162,9 @@ in
       direnv
       cookiecutter
       kubectl
-
       socat
+      linuxPackages.bcc
+      restic
 
       # for the 'ts' cli utility
       moreutils
