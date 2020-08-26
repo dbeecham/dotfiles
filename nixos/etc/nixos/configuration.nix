@@ -165,6 +165,7 @@ in
       socat
       linuxPackages.bcc
       restic
+      bear cscope
 
       python38Packages.cfn-lint
 
