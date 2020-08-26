@@ -31,6 +31,8 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  documentation.dev.enable = true;
+
   networking.hostName = "pp-ws-dbe"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -166,6 +168,7 @@ in
       linuxPackages.bcc
       restic
       bear cscope
+      manpages
 
       python38Packages.cfn-lint
 
