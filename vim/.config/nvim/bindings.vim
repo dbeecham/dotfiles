@@ -59,7 +59,8 @@ nnoremap <leader>X :TagbarToggle<cr>
 
 set completeopt=menuone,longest,noselect
 imap <expr><tab> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ? (complete_info().selected == -1 ? "\<C-n>" : "\<Plug>(neosnippet_jump_or_expand)") : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<tab>")
-smap <expr><tab> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+smap <expr><tab> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ? (complete_info().selected == -1 ? "\<C-n>" : "\<Plug>(neosnippet_jump_or_expand)") : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<tab>")
+"smap <expr><tab> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
 
 " FZF is very useful.
 nnoremap <leader>f :Files<cr>
