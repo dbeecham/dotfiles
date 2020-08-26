@@ -166,6 +166,8 @@ in
       linuxPackages.bcc
       restic
 
+      python38Packages.cfn-lint
+
       # for the 'ts' cli utility
       moreutils
 

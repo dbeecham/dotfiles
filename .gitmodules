@@ -71,3 +71,6 @@
 [submodule "vim/.config/nvim/pack/slime/vim-slime"]
 	path = vim/.config/nvim/pack/slime/vim-slime
 	url = git@github.com:jpalardy/vim-slime
+[submodule "vim/.config/nvim/pack/syntax-checking/start/ale"]
+	path = vim/.config/nvim/pack/syntax-checking/start/ale
+	url = git@github.com:dense-analysis/ale
