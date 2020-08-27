@@ -24,11 +24,14 @@ if test ! -d ./overlay/mnt; then
 fi
 
 echo "Entering own mount namespace..."
-sudo unshare -m sh -c "echo 'Mounting local overlay...' && \
+sudo unshare -m bash -c "echo 'Mounting local overlay...' && \
     mount -t overlay overlay -o upperdir=$(pwd)/overlay/upperdir,workdir=$(pwd)/overlay/workdir,lowerdir=/ $(pwd)/overlay/mnt && \
     mount -o bind /sys overlay/mnt/sys && \
     mount -t proc none overlay/mnt/proc && \
     mount -o bind /dev overlay/mnt/dev && \
     mount -o bind /dev/pts overlay/mnt/dev/pts && \
+    mount -o bind /nix overlay/mnt/nix && \
+    mount -o bind /home overlay/mnt/home && \
+    mount -o bind /run overlay/mnt/run && \
     echo 'chrooting...' && \
-    sudo chroot overlay/mnt sh -c 'export action=\"(chroot) \"; cd $(pwd) && sudo -E -u $(whoami) $SHELL'"
+    sudo chroot overlay/mnt /bin/sh -c 'export action=\"(chroot) \"; cd $(pwd) && sudo -u $(whoami) $SHELL'"
