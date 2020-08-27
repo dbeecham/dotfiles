@@ -56,12 +56,12 @@
 [submodule "vim/.config/nvim/pack/completion/start/neosnippet-snippets"]
 	path = vim/.config/nvim/pack/completion/start/neosnippet-snippets
 	url = git@github.com:dbeecham/neosnippet-snippets
-[submodule "vim/.config/nvim/pack/slime/vim-slime"]
-	path = vim/.config/nvim/pack/slime/vim-slime
-	url = git@github.com:jpalardy/vim-slime
 [submodule "vim/.config/nvim/pack/syntax-checking/start/ale"]
 	path = vim/.config/nvim/pack/syntax-checking/start/ale
 	url = git@github.com:dense-analysis/ale
 [submodule "zsh/.zsh/plug/zsh-syntax-highlighting"]
 	path = zsh/.zsh/plug/zsh-syntax-highlighting
 	url = git@github.com:zsh-users/zsh-syntax-highlighting
+[submodule "vim/.config/nvim/pack/slime/start/vim-slime"]
+	path = vim/.config/nvim/pack/slime/start/vim-slime
+	url = git@github.com:jpalardy/vim-slime
