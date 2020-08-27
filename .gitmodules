@@ -62,3 +62,6 @@
 [submodule "vim/.config/nvim/pack/syntax-checking/start/ale"]
 	path = vim/.config/nvim/pack/syntax-checking/start/ale
 	url = git@github.com:dense-analysis/ale
+[submodule "zsh/.zsh/plug/zsh-syntax-highlighting"]
+	path = zsh/.zsh/plug/zsh-syntax-highlighting
+	url = git@github.com:zsh-users/zsh-syntax-highlighting

@@ -2,13 +2,12 @@ if test "$COLORTERM" = "gnome-terminal" -o "$TERM" = "rxvt-unicode" -o "$TERM" =
     export TERM="xterm-256color"
 fi
 
-if test -r ~/.light; then
-    export DARK=0
-else
-    export DARK=1
-fi
-
-C=$(tput colors)
+# So I ran `execsnoop | ts` to optimize my zsh bootup time, and I found that this
+# command takes like 0.4 seconds to run. That's pretty slow in my opinion. I'm
+# just running this on 256 color capable terminals, so I'm just going to set that
+# directly, and deal with the consequences when they arrive.
+#C=$(tput colors)
+C=256
 
 export PATH=~/bin:$PATH
 
@@ -18,8 +17,8 @@ export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 # Enable completion system.
 autoload -Uz compinit && compinit
 
-# Enable Colors
-autoload -U colors && colors
+# Enable Colors (is done in separate file)
+#autoload -U colors && colors
 
 # Enables additional prompt extentions
 setopt prompt_subst
@@ -30,8 +29,9 @@ setopt extended_glob
 # Change directory without 'cd' command.
 setopt auto_cd
 
-# Autocorrect
-setopt correct
+# Autocorrect - is mostly annoying, i just press no anyway, and it always corrects
+# "gits tatus" to "git tatus" which isn't correct anyway
+#setopt correct
 
 # using !command with verification
 setopt histverify
