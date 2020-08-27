@@ -197,6 +197,7 @@ in
       fd # better find
       file
       direnv
+      atool unzip
 
       # network
       httpie
