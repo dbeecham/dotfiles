@@ -143,46 +143,64 @@ in
     uid = 1000;
     shell = pkgs.zsh;
     packages = with pkgs; [ 
+      # rice
       rofi polybar apvlv
-      synergy
-      (vim_configurable.override { python = python39; })
-      git github-cli pass l_gnupg pinentry-curses ccls cquery shellcheck
-      ripgrep ripgrep-all
-      docker-compose
-      fzf fd
-      file
-      xsel
-      httpie
-      jq
-      entr
-      tmux minicom
-      sqlite duc
-      opensc
-      google-chrome
-      nodejs python39
-      awscli
-      direnv
-      cookiecutter
-      kubectl
-      socat
-      linuxPackages.bcc
-      restic
-      bear cscope
-      manpages
-
-      python38Packages.cfn-lint
-
-      # for the 'ts' cli utility
-      moreutils
-
-      gnumake gcc
-
-      inputs.local.rip
-
       (st.override { 
         patches = [ ../../../st/st-scrollback-0.8.2.diff ];
         conf = builtins.readFile ../../../st/config.h; 
       })
+      synergy
+
+      # os stuff
+      opensc # for pkcs11 cards (yubikey, yubihsm)
+      linuxPackages.bcc # execsnoop, bindsnoop, exitsnoop, tcptop, cpudist, many, many others
+      xsel
+      duc # disk usage indexer
+      google-chrome
+      smartmontools # disk health stuff
+      e2fsprogs # badblocks, e2fsck, tune2fs, chattr, mkfs.ext*
+
+      # backup
+      restic
+
+      # development
+      (vim_configurable.override { python = python39; })
+      bear
+      cscope
+      ctags
+      gnumake
+      gcc
+      entr
+      cookiecutter
+      docker-compose
+      git github-cli pass l_gnupg pinentry-curses ccls cquery shellcheck
+      nodejs python39
+      minicom
+      sqlite
+      awscli
+
+      # linters
+      python38Packages.cfn-lint
+
+      # general cli
+      psmisc # for 'fuser', 'killall', 'pstree', 'peekfd', 'prtstat'
+      moreutils # for 'ts', 'sponge', 'errno', 'ifdata' and others
+      inputs.local.rip # better rm
+      lsof
+      htop
+      socat
+      manpages
+      kubectl
+      tmux 
+      ripgrep ripgrep-all # better grep/ag
+      fzf
+      fd # better find
+      file
+      direnv
+
+      # network
+      httpie
+      jq
 
     ];
   };
