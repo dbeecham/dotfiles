@@ -21,10 +21,6 @@ let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
 
 
-" Tell neosnippet about my snippets
-let g:neosnippet#enable_snipmate_compatibility = 1
-let g:neosnippet#neosnippets_directory='~/.vim/plugged/vim-snippets/snippets'
-
 " I dont care about cscope updating my db
 let g:cscope_silent = 1
 
@@ -39,17 +35,15 @@ let g:table_mode_map_prefix = "<Leader>m"
 let g:table_mode_corner_corner='|'
 "let g:table_mode_header_fillchar='='
 
-" dont use cache dir for gen_tags - it puts the ctags in
-" ~/.cache/tags_dir/something/prj_tags, but I havent looked into getting fzf
-" to find this file.
-let g:gen_tags#use_cache_dir = 0
 
 " let fzf ignore files specified in gitinore
 let $FZF_DEFAULT_COMMAND = 'fd --type f'
 
+
 " Use syntax highlighting in in code blocks in markdown
 let g:markdown_fenced_languages = ['c']
 let g:markdown_minlines = 1000
+
 
 " asyncomplete
 let g:asyncomplete_auto_popup = 1
@@ -57,5 +51,6 @@ let g:asyncomplete_auto_popup = 1
 "set completeopt=menuone,noinsert,noselect,preview
 " automatically close the preview when done
 "autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
 
 endif

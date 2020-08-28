@@ -20,17 +20,26 @@ hi Character        cterm=NONE              ctermfg=149         ctermbg=NONE
 hi Number           cterm=NONE              ctermfg=208         ctermbg=NONE
 hi Boolean          cterm=NONE              ctermfg=208         ctermbg=NONE
 hi Float            cterm=NONE              ctermfg=208         ctermbg=NONE
-hi Comment          cterm=NONE	            ctermfg=10         ctermbg=NONE
+hi Comment          cterm=NONE	            ctermfg=246         ctermbg=235
 
-hi Identifier       cterm=NONE              ctermfg=15          ctermbg=NONE
-hi Function         cterm=NONE              ctermfg=15          ctermbg=NONE
+" variable names
+hi Identifier       cterm=NONE              ctermfg=45          ctermbg=NONE
+
+" function names
+hi Function         cterm=NONE              ctermfg=123          ctermbg=NONE
+
+hi LinuxFunction cterm=none ctermfg=255 ctermbg=NONE
 
 hi Statement        cterm=bold              ctermfg=1         ctermbg=NONE
-hi Conditional      cterm=bold              ctermfg=4         ctermbg=NONE
+
+" if
+hi Conditional      cterm=bold              ctermfg=7         ctermbg=NONE
 hi Repeat           cterm=bold              ctermfg=4         ctermbg=NONE
 hi Label            cterm=bold              ctermfg=149         ctermbg=NONE
 hi Operator         cterm=NONE              ctermfg=1         ctermbg=NONE
-hi Keyword          cterm=bold              ctermfg=15         ctermbg=NONE
+
+" global definitions are keywords
+hi Keyword          cterm=NONE              ctermfg=253         ctermbg=NONE
 hi Exception        cterm=NONE              ctermfg=170         ctermbg=NONE
 
 hi PreProc          cterm=NONE              ctermfg=243         ctermbg=NONE
@@ -40,10 +49,15 @@ hi Define           cterm=NONE              ctermfg=243         ctermbg=NONE
 hi Macro            cterm=NONE              ctermfg=245         ctermbg=NONE
 hi PreCondit        cterm=NONE              ctermfg=245         ctermbg=NONE
 
+hi NormalType cterm=NONE ctermfg=253 ctermbg=NONE
 hi Type             cterm=NONE              ctermfg=12         ctermbg=NONE
 hi StorageClass     cterm=NONE              ctermfg=12         ctermbg=NONE
-hi Structure        cterm=NONE              ctermfg=12         ctermbg=NONE
-hi Typedef          cterm=NONE              ctermfg=12         ctermbg=NONE
+
+" A structure is a type, so link the two
+hi link Structure Type
+
+" typedefs too
+hi link Typedef Type
 
 hi Special          cterm=NONE              ctermfg=15          ctermbg=NONE
 hi SpecialChar      cterm=NONE              ctermfg=15          ctermbg=NONE
@@ -67,6 +81,27 @@ hi Error            cterm=bold              ctermfg=15          ctermbg=9
 
 hi Todo             cterm=NONE              ctermfg=15          ctermbg=149
 
+"hi LocalVariable cterm=NONE ctermfg=244 ctermbg=NONE
+hi link LocalVariable Identifier
+hi GlobalVariable cterm=none ctermfg=55 ctermbg=45
+hi GlobalConstant cterm=none ctermfg=231 ctermbg=45
+hi Member cterm=NONE ctermfg=254 ctermbg=NONE
+hi link Union Type
+
+"2        Class           : Class
+"2        DefinedName     : Define
+"2        Enumerator      : Enumerator
+"2        Function        : Function or method
+"2        EnumerationName : Enumeration name
+"2        Member          : Member (of structure or class)
+"2        Structure       : Structure Name
+"2        Type            : Typedef
+"2        Union           : Union Name
+"2        GlobalConstant  : Global Constant
+"2        GlobalVariable  : Global Variable
+"2        LocalVariable   : Local Variable
+ 
+
 
 """"""
 " INTERFACE
@@ -81,7 +116,7 @@ hi MatchParen       cterm=bold              ctermfg=0           ctermbg=149
 hi ModeMsg          cterm=NONE              ctermfg=15          ctermbg=NONE
 hi MoreMsg          cterm=NONE              ctermfg=149         ctermbg=NONE
 hi NonText          cterm=bold              ctermfg=239         ctermbg=NONE
-hi Normal           cterm=NONE              ctermfg=254         ctermbg=NONE
+hi Normal           cterm=NONE              ctermfg=245         ctermbg=NONE
 hi Question         cterm=NONE              ctermfg=149         ctermbg=NONE
 hi SpecialKey       cterm=NONE              ctermfg=250         ctermbg=NONE
 hi Title            cterm=NONE              ctermfg=170         ctermbg=NONE
