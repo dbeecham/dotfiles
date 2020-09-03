@@ -1,0 +1,60 @@
+[user]
+	email = daniel@lunix.se
+	name = Daniel Beecham
+    signingkey = 0x82773BBAA355DF28
+[push]
+	default = simple
+[color "status"]
+    added = cyan
+    changed = green
+    untracked = dim white
+[color "diff"]
+    meta = dim white
+    frag = dim white
+    new = green
+    old = red
+    context = white
+[alias]
+    l = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(green)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    ll = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(green)- %an%C(reset)%C(bold yellow)%d%C(reset)\n' --all --stat
+    s = status --short --branch
+    sa = status --short --branch
+	d = diff
+	dt = difftool
+    a = add
+    b = branch
+    c = commit
+    p = push
+    ss = status
+    co = checkout
+    t = tag
+    rp = rev-parse
+    ls = ls-remote
+    move-head-to-commit = reset --soft
+    move-head-to-ref = symbolic-ref HEAD
+    reset-index = reset --mixed HEAD
+    move-branch = branch -f
+    where-is-head = symbolic-ref HEAD
+    where-is-head-resolved = rev-parse HEAD
+
+# I had an issue where I couldn't fetch from some repo, and this fixed that
+# issue. I don't remember what repo it was, or what the error message was.
+[http]
+	sslverify = true
+[color]
+	ui = auto
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+
+# this makes it possible to use :cquit to quit a 'git difftool'
+	trustExitCode = true
+[merge]
+	conflictstyle = diff3
+	prompt = false
+[credential]
+	helper = !aws codecommit credential-helper $@
+	UseHttpPath = true
