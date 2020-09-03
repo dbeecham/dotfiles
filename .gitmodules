@@ -65,3 +65,6 @@
 [submodule "vim/.config/nvim/pack/slime/start/vim-slime"]
 	path = vim/.config/nvim/pack/slime/start/vim-slime
 	url = git@github.com:jpalardy/vim-slime
+[submodule "zsh/.zsh/plug/zsh-autosuggestions"]
+	path = zsh/.zsh/plug/zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions
