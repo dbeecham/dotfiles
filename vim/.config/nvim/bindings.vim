@@ -105,3 +105,10 @@ nnoremap ö :cprev<cr>
 nnoremap Ö :cfirst<cr>
 nnoremap ä :cnext<cr>
 nnoremap Ä :clast<cr>
+
+
+" let's try these out as well!
+nnoremap <leader>sal :call writefile(["<C-r><C-w>	" . expand('%') . "	" . (line('.') + 1) . ";\"	l"], "tags", "a")<cr>:call ltaghighlight#init()<cr>
+nnoremap <leader>sai :call writefile(["<C-r><C-w>	" . expand('%') . "	" . (line('.') + 1) . ";\"	i"], "tags", "a")<cr>:call ltaghighlight#init()<cr>
+nnoremap <leader>sak :call writefile(["<C-r><C-w>	" . expand('%') . "	" . (line('.') + 1) . ";\"	k"], "tags", "a")<cr>:call ltaghighlight#init()<cr>
+nnoremap <leader>saf :call writefile(["<C-r><C-w>	" . expand('%') . "	" . (line('.') + 1) . ";\"	f"], "tags", "a")<cr>:call ltaghighlight#init()<cr>

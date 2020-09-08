@@ -1,8 +1,5 @@
 if exists("b:current_syntax")
-    "finish
-    syntax clear cIncludeGlobalHeader
-    syntax clear cIncludeGlobal
-    syntax clear cString
+    finish
 endif
 let b:current_syntax = "c"
 
