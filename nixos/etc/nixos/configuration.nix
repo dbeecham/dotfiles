@@ -45,6 +45,7 @@ in
   networking.interfaces.enp13s0.useDHCP = false;
   networking.interfaces.enp7s0.useDHCP = false;
 
+
   networking.interfaces.enp5s0 = {
     useDHCP = false;
     ipv4.addresses = [ {
@@ -202,6 +203,9 @@ in
       # network
       httpie
       jq
+      stunnel
+      gnutls
+      openssl
 
     ];
   };
