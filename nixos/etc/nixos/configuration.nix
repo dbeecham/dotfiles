@@ -214,6 +214,7 @@ in
       openssl
       nmap
       testssl # testssl.sh
+      wget # scripts use this sometimes
 
     ];
   };
