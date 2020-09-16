@@ -45,6 +45,12 @@ in
   networking.interfaces.enp13s0.useDHCP = false;
   networking.interfaces.enp7s0.useDHCP = false;
 
+  networking.extraHosts = ''
+    79.136.33.222 k0.k8s0.plejd.io etcd0.k8s0.plejd.io k0.c.plejd.io
+    79.136.33.221 k1.k8s0.plejd.io etcd1.k8s0.plejd.io k1.c.plejd.io
+    79.136.33.220 k2.k8s0.plejd.io etcd2.k8s0.plejd.io k2.c.plejd.io
+  '';
+
 
   networking.interfaces.enp5s0 = {
     useDHCP = false;
@@ -206,6 +212,8 @@ in
       stunnel
       gnutls
       openssl
+      nmap
+      testssl # testssl.sh
 
     ];
   };
