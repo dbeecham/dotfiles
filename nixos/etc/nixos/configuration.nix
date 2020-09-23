@@ -166,6 +166,7 @@ in
       google-chrome
       smartmontools # disk health stuff
       e2fsprogs # badblocks, e2fsck, tune2fs, chattr, mkfs.ext*
+      yubikey-manager
 
       # backup
       restic
@@ -185,6 +186,9 @@ in
       minicom
       sqlite
       awscli
+      pgcli
+      postgresql
+      fly
 
       # linters
       python38Packages.cfn-lint
@@ -215,6 +219,7 @@ in
       nmap
       testssl # testssl.sh
       wget # scripts use this sometimes
+      bind # for dig
 
     ];
   };
