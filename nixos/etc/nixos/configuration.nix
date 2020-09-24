@@ -209,6 +209,8 @@ in
       file
       direnv
       atool unzip
+      tcpdump
+      wireshark
 
       # network
       httpie
