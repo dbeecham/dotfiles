@@ -1,4 +1,6 @@
 {
+
+  # updated 2020-10-12
   inputs.nixpkgs = {
     type = "github";
     owner = "NixOS";
@@ -15,7 +17,7 @@
   inputs.pdotfiles = {
     type = "git";
     url = "git+ssh://git@github.com/dbeecham/p-dotfiles";
-    rev = "37cc91c19bed9fcb0ace7dae59ea351c3f17c2b3";
+    rev = "5d73ca38e8667f4775926a225e529423ea6cabbe";
   };
 
   outputs = inputs@{ self, nixpkgs, rip, pdotfiles }: rec {
