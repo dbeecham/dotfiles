@@ -49,6 +49,7 @@ in
     79.136.33.222 k0.k8s0.plejd.io etcd0.k8s0.plejd.io k0.c.plejd.io
     79.136.33.221 k1.k8s0.plejd.io etcd1.k8s0.plejd.io k1.c.plejd.io
     79.136.33.220 k2.k8s0.plejd.io etcd2.k8s0.plejd.io k2.c.plejd.io
+    54.74.210.203 snatstunneld.plejd.io
   '';
 
 
@@ -89,8 +90,10 @@ in
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
+  programs.ssh.startAgent = false;
   programs.gnupg.agent = {
     enable = true;
+    enableSSHSupport = true;
     pinentryFlavor = "gnome3";
   };
 
@@ -101,6 +104,7 @@ in
   environment.shellInit = ''
     export GPG_TTY="$(tty)"
     gpg-connect-agent /bye
+    export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
   '';
 
   # Enable the OpenSSH daemon.
@@ -189,6 +193,8 @@ in
       pgcli
       postgresql
       fly
+      terraform
+      mongoc
 
       # linters
       python38Packages.cfn-lint
@@ -222,6 +228,10 @@ in
       testssl # testssl.sh
       wget # scripts use this sometimes
       bind # for dig
+      bandwhich
+      iftop
+      ferm
+      ngrok
 
     ];
   };
@@ -231,9 +241,8 @@ in
     nerdfonts # nerdfonts are way too larde - stop using this (i's 2298.5 MiB)
   ];
 
-  programs.ssh.startAgent = true;
-  programs.ssh.agentPKCS11Whitelist = "${pkgs.opensc}/lib/opensc-pkcs11.so";
-  programs.ssh.extraConfig = "PKCS11Provider ${pkgs.opensc}/lib/opensc-pkcs11.so";
+  #programs.ssh.agentPKCS11Whitelist = "${pkgs.opensc}/lib/opensc-pkcs11.so";
+  #programs.ssh.extraConfig = "PKCS11Provider ${pkgs.opensc}/lib/opensc-pkcs11.so";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
