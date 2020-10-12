@@ -17,7 +17,7 @@
   inputs.pdotfiles = {
     type = "git";
     url = "git+ssh://git@github.com/dbeecham/p-dotfiles";
-    rev = "5d73ca38e8667f4775926a225e529423ea6cabbe";
+    rev = "396e0205289dd2b3912520138ad5061bb5b9d3b7";
   };
 
   outputs = inputs@{ self, nixpkgs, rip, pdotfiles }: rec {
