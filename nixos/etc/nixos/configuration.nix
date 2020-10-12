@@ -186,7 +186,6 @@ in
       postgresql
       fly
       terraform
-      mongodb
 
       # linters
       python38Packages.cfn-lint
