@@ -3,18 +3,6 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 inputs: { pkgs, ... }:
 
-let
-  l_gnupg =  pkgs.symlinkJoin {
-    name = "gnupg";
-    paths = [ pkgs.gnupg ];
-    buildInputs = [ pkgs.makeWrapper ];
-    postBuild = ''
-      wrapProgram $out/bin/gpg --set SSH_AUTH_SOCK '/run/user/$UID/gnupg/gpg-agent.sock'
-      wrapProgram $out/bin/gpg-agent --set SSH_AUTH_SOCK '/run/user/$UID/gnupg/gpg-agent.sock'
-    '';
-  };
-
-in
 {
 
   nix.package = pkgs.nixUnstable;
@@ -31,6 +19,8 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  documentation.dev.enable = true;
+
   networking.hostName = "doppy"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -46,6 +36,14 @@ in
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  services.strongswan = {
+    enable = true;
+    setup.uniqueids = "yes";
+    connections.k2 = {
+      right = "k2.plejdab.se";
+    };
+  };
 
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
@@ -66,9 +64,11 @@ in
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
+  programs.ssh.startAgent = false;
   programs.gnupg.agent = {
     enable = true;
-    pinentryFlavor = "gnome3";
+    pinentryFlavor = "curses";
+    enableSSHSupport = true;
   };
 
   # List services that you want to enable:
@@ -78,6 +78,7 @@ in
   environment.shellInit = ''
     export GPG_TTY="$(tty)"
     gpg-connect-agent /bye
+    export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
   '';
 
   # Enable the OpenSSH daemon.
@@ -103,6 +104,19 @@ in
 
   services.xserver.windowManager.bspwm.enable = true;
 
+  # wacom support
+  services.xserver.wacom.enable = true;
+  #services.xserver.modules = [ pkgs.xf86_input_wacom ]
+
+  # the 'multitouch' option no longer has any effect
+  #services.xserver.multitouch.enable = true;
+  #services.xserver.multitouch.invertScroll = true;
+  #services.xserver.multitouch.ignorePalm = true;
+
+  # if you just enable libinput, the keyboard stops working.
+  #services.xserver.libinput.enable = true;
+
+
   virtualisation.docker.enable = true;
 
   # Enable touchpad support.
@@ -127,39 +141,68 @@ in
     uid = 1000;
     shell = pkgs.zsh;
     packages = with pkgs; [ 
+      # rice
       rofi polybar apvlv
-      synergy
-      (vim_configurable.override { python = python39; })
-      git github-cli pass l_gnupg pinentry-curses ccls cquery shellcheck
-      ripgrep ripgrep-all
-      docker-compose
-      fzf fd
-      file
-      xsel
-      httpie
-      jq
-      entr
-      tmux minicom
-      sqlite duc
-      opensc
-      google-chrome
-      nodejs python39
-      awscli
-      direnv
-
-      socat
-
-      # for the 'ts' cli utility
-      moreutils
-
-      gnumake gcc
-
-      inputs.local.rip
-
       (st.override { 
         patches = [ ../../st/st-scrollback-0.8.2.diff ];
         conf = builtins.readFile ../../st/config.h; 
       })
+      synergy
+
+      # os stuff
+      opensc # for pkcs11 cards (yubikey, yubihsm)
+      linuxPackages.bcc # execsnoop, bindsnoop, exitsnoop, tcptop, cpudist, many, many others
+      xsel
+      duc # disk usage indexer
+      google-chrome
+      smartmontools # disk health stuff
+      e2fsprogs # badblocks, e2fsck, tune2fs, chattr, mkfs.ext*
+
+      # backup
+      restic
+
+      # development
+      (vim_configurable.override { python = python39; })
+      bear
+      cscope
+      ctags
+      gnumake
+      gcc
+      entr
+      cookiecutter
+      docker-compose
+      git github-cli pass gnupg pinentry-curses ccls cquery shellcheck
+      nodejs python39
+      minicom
+      sqlite
+      awscli
+
+      # linters
+      python38Packages.cfn-lint
+
+      # general cli
+      psmisc # for 'fuser', 'killall', 'pstree', 'peekfd', 'prtstat'
+      moreutils # for 'ts', 'sponge', 'errno', 'ifdata' and others
+      inputs.local.rip # better rm
+      lsof
+      htop
+      socat
+      manpages
+      kubectl
+      tmux 
+      ripgrep ripgrep-all
+      fzf
+      fd # better find
+      file
+      direnv
+      atool unzip
+
+      # network
+      httpie
+      jq
+
+      # graphics
+      blender
 
     ];
   };
@@ -168,9 +211,8 @@ in
     ubuntu_font_family mononoki noto-fonts-cjk
   ];
 
-  programs.ssh.startAgent = true;
-  programs.ssh.agentPKCS11Whitelist = "${pkgs.opensc}/lib/opensc-pkcs11.so";
-  programs.ssh.extraConfig = "PKCS11Provider ${pkgs.opensc}/lib/opensc-pkcs11.so";
+  #programs.ssh.agentPKCS11Whitelist = "${pkgs.opensc}/lib/opensc-pkcs11.so";
+  #programs.ssh.extraConfig = "PKCS11Provider ${pkgs.opensc}/lib/opensc-pkcs11.so";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
