@@ -40,20 +40,20 @@ in
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
   networking.useDHCP = false;
-  networking.interfaces.enp0s31f6.useDHCP = false;
   networking.interfaces.enp11s0.useDHCP = false;
   networking.interfaces.enp13s0.useDHCP = false;
   networking.interfaces.enp7s0.useDHCP = false;
+  networking.interfaces.enp5s0.useDHCP = false;
 
-  networking.interfaces.enp5s0 = {
+  networking.interfaces.enp0s31f6 = {
     useDHCP = false;
     ipv4.addresses = [ {
-      address = "10.13.15.17";
+      address = "10.10.110.1";
       prefixLength = 16;
     } ];
   };
 
-  networking.defaultGateway = "10.13.0.1";
+  networking.defaultGateway = "10.10.0.1";
   networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
 
   services.udev.packages = [ pkgs.yubikey-personalization ];
@@ -103,7 +103,9 @@ in
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 24800 ];
+  networking.firewall.allowedTCPPorts = [ 
+    24800 # synergys
+  ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
@@ -148,10 +150,7 @@ in
     packages = with pkgs; [ 
       # rice
       rofi polybar apvlv
-      (st.override { 
-        patches = [ ../../../st/st-scrollback-0.8.2.diff ];
-        conf = builtins.readFile ../../../st/config.h; 
-      })
+      inputs.st.defaultPackage.x86_64-linux
       synergy
 
       # os stuff
@@ -177,7 +176,7 @@ in
       entr
       cookiecutter
       docker-compose
-      git github-cli pass l_gnupg pinentry-curses ccls cquery shellcheck
+      git github-cli pass l_gnupg pinentry-curses ccls shellcheck
       nodejs python39
       minicom
       sqlite
@@ -194,6 +193,8 @@ in
       psmisc # for 'fuser', 'killall', 'pstree', 'peekfd', 'prtstat'
       moreutils # for 'ts', 'sponge', 'errno', 'ifdata' and others
       inputs.local.rip # better rm
+      bat # better cat
+      broot # file manager
       lsof
       htop
       socat
