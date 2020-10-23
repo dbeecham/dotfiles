@@ -108,7 +108,12 @@ in
   ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
+
+  services.ferm = {
+    enable = true;
+    config = builtins.readFile ./ferm.conf;
+  };
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
