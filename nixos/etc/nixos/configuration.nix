@@ -185,6 +185,7 @@ in
       postgresql
       fly
       terraform
+      gdb
 
       # linters
       python38Packages.cfn-lint
