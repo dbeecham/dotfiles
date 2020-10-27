@@ -1,0 +1,24 @@
+[general]
+accounts = main
+pythonfile = ~/.offlineimap/pass.py
+
+[Account main]
+localrepository = maildir
+remoterepository = plejd
+
+[Repository maildir]
+type = Maildir
+localfolders = ~/mail
+
+[Repository plejd]
+type = Gmail
+remoteuser = daniel.beecham@plejd.com
+remotepasseval = get_pass()
+nametrans = lambda foldername: re.sub ('^\[gmail\]', 'bak',
+                               re.sub ('sent_mail', 'sent',
+                               re.sub ('starred', 'flagged',
+                               re.sub (' ', '_', foldername.lower()))))
+folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail']
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+ssl_version = tls1_2
+quick = 10
