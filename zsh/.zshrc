@@ -15,3 +15,5 @@ fi
 eval "$(direnv hook zsh)"
 
 # unalias d
+
+source /home/dbe/.config/broot/launcher/bash/br
