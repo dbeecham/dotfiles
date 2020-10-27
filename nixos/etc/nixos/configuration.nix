@@ -193,6 +193,7 @@ in
       terraform
       gdb
       pwgen
+      keybase
 
       # linters
       python38Packages.cfn-lint
