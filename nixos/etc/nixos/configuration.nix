@@ -167,6 +167,7 @@ in
       smartmontools # disk health stuff
       e2fsprogs # badblocks, e2fsck, tune2fs, chattr, mkfs.ext*
       yubikey-manager
+      cryptsetup
 
       # backup
       restic
@@ -191,6 +192,7 @@ in
       fly
       terraform
       gdb
+      pwgen
 
       # linters
       python38Packages.cfn-lint
@@ -215,6 +217,13 @@ in
       atool unzip
       tcpdump
       wireshark
+
+      # mail
+      msmtp # to send mail
+      mailutils # uses msmtp to send mail
+      lieer # to sync with gmail
+      notmuch # to index 
+      neomutt # to read using tui
 
       # network
       httpie
