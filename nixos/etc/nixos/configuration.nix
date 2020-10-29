@@ -59,6 +59,11 @@ in
   services.udev.packages = [ pkgs.yubikey-personalization ];
   services.pcscd.enable = true;
 
+  services.udev.extraRules = ''
+    ACTION=="add",SUBSYSTEM=="usb", ATTRS{idVendor}=="1050", ATTRS{idProduct}=="0030", OWNER="dbe"
+    ACTION=="change",SUBSYSTEM=="usb", ATTRS{idVendor}=="1050", ATTRS{idProduct}=="0030", OWNER="dbe"
+  '';
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -138,6 +143,8 @@ in
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
 
+  services.keybase.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # users.users.jane = {
   #   isNormalUser = true;
@@ -193,7 +200,7 @@ in
       terraform
       gdb
       pwgen
-      keybase
+      keybase kbfs
 
       # linters
       python38Packages.cfn-lint
