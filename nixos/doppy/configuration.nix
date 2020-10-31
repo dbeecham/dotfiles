@@ -30,6 +30,8 @@ inputs: { pkgs, ... }:
   networking.useDHCP = false;
   networking.interfaces.enp3s0.useDHCP = true;
 
+  security.pam.p11.enable = true;
+
   services.udev.packages = [ pkgs.yubikey-personalization ];
   services.pcscd.enable = true;
 
@@ -143,11 +145,10 @@ inputs: { pkgs, ... }:
     packages = with pkgs; [ 
       # rice
       rofi polybar apvlv
-      (st.override { 
-        patches = [ ../../st/st-scrollback-0.8.2.diff ];
-        conf = builtins.readFile ../../st/config.h; 
-      })
+      inputs.st.defaultPackage.x86_64-linux
       synergy
+      xautolock
+      i3lock-fancy-rapid
 
       # os stuff
       opensc # for pkcs11 cards (yubikey, yubihsm)
@@ -171,7 +172,7 @@ inputs: { pkgs, ... }:
       entr
       cookiecutter
       docker-compose
-      git github-cli pass gnupg pinentry-curses ccls cquery shellcheck
+      git github-cli pass gnupg pinentry-curses ccls shellcheck
       nodejs python39
       minicom
       sqlite
