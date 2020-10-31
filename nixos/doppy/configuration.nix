@@ -151,6 +151,7 @@ inputs: { pkgs, ... }:
       i3lock-fancy-rapid
       dunst
       compton
+      libnotify # for notify-send
 
       # os stuff
       opensc # for pkcs11 cards (yubikey, yubihsm)
