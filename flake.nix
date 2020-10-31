@@ -17,7 +17,7 @@
   inputs.pdotfiles = {
     type = "git";
     url = "git+ssh://git@github.com/dbeecham/p-dotfiles";
-    rev = "396e0205289dd2b3912520138ad5061bb5b9d3b7";
+    rev = "ed45ce51262b51494b70878037a411b7db48f2a3";
   };
 
   outputs = inputs@{ self, nixpkgs, rip, pdotfiles }: rec {
@@ -36,6 +36,7 @@
       modules = [
         nixpkgs.nixosModules.notDetected
         (import ./nixos/doppy/configuration.nix (inputs // { local = packages.x86_64-linux; } ))
+        pdotfiles.nixosModules.prodhosts
       ];
     };
 
