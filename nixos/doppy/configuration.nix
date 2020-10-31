@@ -149,6 +149,8 @@ inputs: { pkgs, ... }:
       synergy
       xautolock
       i3lock-fancy-rapid
+      dunst
+      compton
 
       # os stuff
       opensc # for pkcs11 cards (yubikey, yubihsm)
