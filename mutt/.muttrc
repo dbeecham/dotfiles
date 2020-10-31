@@ -1,6 +1,7 @@
 source "~/.mutt/general.conf"
 source "~/.mutt/self.conf"
 source "~/.mutt/signature.conf"
-source "~/.mutt/imap.conf"
+source "~/.mutt/maildir.conf"
 source "~/.mutt/smtp.conf"
 source "~/.mutt/colors.conf"
+source "~/.mutt/bindings.conf"

@@ -127,3 +127,14 @@ fonts/**/.uuid
 
 # nixos result file
 result
+
+# ccls stuf
+.ccls-cache
+
+# offlineimap stuff
+offlineimap/.offlineimap/Account-main/
+offlineimap/.offlineimap/Repository-maildir/
+offlineimap/.offlineimap/Repository-plejd/
+
+# python compiled files
+*.pyc

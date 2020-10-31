@@ -5,7 +5,7 @@
     type = "github";
     owner = "NixOS";
     repo = "nixpkgs";
-    rev = "eba1d0126b4e6c386d529911bbeadbea99b933d6";
+    rev = "d2b8b928655f1b5e80985e49555aef70818a9bdf";
   };
   inputs.rip = {
     type = "github";
@@ -19,14 +19,20 @@
     url = "git+ssh://git@github.com/dbeecham/p-dotfiles";
     rev = "ed45ce51262b51494b70878037a411b7db48f2a3";
   };
+  inputs.st = {
+    type = "github";
+    owner = "dbeecham";
+    repo = "st";
+    rev = "77f6af60b98c6f264f78f6feeae13150fd28e3f0";
+  };
 
-  outputs = inputs@{ self, nixpkgs, rip, pdotfiles }: rec {
+  outputs = inputs@{ self, nixpkgs, rip, pdotfiles, ... }: rec {
 
     nixosConfigurations.pp-ws-dbe = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         nixpkgs.nixosModules.notDetected
-        (import ./nixos/etc/nixos/configuration.nix (inputs // { local = packages.x86_64-linux; } ) )
+        (import ./nixos/etc/nixos/configuration.nix (inputs // { st = inputs.st; local = packages.x86_64-linux; } ) )
         pdotfiles.nixosModules.prodhosts
       ];
     };
@@ -47,7 +53,7 @@
         pname = "rm-improved";
         version = "8b9514f841cf596ff6c2f1a7cc8f8df037c4a1b0";
         src = rip;
-        cargoSha256 = "XaqheiJMP3K2wDrIKz54NK8TRft8+SufYACc8XHvjWQ=";
+        cargoSha256 = "HBRXlaCyXp7Mc68D296fuDpCdoa2H31Ze8XrE+8O12g=";
         verifyCargoDeps = true;
       };
 
