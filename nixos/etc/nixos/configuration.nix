@@ -175,6 +175,7 @@ in
       e2fsprogs # badblocks, e2fsck, tune2fs, chattr, mkfs.ext*
       yubikey-manager
       cryptsetup
+      iptables
 
       # backup
       restic
@@ -209,6 +210,7 @@ in
       psmisc # for 'fuser', 'killall', 'pstree', 'peekfd', 'prtstat'
       moreutils # for 'ts', 'sponge', 'errno', 'ifdata' and others
       inputs.local.rip # better rm
+      inputs.local.dog # better dig
       bat # better cat
       broot # file manager
       lsof
