@@ -14,6 +14,13 @@
     rev = "8b9514f841cf596ff6c2f1a7cc8f8df037c4a1b0";
     flake = false;
   };
+  inputs.dog = {
+    type = "github";
+    owner = "ogham";
+    repo = "dog";
+    rev = "f756c6769dbdea0661a0ed074568d935f62b3b89";
+    flake = false;
+  };
   inputs.pdotfiles = {
     type = "git";
     url = "git+ssh://git@github.com/dbeecham/p-dotfiles";
@@ -26,7 +33,7 @@
     rev = "77f6af60b98c6f264f78f6feeae13150fd28e3f0";
   };
 
-  outputs = inputs@{ self, nixpkgs, rip, pdotfiles, ... }: rec {
+  outputs = inputs@{ self, nixpkgs, rip, dog, pdotfiles, ... }: rec {
 
     nixosConfigurations.pp-ws-dbe = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -54,6 +61,16 @@
         version = "8b9514f841cf596ff6c2f1a7cc8f8df037c4a1b0";
         src = rip;
         cargoSha256 = "HBRXlaCyXp7Mc68D296fuDpCdoa2H31Ze8XrE+8O12g=";
+        verifyCargoDeps = true;
+      };
+
+      dog = nixpkgs.legacyPackages.x86_64-linux.rustPlatform.buildRustPackage {
+        name = "dog";
+        version = "f756c6769dbdea0661a0ed074568d935f62b3b89";
+        src = dog;
+        nativeBuildInputs = with nixpkgs.legacyPackages.x86_64-linux; [ pkgconfig ];
+        buildInputs = with nixpkgs.legacyPackages.x86_64-linux; [ openssl ];
+        cargoSha256 = "A+7lAJSpt9X+p/yT9XR8UNIj86RK6QdpQTKPzs484Q8=";
         verifyCargoDeps = true;
       };
 
