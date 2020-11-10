@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+docker run -it --rm --net=host -e GNUTLS_PIN="${GNUTLS_PIN}" -v "$(pwd)":/yubihsm/ yubihsm-shell certtool --provider /usr/lib/x86_64-linux-gnu/pkcs11/yubihsm_pkcs11.so "$@"
