@@ -17,7 +17,7 @@
   inputs.pdotfiles = {
     type = "git";
     url = "git+ssh://git@github.com/dbeecham/p-dotfiles";
-    rev = "64f2f4118e7f94cde48c9e3e7fcef6d96f824df4";
+    rev = "e0c03a0f2d3e76e3dc669382affbdb8422aeb07b";
   };
   inputs.st = {
     type = "github";
