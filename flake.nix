@@ -57,6 +57,17 @@
         verifyCargoDeps = true;
       };
 
+      fonts = pkgs.stdenv.mkDerivation {
+        name = "fonts";
+        src = ./fonts;
+        nativeBuildInputs = [ pkgs.xorg.mkfontdir ];
+        installPhase = ''
+          ls
+          install -m 644 -D .fonts/Hack/*ttf -t $out/share/fonts
+          mkfontdir $out/share/fonts
+        '';
+      };
+
     };
 
   };

@@ -213,7 +213,7 @@ inputs: { pkgs, ... }:
   };
 
   fonts.fonts = with pkgs; [ 
-    ubuntu_font_family mononoki noto-fonts-cjk
+    ubuntu_font_family mononoki noto-fonts-cjk inputs.local.fonts
   ];
 
   #programs.ssh.agentPKCS11Whitelist = "${pkgs.opensc}/lib/opensc-pkcs11.so";
