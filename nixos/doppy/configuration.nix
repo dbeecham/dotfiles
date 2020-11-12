@@ -31,6 +31,7 @@ inputs: { pkgs, ... }:
   networking.interfaces.enp3s0.useDHCP = true;
 
   security.pam.p11.enable = true;
+  #security.pam.p11.control = "required";
 
   services.udev.packages = [ pkgs.yubikey-personalization ];
   services.pcscd.enable = true;
