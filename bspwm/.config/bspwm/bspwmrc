@@ -3,7 +3,8 @@
 xrdb ~/.Xresources
 
 sxhkd &
-xautolock -time 2 -locker /home/dbe/bin/i3lock &
+xautolock -time 3 -locker /home/dbe/bin/i3lock &
+dunst &
 
 if test "$(hostname)" = "pp-lap-dbe"; then
     bspc monitor eDP-1 -d iota gamma mu delta lambda kappa
