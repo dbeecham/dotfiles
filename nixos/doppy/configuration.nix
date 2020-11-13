@@ -31,6 +31,7 @@ inputs: { pkgs, ... }:
   networking.interfaces.enp3s0.useDHCP = true;
 
   security.pam.p11.enable = true;
+  #security.pam.p11.control = "required";
 
   services.udev.packages = [ pkgs.yubikey-personalization ];
   services.pcscd.enable = true;
@@ -212,7 +213,7 @@ inputs: { pkgs, ... }:
   };
 
   fonts.fonts = with pkgs; [ 
-    ubuntu_font_family mononoki noto-fonts-cjk
+    ubuntu_font_family mononoki noto-fonts-cjk inputs.local.fonts
   ];
 
   #programs.ssh.agentPKCS11Whitelist = "${pkgs.opensc}/lib/opensc-pkcs11.so";

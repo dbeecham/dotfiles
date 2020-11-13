@@ -4,11 +4,14 @@ invisible = #0000
 red = #ff0000
 
 [bar/top]
-monitor = eDP-1
+monitor = DVI-D-1
+#width = 1850px
 width = 100%
 height = 35
-offset-x = 0
-offset-y = 0
+#offset-x = 35px
+#offset-y = 10px
+offset-x = 0px
+offset-y = 0px
 radius = 0
 padding-left = 0
 padding-right = 0
@@ -16,13 +19,18 @@ module-margin = 0
 underline-size = 2
 underline-color = #eee
 wm-restack = bspwm
-font-0 = "Noto Sans CJK SC:pixelsize=12;0"
-font-1 = "Hack Nerd Font:pixelsize=10;2"
+
+# font-<index> = <fontconfig-name>;<vertical offset>
+#font-0 = "Noto Sans CJK SC:pixelsize=12;0"
+font-0 = "Ubuntu Mono:style=Regular:pixelsize=10:antialias=true:autohint=true"
+font-1 = "Hack Nerd Font Mono:pixelsize=16;2"
+font-2 = "Hack Nerd Font Mono:pixelsize=16;2"
 background = ${colors.semitransparent}
 foreground = #ffffff
 modules-left = bspwm
 modules-center = 
-modules-right = battery volume date
+modules-right = date
+fixed-center = true
 
 [bar/work1]
 monitor = DVI-1
@@ -92,17 +100,17 @@ type = internal/bspwm
 pin-workspaces = true
 format = <label-state> <label-mode>
 label-focused = %icon%
-label-focused-padding = 4
+label-focused-padding = 2
 label-focused-background = #88000000
 label-focused-underline = #ddd
 label-focused-foreground = #ffffff
 label-focused-font = 2
 label-occupied = %icon%
-label-occupied-padding = 4
+label-occupied-padding = 2
 label-occupied-font = 2
 label-empty = %icon%
 label-empty-font = 2
-label-empty-padding = 4
+label-empty-padding = 2
 ws-icon-0 = iota;
 ws-icon-1 = gamma;
 ws-icon-2 = mu;
