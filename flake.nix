@@ -35,6 +35,8 @@
 
   outputs = inputs@{ self, nixpkgs, rip, dog, pdotfiles, ... }: rec {
 
+    nixosModules.dbe = (import ./nixos/users/dbe.nix (inputs // { st = inputs.st; local = packages.x86_64-linux; }));
+
     nixosConfigurations.pp-ws-dbe = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -50,6 +52,7 @@
         nixpkgs.nixosModules.notDetected
         (import ./nixos/doppy/configuration.nix (inputs // { local = packages.x86_64-linux; } ))
         pdotfiles.nixosModules.prodhosts
+        self.nixosModules.dbe
       ];
     };
 
@@ -70,7 +73,7 @@
         src = dog;
         nativeBuildInputs = with nixpkgs.legacyPackages.x86_64-linux; [ pkgconfig ];
         buildInputs = with nixpkgs.legacyPackages.x86_64-linux; [ openssl ];
-        cargoSha256 = "A+7lAJSpt9X+p/yT9XR8UNIj86RK6QdpQTKPzs484Q8=";
+        cargoSha256 = "F/cZUVoaGfsQDyzdT2D6fphCetFPfPcLc64HMNsDhCs=";
         verifyCargoDeps = true;
       };
 
