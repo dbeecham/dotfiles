@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "dog": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1604966560,
+        "narHash": "sha256-gI+hE9tK2wT+zIBfoDbO0ObfvY13HB4r3+akCJOYRbw=",
+        "owner": "ogham",
+        "repo": "dog",
+        "rev": "f756c6769dbdea0661a0ed074568d935f62b3b89",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ogham",
+        "repo": "dog",
+        "rev": "f756c6769dbdea0661a0ed074568d935f62b3b89",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1603283230,
@@ -67,6 +84,7 @@
     },
     "root": {
       "inputs": {
+        "dog": "dog",
         "nixpkgs": "nixpkgs",
         "pdotfiles": "pdotfiles",
         "rip": "rip",
