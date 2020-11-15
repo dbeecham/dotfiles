@@ -28,9 +28,12 @@ inputs: { pkgs, ... }: {
       yubikey-manager
       cryptsetup
       iptables
+      qemu
+      ext4magic
 
       # backup
       restic
+      ddrescue ddrescueview
 
       # development
       (vim_configurable.override { python = python39; })
@@ -54,6 +57,10 @@ inputs: { pkgs, ... }: {
       gdb
       pwgen
       keybase kbfs
+      #arduino-cli
+      ghidra-bin radare2 radare2-cutter
+      valgrind
+      aflplusplus
 
       # linters
       python38Packages.cfn-lint
@@ -97,13 +104,31 @@ inputs: { pkgs, ... }: {
       testssl # testssl.sh
       wget # scripts use this sometimes
       bind # for dig
+
+      ncat
       bandwhich
       iftop
       ferm
       ngrok
+      fping
+
+      p0f
+      bettercap
+      dsniff
+      sniffglue
+      burpsuite
+      dirb gobuster
+      spike
 
       # graphics
       blender
+
+      # exploiting stuff
+      #metasploit
+      sqlmap
+      brutespray
+      hashcat hashcat-utils john 
+      wpscan zap
 
     ];
   };
