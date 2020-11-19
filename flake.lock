@@ -51,16 +51,16 @@
     },
     "pdotfiles": {
       "locked": {
-        "lastModified": 1605792706,
-        "narHash": "sha256-w7sTfRuRdqETsrdUAOl1ye9WlkBWRa+bkAGJZLOFwqc=",
+        "lastModified": 1605815496,
+        "narHash": "sha256-6Ah1/46XwjV7Qc0Zc9bwsKcqfmRQSXrb/5Y+B3l8UPE=",
         "ref": "master",
-        "rev": "32344bcf376e5d5162ef237e70eabd60548cdc31",
-        "revCount": 13,
+        "rev": "2353a0f0b5bd841a65de99ae63a361a4260f6045",
+        "revCount": 15,
         "type": "git",
         "url": "git+ssh://git@github.com/dbeecham/p-dotfiles"
       },
       "original": {
-        "rev": "32344bcf376e5d5162ef237e70eabd60548cdc31",
+        "rev": "2353a0f0b5bd841a65de99ae63a361a4260f6045",
         "type": "git",
         "url": "git+ssh://git@github.com/dbeecham/p-dotfiles"
       }
