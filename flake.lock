@@ -52,9 +52,11 @@
     "pdotfiles": {
       "locked": {
         "lastModified": 1605259946,
-        "narHash": "sha256-xDzZrI0lkHiZqjDNunccPxYuvo6MEz4x1oE9s9hcS9Y=",
+        "narHash": "sha256-gRCnTI7S9Z+Q+FaZjPcku7nKLiwPgxUPQ8f4sMaK7mE=",
+        "rev": "f37f05783e8bdea575eaa93a1a2a01f65a13e45b",
+        "revCount": 11,
         "type": "git",
-        "url": "file:///home/dbe/p-dotfiles"
+        "url": "git+ssh://git@github.com/dbeecham/p-dotfiles"
       },
       "original": {
         "rev": "f37f05783e8bdea575eaa93a1a2a01f65a13e45b",
