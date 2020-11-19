@@ -67,19 +67,20 @@ inputs: { pkgs, config, ... }:
   programs.ssh.startAgent = false;
   programs.gnupg.agent = {
     enable = true;
-    pinentryFlavor = "tty";
+    pinentryFlavor = "gtk2";
     enableSSHSupport = true;
   };
+
 
   # List services that you want to enable:
 
   #export HELLOTHERE="${dotfiles}/hi"
   # environment has a variables thing as well
-  environment.shellInit = ''
-    export GPG_TTY="$(tty)"
-    gpg-connect-agent /bye
-    export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
-  '';
+  #environment.shellInit = ''
+  #  export GPG_TTY="$(tty)"
+  #  gpg-connect-agent /bye
+  #  export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
+  #'';
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
@@ -101,6 +102,11 @@ inputs: { pkgs, config, ... }:
   services.xserver.enable = true;
   services.xserver.layout = "se";
   services.xserver.xkbOptions = "caps:escape";
+
+  services.xserver.displayManager.defaultSession = "none+bspwm";
+  services.xserver.displayManager.lightdm = {
+    enable = true;
+  };
 
   services.xserver.windowManager.bspwm.enable = true;
 
