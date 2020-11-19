@@ -1,7 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-inputs: { pkgs, ... }:
+inputs: { pkgs, config, ... }:
 
 {
 
@@ -29,9 +29,6 @@ inputs: { pkgs, ... }:
   # replicates the default behaviour.
   networking.useDHCP = false;
   networking.interfaces.enp3s0.useDHCP = true;
-
-  security.pam.p11.enable = true;
-  #security.pam.p11.control = "required";
 
   services.udev.packages = [ pkgs.yubikey-personalization ];
   services.pcscd.enable = true;
@@ -70,7 +67,7 @@ inputs: { pkgs, ... }:
   programs.ssh.startAgent = false;
   programs.gnupg.agent = {
     enable = true;
-    pinentryFlavor = "curses";
+    pinentryFlavor = "tty";
     enableSSHSupport = true;
   };
 
@@ -151,6 +148,6 @@ inputs: { pkgs, ... }:
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "20.03"; # Did you read the comment?
+  system.stateVersion = "20.09"; # Did you read the comment?
 
 }

@@ -24,7 +24,7 @@
   inputs.pdotfiles = {
     type = "git";
     url = "git+ssh://git@github.com/dbeecham/p-dotfiles";
-    rev = "f37f05783e8bdea575eaa93a1a2a01f65a13e45b";
+    rev = "32344bcf376e5d5162ef237e70eabd60548cdc31";
   };
   inputs.st = {
     type = "github";
@@ -52,6 +52,7 @@
         nixpkgs.nixosModules.notDetected
         (import ./nixos/doppy/configuration.nix (inputs // { local = packages.x86_64-linux; } ))
         pdotfiles.nixosModules.prodhosts
+        pdotfiles.nixosModules.pam_rules
         self.nixosModules.dbe
       ];
     };
