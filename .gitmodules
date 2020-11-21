@@ -23,9 +23,6 @@
 [submodule "bin/bin/checksec.sh"]
 	path = bin/bin/checksec.sh
 	url = git@github.com:dbeecham/checksec.sh
-[submodule "bin/sources/fasd"]
-	path = bin/sources/fasd
-	url = git@github.com:clvv/fasd
 [submodule "zsh/.zsh/zplug"]
 	path = zsh/.zsh/zplug
 	url = https://github.com/zplug/zplug
@@ -68,3 +65,6 @@
 [submodule "zsh/.zsh/plug/zsh-autosuggestions"]
 	path = zsh/.zsh/plug/zsh-autosuggestions
 	url = git@github.com:zsh-users/zsh-autosuggestions
+[submodule "vim/.config/nvim/pack/gutter/start/vim-signature"]
+	path = vim/.config/nvim/pack/gutter/start/vim-signature
+	url = git@github.com:kshenoy/vim-signature
