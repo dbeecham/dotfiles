@@ -61,6 +61,7 @@ inputs: { pkgs, ... }: {
       ghidra-bin radare2 radare2-cutter
       valgrind
       aflplusplus
+      k9s
 
       # linters
       python38Packages.cfn-lint
@@ -86,6 +87,7 @@ inputs: { pkgs, ... }: {
       atool unzip
       tcpdump
       wireshark
+      tree
 
       # mail
       msmtp # to send mail
@@ -104,6 +106,7 @@ inputs: { pkgs, ... }: {
       testssl # testssl.sh
       wget # scripts use this sometimes
       bind # for dig
+      syncthing
 
       ncat
       bandwhich
