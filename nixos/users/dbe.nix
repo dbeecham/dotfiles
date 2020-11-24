@@ -107,6 +107,7 @@ inputs: { pkgs, ... }: {
       wget # scripts use this sometimes
       bind # for dig
       syncthing
+      nebula
 
       ncat
       bandwhich

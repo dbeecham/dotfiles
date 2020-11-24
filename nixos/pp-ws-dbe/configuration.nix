@@ -43,9 +43,12 @@ inputs: { pkgs, ... }:
 
   networking.defaultGateway = "10.10.0.1";
   networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
+  networking.search = [ "local" ];
 
   services.udev.packages = [ pkgs.yubikey-personalization ];
   services.pcscd.enable = true;
+
+  services.avahi.nssmdns = true;
 
   services.udev.extraRules = ''
     ACTION=="add",SUBSYSTEM=="usb", ATTRS{idVendor}=="1050", ATTRS{idProduct}=="0030", OWNER="dbe"
@@ -121,6 +124,9 @@ inputs: { pkgs, ... }:
   services.xserver.xkbOptions = "caps:escape";
 
   services.xserver.windowManager.bspwm.enable = true;
+
+  #services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome3.enable = true;
 
   virtualisation.docker.enable = true;
 
