@@ -24,7 +24,7 @@
   inputs.pdotfiles = {
     type = "git";
     url = "git+ssh://git@github.com/dbeecham/p-dotfiles";
-    rev = "a6e3db27a0853733149668f0eaf4445b2146c3d3";
+    rev = "612398c50dca4c3d9b530b9e531b84f31eb34821";
   };
   inputs.st = {
     type = "github";
@@ -44,6 +44,7 @@
         (import ./nixos/pp-ws-dbe/configuration.nix (inputs // { st = inputs.st; local = packages.x86_64-linux; } ) )
         pdotfiles.nixosModules.prodhosts
         pdotfiles.nixosModules.pam_rules
+        pdotfiles.nixosModules.pp_ws_dbe
         self.nixosModules.dbe
       ];
     };
