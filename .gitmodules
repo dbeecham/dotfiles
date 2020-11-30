@@ -68,3 +68,9 @@
 [submodule "vim/.config/nvim/pack/gutter/start/vim-signature"]
 	path = vim/.config/nvim/pack/gutter/start/vim-signature
 	url = git@github.com:kshenoy/vim-signature
+[submodule "vim/.config/nvim/pack/completion/start/asyncomplete-neosnippet.vim"]
+	path = vim/.config/nvim/pack/completion/start/asyncomplete-neosnippet.vim
+	url = git@github.com:prabirshrestha/asyncomplete-neosnippet.vim
+[submodule "vim/.config/nvim/pack/completion/start/asyncomplete-file.vim"]
+	path = vim/.config/nvim/pack/completion/start/asyncomplete-file.vim
+	url = git@github.com:prabirshrestha/asyncomplete-file.vim

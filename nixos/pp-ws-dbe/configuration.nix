@@ -48,7 +48,7 @@ inputs: { pkgs, ... }:
   services.udev.packages = [ pkgs.yubikey-personalization ];
   services.pcscd.enable = true;
 
-  services.avahi.nssmdns = true;
+  services.avahi.nssmdns = false;
 
   services.udev.extraRules = ''
     ACTION=="add",SUBSYSTEM=="usb", ATTRS{idVendor}=="1050", ATTRS{idProduct}=="0030", OWNER="dbe"
@@ -99,9 +99,9 @@ inputs: { pkgs, ... }:
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 
-    24800 # synergys
-  ];
+#  networking.firewall.allowedTCPPorts = [ 
+#    24800 # synergys
+#  ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   networking.firewall.enable = false;

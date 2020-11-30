@@ -22,7 +22,9 @@
 	d = diff
 	dt = difftool
     a = add
+    f = fetch
     b = branch
+    r = remote
     c = commit
     p = push
     ss = status
@@ -30,6 +32,11 @@
     t = tag
     rp = rev-parse
     ls = ls-remote
+    wt = write-tree
+    rt = read-tree
+    ct = commit-tree
+    ci = checkout-index
+    ur = update-ref
     move-head-to-commit = reset --soft
     move-head-to-ref = symbolic-ref HEAD
     reset-index = reset --mixed HEAD
