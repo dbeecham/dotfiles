@@ -29,6 +29,7 @@ inputs: { pkgs, config, ... }:
   # replicates the default behaviour.
   networking.useDHCP = false;
   networking.interfaces.enp3s0.useDHCP = true;
+  networking.networkmanager.enable = true;
 
   services.udev.packages = [ pkgs.yubikey-personalization ];
   services.pcscd.enable = true;
@@ -71,7 +72,6 @@ inputs: { pkgs, config, ... }:
     enableSSHSupport = true;
   };
 
-
   # List services that you want to enable:
 
   #export HELLOTHERE="${dotfiles}/hi"
@@ -103,10 +103,12 @@ inputs: { pkgs, config, ... }:
   services.xserver.layout = "se";
   services.xserver.xkbOptions = "caps:escape";
 
-  services.xserver.displayManager.defaultSession = "none+bspwm";
-  services.xserver.displayManager.lightdm = {
-    enable = true;
-  };
+  #services.xserver.displayManager.defaultSession = "none+bspwm";
+#  services.xserver.displayManager.lightdm = {
+#    enable = true;
+#  };
+
+  services.xserver.desktopManager.gnome3.enable = true;
 
   services.xserver.windowManager.bspwm.enable = true;
 
