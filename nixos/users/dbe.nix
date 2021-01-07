@@ -62,6 +62,8 @@ inputs: { pkgs, ... }: {
       valgrind
       aflplusplus
       k9s
+      vscode-with-extensions
+      typora
 
       # linters
       python38Packages.cfn-lint
@@ -108,6 +110,7 @@ inputs: { pkgs, ... }: {
       bind # for dig
       syncthing
       nebula
+      mtr
 
       ncat
       bandwhich
