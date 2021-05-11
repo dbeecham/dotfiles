@@ -111,6 +111,7 @@ inputs: { pkgs, ... }: {
       syncthing
       nebula
       mtr
+      dropbox
 
       ncat
       bandwhich
