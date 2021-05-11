@@ -6,8 +6,11 @@ endif
 nmap - /\v
 
 " I think these are useful enough to be included.
-nnoremap <leader>ve :vsplit $MYVIMRC<cr>
-nnoremap <leader>vs :source $MYVIMRC<cr>
+nnoremap <leader>ve :vsplit ~/.vimrc<cr>
+nnoremap <leader>vs :source ~/.vimrc<cr>
+
+" this binding is in ftplugin
+" nnoremap <leader>vn :vsplit ~/.vim/pack/completion/start/neosnippet-snippets/neosnippets/c.snip
 
 " Back to previous file
 " c-^ is super awkward on a swedish keyboard.
@@ -56,8 +59,16 @@ nnoremap <leader>X :TagbarToggle<cr>
 "imap <C-6> <Plug>snipMateBack
 "smap <C-6> <Plug>snipMateBack
 
+function! TabComplete()
+    if neosnippet#expandable()
+        normal "\<Plug>(neosnippet_expand)"
+    endif
+endfunction
+
+autocmd CompleteDone * if pumvisible() == 0 | silent! pclose | endif
 set completeopt=menuone,longest,noselect
-imap <expr><tab> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ? (complete_info().selected == -1 ? "\<C-n>" : "\<Plug>(neosnippet_jump_or_expand)") : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<tab>")
+imap <expr><tab> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ? (complete_info().selected == -1 ? "\<C-n>" : "\<Plug>(neosnippet_expand_or_jump)") : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<tab>")
+"imap <expr><tab> TabComplete()
 smap <expr><tab> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ? (complete_info().selected == -1 ? "\<C-n>" : "\<Plug>(neosnippet_jump_or_expand)") : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<tab>")
 "smap <expr><tab> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
 
@@ -88,6 +99,10 @@ nnoremap J 5j
 nnoremap K 5k
 vnoremap J 5j
 vnoremap K 5k
+
+
+" stage this hunk
+nnoremap <leader>s :GitGutterStageHunk<cr>
 
 
 " for brookhong/cscope

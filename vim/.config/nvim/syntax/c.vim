@@ -39,17 +39,18 @@ syntax match cInclude :\v^\s*#\s*include\s: nextgroup=cIncludeGlobalHeader,cIncl
 " }
 
 " conditionals
-syntax keyword Conditional if switch for while break continue case default
+syntax keyword Conditional if switch for while break continue case default else
 
 " Some additional defines
-syntax keyword Keyword __FILE__ __LINE__ __func__
+syntax keyword Keyword __FILE__ __LINE__ __func__ S_IRUSR S_IWUSR O_RDWR errno LOG_DEBUG LOG_WARNING LOG_ERR
+    \ LOG_NOTICE LOG_INFO LOG_CRIT LOG_ALERT LOG_EMERG ret
 
 " I want the linux api specially highlighted
 syntax keyword LinuxFunction syslog close getaddrinfo freeaddrinfo syslog
     \ openlog epoll_wait epoll_ctl strerror open exit read write bind epoll_create1 timerfd_create timerfd_settime
-    \ socket setsockopt gai_strerror listen recvfrom printf snprintf sendto accept warn err fprintf closelog
+    \ socket setsockopt gai_strerror listen recvfrom sendto accept warn err fprintf closelog
     \ nanosleep fflush sigwaitinfo sigaddset sigemptyset waitpid pthread_create fork sethostname execl mount
-    \ srand48 drand48 clock_gettime sigprocmask prctl
+    \ srand48 drand48 clock_gettime sigprocmask prctl mkfifo strncmp printf snprintf strlen memcpy
 
 " these are type keywords, but I want them highlighted as normal
 syntax keyword NormalType struct union const

@@ -64,8 +64,15 @@ set winminheight=4
 set wildmode=longest:full,full
 set wildmenu
 
-" Same with ctrln, ctrlp
-set completeopt=longest,menu,preview
+" menu = use a popup menu
+" menuone = use the popup menu also when there is only one match
+" longest = only insert the longest common text of the matches
+" preview = show extra information about the currently selected match
+" popup = show extra information about the currenctlys selected in a popup
+" popuphidden = like popup but initially hide the popup
+" noinsert = dont insert any text until the user selects a match from the menu
+" noselect = do not select a match in the menu, force user to do it
+set completeopt=longest,menuone,preview,noinsert
 
 " Keep a viminfo file
 set viminfo='20,\"500   " Keep a .viminfo file.
@@ -82,12 +89,13 @@ set isfname-==
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class
 
-" number off by default
-set nonumber
+" number on by default
+set number
+set signcolumn=number
 
 " and relative numbers if support exists
 if v:version >= 703
-    set norelativenumber
+    set relativenumber
 endif
 
 " When displaying line numbers, don't use an annoyingly wide number column. This

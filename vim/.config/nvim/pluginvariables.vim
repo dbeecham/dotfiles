@@ -1,5 +1,3 @@
-" plug:vim-slime
-
 if exists(":let")
 
 " netrw settings
@@ -32,13 +30,14 @@ let g:table_mode_map_prefix = "<Leader>m"
 
 " This is here to make table mode do rst tables.
 " TODO: move this out to a filetype-specific place.
-let g:table_mode_corner_corner='|'
+"let g:table_mode_corner_corner='|'
 "let g:table_mode_header_fillchar='='
 
 
 " let fzf ignore files specified in gitinore
 let $FZF_DEFAULT_COMMAND = 'fd --type f'
 
+let g:SignatureMarkTextHLDynamic=1
 
 " Use syntax highlighting in in code blocks in markdown
 let g:markdown_fenced_languages = ['c']
@@ -46,9 +45,10 @@ let g:markdown_minlines = 1000
 
 
 " asyncomplete
+let g:asyncomplete_enable = 1
 let g:asyncomplete_auto_popup = 1
-"let g:asyncomplete_auto_completeopt = 1
-"set completeopt=menuone,noinsert,noselect,preview
+let g:asyncomplete_auto_completeopt = 1 " use the 'completeopt' provided by me
+let g:asyncomplete_popup_delay = 30 " default = 30
 " automatically close the preview when done
 "autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
