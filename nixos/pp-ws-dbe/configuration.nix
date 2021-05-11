@@ -48,7 +48,7 @@ inputs: { pkgs, ... }:
   services.udev.packages = [ pkgs.yubikey-personalization ];
   services.pcscd.enable = true;
 
-  services.avahi.nssmdns = false;
+  services.avahi.nssmdns = true;
 
   services.udev.extraRules = ''
     ACTION=="add",SUBSYSTEM=="usb", ATTRS{idVendor}=="1050", ATTRS{idProduct}=="0030", OWNER="dbe"
@@ -97,6 +97,12 @@ inputs: { pkgs, ... }:
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  # Remove existing unix sockets when creating local port forwards; makes
+  # forwarding of gpg sockets easier.
+  services.openssh.extraConfig = ''
+    StreamLocalBindUnlink yes
+  '';
 
   # Open ports in the firewall.
 #  networking.firewall.allowedTCPPorts = [ 
