@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+clickup() {
+    IFS=$'\n'
+    pass=$(pass plejd/clickup/dbe-app)
+    access_token=$(grep -e "^access_token:" <<< "${pass}" | cut -d ' ' -f 2)
+    unset pass
+
+    team_id=$(http https://app.clickup.com/api/v2/team Authorization:$access_token | jq '.teams[0].id' -r)
+
+}
+
+clickup

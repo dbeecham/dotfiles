@@ -11,6 +11,10 @@ const NATS_PORT = process.env['NATS_PORT'] || '4222';
 const NATS = require('nats');
 const nats = NATS.connect({servers: [`nats://${NATS_HOST}:${NATS_PORT}`]});
 
+nats.on('error', (err) => {
+    console.log(err);
+});
+
 nats.subscribe(process.argv[2], (msg, reply, topic, sid) => {
     if (undefined !== reply) {
         console.log(`${topic} [${reply}]: ${msg}`);
