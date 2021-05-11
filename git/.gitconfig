@@ -36,7 +36,9 @@
     rt = read-tree
     ct = commit-tree
     ci = checkout-index
-    ur = update-ref
+    refs = show-ref
+    ur = update-ref --no-deref
+    cl = clean -id
     move-head-to-commit = reset --soft
     move-head-to-ref = symbolic-ref HEAD
     reset-index = reset --mixed HEAD

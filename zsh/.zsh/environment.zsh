@@ -9,7 +9,7 @@ fi
 #C=$(tput colors)
 C=256
 
-export PATH=~/bin:$PATH
+export PATH=~/bin:~/sbin:$PATH
 
 # LS Colors
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"

@@ -13,7 +13,7 @@ elif test "$(hostname)" = "pp-ws-dbe"; then
     ${HOME}/bin/setup-screens
     synergys -c ${HOME}/.synergy.conf
     #xrandr --output HDMI-0 --mode 1920x1080 --pos 0x1080 --output DVI-D-0 --pos 0x0 --output DP-1 --mode 1920x1080 --rotate left --pos 1920x240
-    bspc monitor DVI-1 -d iota gamma mu delta lambda kappa
+    bspc monitor DVI-0 -d iota gamma mu delta lambda kappa
     bspc monitor DisplayPort-2 -d iota gamma mu delta lambda kappa
     bspc monitor DisplayPort-0 -d iota gamma mu delta lambda kappa
     feh --bg-center /home/dbe/Dropbox/bgs/light/173.jpg /home/dbe/Dropbox/bgs/light/94.jpg /home/dbe/Dropbox/bgs/light/Lake\ Tahoe\ Colors.jpg
@@ -22,7 +22,7 @@ else
     bspc monitor -d iota gamma mu delta lambda kappa
 fi
 
-bspc config border_width         0
+bspc config border_width         1
 bspc config window_gap          37
 
 bspc config split_ratio          0.52
