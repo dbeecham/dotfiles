@@ -1,24 +1,24 @@
 {
 
-  # updated 2020-10-12
+  # updated 2021-05-03
   inputs.nixpkgs = {
     type = "github";
     owner = "NixOS";
     repo = "nixpkgs";
-    rev = "d2b8b928655f1b5e80985e49555aef70818a9bdf";
+    rev = "7c679678d6fd5e9b6a37155fa7b66228341dc4fa";
   };
   inputs.rip = {
     type = "github";
     owner = "nivekuil";
     repo = "rip";
-    rev = "8b9514f841cf596ff6c2f1a7cc8f8df037c4a1b0";
+    rev = "11f0b8d018975f78d922038efc7f60bf9fffafd0";
     flake = false;
   };
   inputs.dog = {
     type = "github";
     owner = "ogham";
     repo = "dog";
-    rev = "f756c6769dbdea0661a0ed074568d935f62b3b89";
+    rev = "640818d36e7ed04e2666aba90d0c037787cb9d6c";
     flake = false;
   };
   inputs.pdotfiles = {
