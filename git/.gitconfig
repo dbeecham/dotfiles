@@ -39,6 +39,7 @@
     refs = show-ref
     ur = update-ref --no-deref
     cl = clean -id
+    cat = cat-file -p
     move-head-to-commit = reset --soft
     move-head-to-ref = symbolic-ref HEAD
     reset-index = reset --mixed HEAD
