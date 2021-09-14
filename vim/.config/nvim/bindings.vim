@@ -66,7 +66,6 @@ function! TabComplete()
 endfunction
 
 autocmd CompleteDone * if pumvisible() == 0 | silent! pclose | endif
-set completeopt=menuone,longest,noselect
 imap <expr><tab> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ? (complete_info().selected == -1 ? "\<C-n>" : "\<Plug>(neosnippet_expand_or_jump)") : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<tab>")
 "imap <expr><tab> TabComplete()
 smap <expr><tab> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ? (complete_info().selected == -1 ? "\<C-n>" : "\<Plug>(neosnippet_jump_or_expand)") : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<tab>")
@@ -82,8 +81,10 @@ nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>l :Lines<cr>
 
 
-" Trying this out as a quick-fold-this-function in C
-nnoremap <leader>F V$%j%zfzz
+" Fold function - gotten used to this one now
+nnoremap <leader>Ff V$%j%zfzz
+" and this to fold block
+nnoremap <leader>Fb V$%zf
 
 
 " My brain wants to press enter to expand a snippet, so I'll bind it.

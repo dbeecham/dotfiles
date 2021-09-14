@@ -51,6 +51,7 @@ syntax keyword LinuxFunction syslog close getaddrinfo freeaddrinfo syslog
     \ socket setsockopt gai_strerror listen recvfrom sendto accept warn err fprintf closelog
     \ nanosleep fflush sigwaitinfo sigaddset sigemptyset waitpid pthread_create fork sethostname execl mount
     \ srand48 drand48 clock_gettime sigprocmask prctl mkfifo strncmp printf snprintf strlen memcpy
+    \ sync reboot
 
 " these are type keywords, but I want them highlighted as normal
 syntax keyword NormalType struct union const

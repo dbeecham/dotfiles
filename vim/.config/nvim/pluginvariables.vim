@@ -47,10 +47,14 @@ let g:markdown_minlines = 1000
 " asyncomplete
 let g:asyncomplete_enable = 1
 let g:asyncomplete_auto_popup = 1
-let g:asyncomplete_auto_completeopt = 1 " use the 'completeopt' provided by me
+let g:asyncomplete_auto_completeopt = 0 " use the 'completeopt' provided by me
 let g:asyncomplete_popup_delay = 30 " default = 30
 " automatically close the preview when done
 "autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+
+" tagbar width
+let g:tagbar_width = 60
 
 
 endif

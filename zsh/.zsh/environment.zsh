@@ -130,6 +130,11 @@ case $TERM in
         ;;
 esac
 
+# edit command line
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
 # I like when FZF picks up on .ignore, .gitignore, etc.
 # It's only a couple of environment variables anyway.
 export FZF_DEFAULT_COMMAND='fd --type d'

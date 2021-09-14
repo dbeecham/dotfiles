@@ -66,13 +66,14 @@ set wildmenu
 
 " menu = use a popup menu
 " menuone = use the popup menu also when there is only one match
-" longest = only insert the longest common text of the matches
+" longest = only insert the longest common text of the matches - WARNING: this
+"   automatically inserts stuff!! don't enable it!
 " preview = show extra information about the currently selected match
 " popup = show extra information about the currenctlys selected in a popup
 " popuphidden = like popup but initially hide the popup
 " noinsert = dont insert any text until the user selects a match from the menu
 " noselect = do not select a match in the menu, force user to do it
-set completeopt=longest,menuone,preview,noinsert
+set completeopt=menuone,preview,noinsert,noselect
 
 " Keep a viminfo file
 set viminfo='20,\"500   " Keep a .viminfo file.
@@ -89,14 +90,21 @@ set isfname-==
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class
 
-" number on by default
-set number
-set signcolumn=number
 
+set number
+" number lines on by default
 " and relative numbers if support exists
 if v:version >= 703
     set relativenumber
 endif
+
+" can be either 'yes', 'no', 'auto', or 'number' (to use line number gutter as
+" sign gutter)
+" I used 'number' here for the longest time, but I found that it often was in
+" the way - especially with gitgutter, and adding a new function; you have no
+" number lines at all in that function, because gitgutter has the "new line"
+" marker on every line.
+set signcolumn=auto
 
 " When displaying line numbers, don't use an annoyingly wide number column. This
 " doesn't enable line numbers -- :set number will do that. The value given is a
