@@ -83,3 +83,6 @@
 [submodule "vim/.config/nvim/pack/lsp/start/vim-lsp"]
 	path = vim/.config/nvim/pack/lsp/start/vim-lsp
 	url = git@github.com:prabirshrestha/vim-lsp
+[submodule "vim/.config/nvim/pack/tagbar/start/tagbar"]
+	path = vim/.config/nvim/pack/tagbar/start/tagbar
+	url = git@github.com:preservim/tagbar
