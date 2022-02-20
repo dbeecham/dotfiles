@@ -1,0 +1,4 @@
+runcached
+*.o
+.ccls-cache
+*.swp
