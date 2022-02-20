@@ -1,0 +1,14 @@
+snippet aws_instance
+alias ec2
+options head
+	resource "aws_instance" "${1:#:name}" {
+		ami = "${2:#:ami}"
+		instance_type = "${3:t3.micro}"
+		subnet_id = "${4:module.vpc.public_subnets[0]}"
+		vpc_security_group_ids = [ aws_security_group.${5:sg0}.id ]
+		key_name = "${6:dbe}"
+		tags = {
+			Name = "${7:dbe}"
+		}
+	}
+	${0}
