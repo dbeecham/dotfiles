@@ -2,7 +2,7 @@ source ~/.zsh/setup.zsh
 source ~/.zsh/environment.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/aliases.zsh
-source ~/.zsh/zsh-histdb/sqlite-history.zsh
+source ~/.zsh/plug/zsh-histdb/sqlite-history.zsh
 source ~/.zsh/themes/myfishy.zsh-theme
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -16,4 +16,6 @@ eval "$(direnv hook zsh)"
 
 # unalias d
 
-source /home/dbe/.config/broot/launcher/bash/br
+if test -f ${HOME}/.config/broot/launcher/bash/br; then
+    source ${HOME}/.config/broot/launcher/bash/br
+fi
