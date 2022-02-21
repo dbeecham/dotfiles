@@ -49,7 +49,7 @@ let g:asyncomplete_enable = 1
 let g:asyncomplete_auto_popup = 1
 let g:asyncomplete_auto_completeopt = 0 " use the 'completeopt' provided by me
 let g:asyncomplete_popup_delay = 30 " default = 30
-let g:asyncomplete_min_chars = 0
+let g:asyncomplete_min_chars = 3
 " automatically close the preview when done
 "autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
