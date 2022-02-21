@@ -45,19 +45,35 @@ nnoremap <leader>x :NERDTreeToggle<cr>
 nnoremap <leader>X :TagbarToggle<cr>
 
 function! TabComplete()
-    if neosnippet#expandable_or_jumpable()
-        return "\<Plug>(neosnippet_expand_or_jump)"
+    " if we can expand a snippet, do it first
+    if neosnippet#expandable()
+        return "\<Plug>(neosnippet_expand)"
     endif
-"
-  "neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ? (complete_info().selected == -1 ? "\<C-n>" : "\<Plug>(neosnippet_expand_or_jump)") : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<tab>")
-  return "\<tab>"
+
+    " otherwise, if we have nothing selected in the pum, select the first one
+    " we do this before jumpable(), because we'd rather select the first item
+    " than jump to the next neosnippet
+    if pumvisible() && complete_info().selected == -1
+        return "\<C-n>"
+    endif
+
+    " lastly, if we can jump to the next item, do that. we don't use
+    " expandable_or_jumpable, because sometimes we can't expand, we can jump,
+    " but we don't want to jump - we want to select the first item in the pum.
+    if neosnippet#jumpable()
+      return "\<Plug>(neosnippet_jump)"
+    endif
+
+    " if nothing else, just insert a tab
+    return "\<tab>"
 endfunction
 
 autocmd CompleteDone * if pumvisible() == 0 | silent! pclose | endif
 
 "imap <expr><tab> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ? (complete_info().selected == -1 ? "\<C-n>" : "\<Plug>(neosnippet_expand_or_jump)") : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<tab>")
-"imap <expr><tab> TabComplete()
-smap <expr><tab> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ? (complete_info().selected == -1 ? "\<C-n>" : "\<Plug>(neosnippet_jump_or_expand)") : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<tab>")
+imap <expr><tab> TabComplete()
+smap <expr><tab> TabComplete()
+"smap <expr><tab> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ? (complete_info().selected == -1 ? "\<C-n>" : "\<Plug>(neosnippet_jump_or_expand)") : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<tab>")
 "smap <expr><tab> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
 
 " FZF is very useful.
