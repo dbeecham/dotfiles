@@ -207,6 +207,8 @@ alias       #def, #define
 # }}}
 
 # Built-in function calls {{{
+snippet strerror
+	strerror(${1:errno})${0}
 snippet snprintf
 options head
 	bytes_written = snprintf(${1:buf}, ${2:buf_len}, "${3:FORMAT STRING}"${4:#:, args...});
@@ -220,19 +222,9 @@ abbr    printf("...\n", ...);
     printf("%s:%d:%s: ${1}\n", __FILE__, __LINE__, __func__${2:#:,...});
 	${0}
 
-snippet scanf
-abbr    scanf("...", ...);
-    scanf("${1}", ${2});
-
 snippet fprintf
 abbr    fprintf(..., "...\n", ...);
     fprintf(${1:stderr}, "${2}\n"${3});
-
-snippet fopen
-abbr fopen("...", "...");
-	fopen("${1:PATH}", "${2:MODE}");
-	${0:TARGET}
-	fclose(${3:FD});
 
 snippet fgets
 abbr    fgets(row, length, file);
