@@ -73,7 +73,7 @@ set wildmenu
 " popuphidden = like popup but initially hide the popup
 " noinsert = dont insert any text until the user selects a match from the menu
 " noselect = do not select a match in the menu, force user to do it
-set completeopt=menuone,preview,noinsert,noselect
+set completeopt=menuone,preview,noinsert,noselect,preview
 
 " Keep a viminfo file
 set viminfo='20,\"500   " Keep a .viminfo file.

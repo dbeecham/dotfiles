@@ -44,29 +44,18 @@ nnoremap <A-i> :tabprev<cr>
 nnoremap <leader>x :NERDTreeToggle<cr>
 nnoremap <leader>X :TagbarToggle<cr>
 
-
-" I don't like Ultisnips any more.
-"if exists(":let")
-"    let g:UltiSnipsExpandTrigger="<C-y>"
-"    let g:UltiSnipsJumpForwardTrigger="<C-j>"
-"    let g:UltiSnipsJumpBackwardTrigger="<C-k>"
-"endif
-
-" I'm not using vim-snipmate any longer either.
-"imap <C-y> <Plug>(neosnippet_expand_or_jump)
-"smap <C-y> <Plug>(neosnippet_expand_or_jump)
-"xmap <C-x> <Plug>(neosnippet_expand_target)
-"imap <C-6> <Plug>snipMateBack
-"smap <C-6> <Plug>snipMateBack
-
 function! TabComplete()
-    if neosnippet#expandable()
-        normal "\<Plug>(neosnippet_expand)"
+    if neosnippet#expandable_or_jumpable()
+        return "\<Plug>(neosnippet_expand_or_jump)"
     endif
+"
+  "neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ? (complete_info().selected == -1 ? "\<C-n>" : "\<Plug>(neosnippet_expand_or_jump)") : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<tab>")
+  return "\<tab>"
 endfunction
 
 autocmd CompleteDone * if pumvisible() == 0 | silent! pclose | endif
-imap <expr><tab> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ? (complete_info().selected == -1 ? "\<C-n>" : "\<Plug>(neosnippet_expand_or_jump)") : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<tab>")
+
+"imap <expr><tab> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ? (complete_info().selected == -1 ? "\<C-n>" : "\<Plug>(neosnippet_expand_or_jump)") : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<tab>")
 "imap <expr><tab> TabComplete()
 smap <expr><tab> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ? (complete_info().selected == -1 ? "\<C-n>" : "\<Plug>(neosnippet_jump_or_expand)") : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<tab>")
 "smap <expr><tab> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
