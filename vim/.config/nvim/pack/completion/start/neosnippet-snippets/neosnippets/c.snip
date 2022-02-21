@@ -363,6 +363,7 @@ options head
 
 # basic fd stuff {{{
 snippet read
+options head
     bytes_read = read(${1:fd}, ${2:buf}, ${3:buf_len});
     if (-1 == bytes_read) {
 		syslog(LOG_ERR, "%s:%d:%s: read: %s", __FILE__, __LINE__, __func__, strerror(errno));
@@ -373,6 +374,7 @@ snippet read
     }
     ${0}
 snippet close
+options head
 	ret = close(${1:fd});
 	if (-1 == ret) {
 		syslog(LOG_ERR, "%s:%d:%s: close: %s", __FILE__, __LINE__, __func__, strerror(errno));
