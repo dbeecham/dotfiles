@@ -2,7 +2,7 @@ source ~/.zsh/setup.zsh
 source ~/.zsh/environment.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/aliases.zsh
-source ~/.zsh/zsh-histdb/sqlite-history.zsh
+source ~/.zsh/plug/zsh-histdb/sqlite-history.zsh
 source ~/.zsh/themes/myfishy.zsh-theme
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
