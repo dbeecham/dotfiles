@@ -61,8 +61,9 @@ set winheight=12
 set winminheight=4
 
 " Emacs-style, Bash-like tab completion
-set wildmode=longest:full,full
-set wildmenu
+"set wildmode=longest:full,full
+set wildmode=lastused
+set nowildmenu
 
 " menu = use a popup menu
 " menuone = use the popup menu also when there is only one match
@@ -73,7 +74,7 @@ set wildmenu
 " popuphidden = like popup but initially hide the popup
 " noinsert = dont insert any text until the user selects a match from the menu
 " noselect = do not select a match in the menu, force user to do it
-set completeopt=menuone,preview,noinsert,noselect,preview
+set completeopt=menuone,preview,noinsert,noselect
 
 " Keep a viminfo file
 set viminfo='20,\"500   " Keep a .viminfo file.

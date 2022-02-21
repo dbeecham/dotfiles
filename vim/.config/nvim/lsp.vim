@@ -62,6 +62,17 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
     \ 'completor': function('asyncomplete#sources#file#completor')
     \ }))
 
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'allowlist': ['*'],
+    \ 'blocklist': [],
+    \ 'priority': 100,
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ 'config': {
+    \     'max_buffer_size': 5242880,
+    \ }
+    \ }))
+
 " i never got this to work. like, i never got the popups in my feed.
 au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
     \ 'name': 'neosnippet',
