@@ -54,9 +54,16 @@ function! ITabComplete()
     " otherwise, if we have nothing selected in the pum, select the first one
     " we do this before jumpable(), because we'd rather select the first item
     " than jump to the next neosnippet
-    if pumvisible() && complete_info().selected == -1
-        return "\<C-n>"
+    if pumvisible()
+        if complete_info().selected == -1
+            return "\<C-n>"
+        endif
+
+        " pum is visible, we dont want to jump because that messes up stuff.
+        " so we need to close it first. This is just a bugfix.
+        return asyncomplete#close_popup()
     endif
+
 
 
     "let l:ctx = asyncomplete#context()
@@ -66,7 +73,6 @@ function! ITabComplete()
     "if (!pumvisible()) && l:endidx - l:startidx >= 2
     "    return "\<Plug>(asyncomplete_force_refresh)"
     "endif
-
 
     " lastly, if we can jump to the next item, do that. we don't use
     " expandable_or_jumpable, because sometimes we can't expand, we can jump,
