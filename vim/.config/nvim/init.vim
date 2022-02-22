@@ -7,5 +7,4 @@ source ~/.config/nvim/fzf_ext.vim
 source ~/.config/nvim/bindings.vim
 source ~/.config/nvim/abbreviations.vim
 
-
 silent! colorscheme lunix-modern-256

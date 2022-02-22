@@ -61,8 +61,9 @@ set winheight=12
 set winminheight=4
 
 " Emacs-style, Bash-like tab completion
-set wildmode=longest:full,full
-set wildmenu
+"set wildmode=longest:full,full
+set wildmode=lastused
+set nowildmenu
 
 " menu = use a popup menu
 " menuone = use the popup menu also when there is only one match

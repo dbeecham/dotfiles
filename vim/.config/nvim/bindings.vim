@@ -44,31 +44,90 @@ nnoremap <A-i> :tabprev<cr>
 nnoremap <leader>x :NERDTreeToggle<cr>
 nnoremap <leader>X :TagbarToggle<cr>
 
+function! ITabComplete()
 
-" I don't like Ultisnips any more.
-"if exists(":let")
-"    let g:UltiSnipsExpandTrigger="<C-y>"
-"    let g:UltiSnipsJumpForwardTrigger="<C-j>"
-"    let g:UltiSnipsJumpBackwardTrigger="<C-k>"
-"endif
-
-" I'm not using vim-snipmate any longer either.
-"imap <C-y> <Plug>(neosnippet_expand_or_jump)
-"smap <C-y> <Plug>(neosnippet_expand_or_jump)
-"xmap <C-x> <Plug>(neosnippet_expand_target)
-"imap <C-6> <Plug>snipMateBack
-"smap <C-6> <Plug>snipMateBack
-
-function! TabComplete()
+    " if we can expand a snippet, do it first
     if neosnippet#expandable()
-        normal "\<Plug>(neosnippet_expand)"
+        return "\<Plug>(neosnippet_expand)"
     endif
+
+    " otherwise, if we have nothing selected in the pum, select the first one
+    " we do this before jumpable(), because we'd rather select the first item
+    " than jump to the next neosnippet
+    if pumvisible()
+        if complete_info().selected == -1
+            return "\<C-n>"
+        endif
+
+        " pum is visible, we dont want to jump because that messes up stuff.
+        " so we need to close it first. This is just a bugfix.
+        return asyncomplete#close_popup()
+    endif
+
+
+
+    "let l:ctx = asyncomplete#context()
+    "let [l:_, l:startidx, l:endidx] = asyncomplete#utils#matchstrpos(l:ctx['typed'], '\(\k\+$\)')
+    " if i'm currently on a word and press tab, then I want to tab complete.
+    " But only if i'm on a word; otherwise I want to jump or insert a tab.
+    "if (!pumvisible()) && l:endidx - l:startidx >= 2
+    "    return "\<Plug>(asyncomplete_force_refresh)"
+    "endif
+
+    " lastly, if we can jump to the next item, do that. we don't use
+    " expandable_or_jumpable, because sometimes we can't expand, we can jump,
+    " but we don't want to jump - we want to select the first item in the pum.
+    if neosnippet#jumpable()
+      return "\<Plug>(neosnippet_jump)"
+    endif
+
+
+    " if nothing else, just insert a tab
+    return "\<tab>"
+endfunction
+
+function! STabComplete()
+
+    " if we can expand a snippet, do it first
+"    if neosnippet#expandable()
+"        return "\<Plug>(neosnippet_expand)"
+"    endif
+
+    " otherwise, if we have nothing selected in the pum, select the first one
+    " we do this before jumpable(), because we'd rather select the first item
+    " than jump to the next neosnippet
+"    if pumvisible() && complete_info().selected == -1
+"        return "\<C-n>"
+"    endif
+
+
+"    let l:ctx = asyncomplete#context()
+"    let [l:_, l:startidx, l:endidx] = asyncomplete#utils#matchstrpos(l:ctx['typed'], '\(\k\+$\)')
+"    " if i'm currently on a word and press tab, then I want to tab complete.
+"    " But only if i'm on a word; otherwise I want to jump or insert a tab.
+"    if (!pumvisible()) && l:endidx - l:startidx >= 2
+"        return "\<Plug>(asyncomplete_force_refresh)"
+"    endif
+
+
+    " lastly, if we can jump to the next item, do that. we don't use
+    " expandable_or_jumpable, because sometimes we can't expand, we can jump,
+    " but we don't want to jump - we want to select the first item in the pum.
+    if neosnippet#jumpable()
+      return "\<Plug>(neosnippet_jump)"
+    endif
+
+
+    " if nothing else, just insert a tab
+    return "\<tab>"
 endfunction
 
 autocmd CompleteDone * if pumvisible() == 0 | silent! pclose | endif
-imap <expr><tab> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ? (complete_info().selected == -1 ? "\<C-n>" : "\<Plug>(neosnippet_expand_or_jump)") : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<tab>")
-"imap <expr><tab> TabComplete()
-smap <expr><tab> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ? (complete_info().selected == -1 ? "\<C-n>" : "\<Plug>(neosnippet_jump_or_expand)") : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<tab>")
+
+"imap <expr><tab> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ? (complete_info().selected == -1 ? "\<C-n>" : "\<Plug>(neosnippet_expand_or_jump)") : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<tab>")
+imap <expr><tab> ITabComplete()
+smap <expr><tab> STabComplete()
+"smap <expr><tab> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ? (complete_info().selected == -1 ? "\<C-n>" : "\<Plug>(neosnippet_jump_or_expand)") : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<tab>")
 "smap <expr><tab> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
 
 " FZF is very useful.
