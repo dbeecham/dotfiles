@@ -827,6 +827,23 @@ options head
     }
 # }}}
 
+# linux fs {{{
+snippet mount
+options head
+	ret = mount(
+		/* src = */ ${1:"proc"},
+		/* dest = */ ${2:"/proc"},
+		/* type = */ ${3:"proc"},
+		/* mountoptions = */ ${4:MS_NOATIME},
+		/* fsoptions = */ ${5:NULL}
+	);
+	if (-1 == ret) {
+		syslog(LOG_ERR, "%s:%d:%s: mount: %s", __FILE__, __LINE__, __func__, strerror(errno));
+		return -1;
+	}
+	${0}
+# }}}
+
 # tcp client {{{
 snippet getaddrinfo
 options head
