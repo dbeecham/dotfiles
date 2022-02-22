@@ -15,14 +15,15 @@
     old = red
     context = white
 [alias]
-    l = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(green)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-    ll = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(green)- %an%C(reset)%C(bold yellow)%d%C(reset)\n' --all --stat
+    l = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(green)- %an%C(reset)%C(bold yellow)%d%C(reset)' 
+    la = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(green)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    ll = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(green)- %an%C(reset)%C(bold yellow)%d%C(reset)\n' --stat
     s = status --short --branch
     sa = status --short --branch
 	d = diff
 	dt = difftool
     a = add
-    f = fetch
+    f = fetch --no-tags --prune
     b = branch
     r = remote
     c = commit
