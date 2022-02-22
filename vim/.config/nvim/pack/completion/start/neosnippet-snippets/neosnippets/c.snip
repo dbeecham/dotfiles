@@ -833,7 +833,7 @@ options head
 			.ai_socktype = SOCK_STREAM,
 			.ai_flags = AI_PASSIVE
 		},
-		/* servinfo = */ ${3:${`ProjectName()`->servinfo}
+		/* servinfo = */ ${3:`ProjectName()`}${4:->}${5:servinfo}
 	);
 	if (-1 == ret) {
 		syslog(LOG_WARNING, "%s:%d:%s: getaddrinfo: %s", __FILE__, __LINE__, __func__, gai_strerror(ret));
@@ -844,7 +844,7 @@ options head
 		return -1;
 	}
 
-	// next, maybe call `ProjectName()`_connect_with_servinfo() or something...
+	// next, maybe call $3_connect_with_servinfo() or something...
 	// app->servinfo_p = app->servinfo;
 	${0}
 snippet setsockopt
@@ -1279,7 +1279,7 @@ options head
 		/* timerspec = */ &(struct itimerspec) {
 			.it_interval = {0},
 			.it_value = {
-				.tv_sec  = 10,
+				.tv_sec  = ${2:3},
 				.tv_nsec = 0
 			}
 		},
@@ -1680,6 +1680,206 @@ options head
 						__FILE__, __LINE__, __func__, ret);
 			}
 	}
+# }}}
+
+# io_uring {{{
+snippet uringdisp
+alias urdisp
+options head
+	static int ${1:`ProjectName()`}_uring_event_dispatch (
+		struct $1_s * $1,
+		struct io_uring_cqe * cqe
+	)
+	{
+		if (NULL == cqe->user_data) {
+			io_uring_cqe_seen(&$1->${2:ring}, cqe);
+			return 0;
+		}
+
+		if (*(int*)cqe->user_data == $1->signalfd)
+			return $1_uring_event_signalfd($1, cqe);
+
+		syslog(LOG_ERR, "%s:%d:%s: No match on uring event.", __FILE__, __LINE__, __func__);
+		return -1;
+	}
+	${0}
+snippet uringw
+alias io_uring_wait_cqe
+alias urw
+options head
+	struct io_uring_cqe * cqe;
+	while (1) {
+
+		ret = io_uring_wait_cqe(&${1:`ProjectName()`}->${2:ring}, &cqe);
+		if (ret < 0) {
+			syslog(LOG_ERR, "%s:%d:%s: io_uring_wait_cqe: %s", __FILE__, __LINE__, __func__, strerror(-ret));
+			return -1;
+		}
+
+		ret = $1_uring_event_dispatch($1, cqe);
+		if (-1 == ret) {
+			syslog(LOG_ERR, "%s:%d:%s: $1_uring_event_dispatch returned -1", __FILE__, __LINE__, __func__);
+			return -1;
+		}
+	}
+	${0}
+snippet io_uring_queue_init
+alias uring_init
+alias urc
+options head
+	// create uring
+	ret = io_uring_queue_init(${1:CONFIG_URING_DEPTH}, &${2:`ProjectName()`}${3:->}${4:ring}, 0);
+	if (0 != ret) {
+		syslog(LOG_ERR, "%s:%d:%s: io_uring_queue_init: %s", __FILE__, __LINE__, __func__, strerror(-ret));
+		return -1;
+	}
+	${0}
+snippet io_uring_get_sqe
+alias uring_get_sqe
+alias ursqe
+options head
+	sqe = io_uring_get_sqe(&${1:`ProjectName()`}${2:->}${3:ring});
+	if (NULL == sqe) {
+		syslog(LOG_ERR, "%s:%d:%s: io_uring_get_sqe returned NULL", __FILE__, __LINE__, __func__);
+		return -1;
+	}
+	${0}
+snippet io_uring_prep_accept
+alias uring_prep_accept
+alias uring_accept
+alias uraccept
+options head
+	// accept()
+	${1:sqe} = io_uring_get_sqe(&${2:`ProjectName()`}->${3:ring});
+	if (NULL == $1) {
+		syslog(LOG_ERR, "%s:%d:%s: io_uring_get_sqe returned NULL", __FILE__, __LINE__, __func__);
+		return -1;
+	}
+	io_uring_prep_accept(
+		/* sqe = */ $1, 
+		/* fd = */ ${4:fd}, 
+		/* addrinfo = */ ${5:NULL},
+		/* addrinfo_len = */ ${6:0},
+		/* flags = */ ${7:0}
+	);
+	io_uring_sqe_set_data($1, ${8:&$4});
+	io_uring_submit(&$2->$3);
+	${0}
+snippet io_uring_prep_read
+alias uring_prep_read
+alias uring_read
+alias urread
+options head
+	// register a read call on fd
+	${1:sqe} = io_uring_get_sqe(&${2:`ProjectName()`}->${3:ring});
+	if (NULL == $1) {
+		syslog(LOG_ERR, "%s:%d:%s: io_uring_get_sqe returned NULL", __FILE__, __LINE__, __func__);
+		return -1;
+	}
+	io_uring_prep_read(
+		/* sqe = */ $1,
+		/* fd = */ ${4:fd},
+		/* buf = */ ${5:buf},
+		/* buf_len = */ ${6:sizeof($5)},
+		/* offset = */ ${7:0}
+	);
+	io_uring_sqe_set_data($1, ${8:&$4});
+	io_uring_submit(&$2->$3);
+	${0}
+snippet io_uring_prep_write
+alias uring_prep_write
+alias uring_write
+alias urwrite
+options head
+	// write buffer to fd
+	${1:sqe} = io_uring_get_sqe(&${2:`ProjectName()`}->${3:ring});
+	if (NULL == $1) {
+		syslog(LOG_ERR, "%s:%d:%s: io_uring_get_sqe returned NULL", __FILE__, __LINE__, __func__);
+		return -1;
+	}
+	io_uring_prep_write(
+		/* sqe = */ $1,
+		/* fd = */ ${4:fd},
+		/* buf = */ ${5:buf},
+		/* buf_len = */ ${6:sizeof($5)},
+		/* offset = */ ${7:0}
+	);
+	io_uring_sqe_set_data($1, ${8:&$4});
+	io_uring_submit(&$2->$3);
+	${0}
+snippet io_uring_prep_close
+alias uring_prep_close
+alias uring_close
+alias urclose
+options head
+	${1:sqe} = io_uring_get_sqe(&${2:`ProjectName()`}->${3:ring});
+	if (NULL == $1) {
+		syslog(LOG_ERR, "%s:%d:%s: io_uring_get_sqe returned NULL", __FILE__, __LINE__, __func__);
+		return -1;
+	}
+	io_uring_prep_close(
+		/* sqe = */ $1,
+		/* fd = */ ${4:fd}
+	);
+	io_uring_sqe_set_data($1, 0);
+	io_uring_submit(&$2->$3);
+	${0}
+snippet io_uring_sqe_seen
+alias uring_seen
+alias urseen
+options head
+	// mark this event as seen
+	io_uring_cqe_seen(&${1:`ProjectName()`}->${2:ring}, ${3:cqe});${0}
+snippet io_uring_register_files
+alias urfiles
+options head
+	ret = io_uring_register_files(
+		/* ring = */ &${1:`ProjectName()`}->${2:ring},
+		/* files = */ (int[]) {
+			${3:fd}${4:#:,...}
+		},
+		/* files_len = */ ${5:1}
+	);
+	if (ret < 0) {
+		syslog(LOG_ERR, "%s:%d:%s: io_uring_register_files: %s", __FILE__, __LINE__, __func__, strerror(-ret));
+		return -1;
+	}
+	${0}
+snippet io_uring_register_buffers
+alias urbuffers
+options head
+	ret = io_uring_register_buffers(
+		/* ring = */ &${1:`ProjectName()`}->${2:ring},
+		/* files = */ (struct iovec[]) {
+			{
+				.iov_base = ${3:buf},
+				.iov_len = ${4:buf_len}
+			}${5:#:,...}
+		},
+		/* iovec_len = */ ${6:1}
+	);
+	if (ret < 0) {
+		syslog(LOG_ERR, "%s:%d:%s: io_uring_register_buffers: %s", __FILE__, __LINE__, __func__, strerror(-ret));
+		return -1;
+	}
+	${0}
+snippet io_uring_prep_poll_add
+alias urpoll
+options head
+	// add poll
+	${1:sqe} = io_uring_get_sqe(&${2:`ProjectName()`}->${3:ring});
+	if (NULL == $1) {
+		syslog(LOG_ERR, "%s:%d:%s: io_uring_get_sqe returned NULL", __FILE__, __LINE__, __func__);
+		return -1;
+	}
+	io_uring_prep_poll_add(
+		/* sqe = */ $1,
+		/* fd = */ ${4:fd},
+		/* poll_mask = */ ${5:POLLIN}
+	);
+	io_uring_sqe_set_data($1, ${8:&$4});
+	io_uring_submit(&$2->$3);
+	${0}
 # }}}
 
 # vim: fdm=marker noexpandtab
