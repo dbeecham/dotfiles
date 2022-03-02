@@ -1754,6 +1754,7 @@ options head
 snippet io_uring_get_sqe
 alias uring_get_sqe
 alias ursqe
+alias urget
 options head
 	sqe = io_uring_get_sqe(&${1:`ProjectName()`}${2:->}${3:ring});
 	if (NULL == sqe) {
@@ -1822,6 +1823,32 @@ options head
 		/* offset = */ ${7:0}
 	);
 	io_uring_sqe_set_data($1, ${8:&$4});
+	io_uring_submit(&$2->$3);
+	${0}
+snippet io_uring_prep_writev
+alias uring_prep_writev
+alias uring_writev
+alias urwritev
+options head
+	// write buffer to fd
+	${1:sqe} = io_uring_get_sqe(&${2:`ProjectName()`}->${3:ring});
+	if (NULL == $1) {
+		syslog(LOG_ERR, "%s:%d:%s: io_uring_get_sqe returned NULL", __FILE__, __LINE__, __func__);
+		return -1;
+	}
+	io_uring_prep_write(
+		/* sqe = */ $1,
+		/* fd = */ ${4:fd},
+		/* iovec = */ (struct iovec[]){
+			{
+				.iov_base = ${5:buf},
+				.iov_len = ${6:sizeof(buf)}
+			}${7:, ...}
+		},
+		/* buf_len = */ ${8:sizeof($5)},
+		/* offset = */ ${9:0}
+	);
+	io_uring_sqe_set_data($1, ${10:&$4});
 	io_uring_submit(&$2->$3);
 	${0}
 snippet io_uring_prep_close
