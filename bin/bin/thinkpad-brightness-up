@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+function main() {
+    read -r max_val < "/sys/class/backlight/intel_backlight/max_brightness"
+    read -r cur_val < "/sys/class/backlight/intel_backlight/brightness"
+    local new_val=$((${cur_val} + 20))
+    local threshold_val=$((${new_val} < ${max_val} ? ${new_val} : ${max_val}))
+    printf ${threshold_val} > /sys/class/backlight/intel_backlight/brightness
+    logger "current=${cur_val}, max=${max_val}"
+}
+
+main "$@"
