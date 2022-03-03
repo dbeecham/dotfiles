@@ -104,9 +104,6 @@ bindkey -e
 # Narrow that down to allow easier skipping through words via M-f and M-b.
 export WORDCHARS='*?[]~&;!$%^<>'
 
-# GO
-export GOROOT="$HOME/go"
-
 # nix
 if test -e ~/.nix-profile/etc/profile.d/nix.sh; then
     source ~/.nix-profile/etc/profile.d/nix.sh

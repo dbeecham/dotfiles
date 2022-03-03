@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+git rev-list --all --children | while read one two; do if test -z "${two}"; then echo "${one}"; fi; done | xargs git show --no-patch --oneline
