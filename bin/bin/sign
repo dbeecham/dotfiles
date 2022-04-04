@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+main() {
+    if test ! "${1:-}" = "-Y"; then
+        printf "expected '-Y', cmdline is $@" >&2
+        exit 1
+    fi
+
+    if test ! "${2:-}" = "sign"; then
+        printf "expected 'sign', cmdline is $@" >&2
+        exit 1
+    fi
+
+    if test ! "${3:-}" = "-n"; then
+        printf "expected '-n', cmdline is $@" >&2
+        exit 1
+    fi
+
+    if test ! "${4:-}" = "git"; then
+        printf "expected 'git', cmdline is $@" >&2
+        exit 1
+    fi
+
+    if test ! "${5:-}" = "-f"; then
+        printf "expected '-f', cmdline is $@" >&2
+        exit 1
+    fi
+
+    local key=${6}
+    local input=${7}
+
+    #/nix/store/8k91is5b3qix1n172ngfn7bk0rzfs8kl-yubico-piv-tool-2.0.0/bin/yubico-piv-tool -a verify-pin --sign -s 9a -A ECCP384 -H SHA256 --input ${input} --output ${input}.sig --format=base64
+    pkcs11-tool --module /nix/store/8k91is5b3qix1n172ngfn7bk0rzfs8kl-yubico-piv-tool-2.0.0/lib/libykcs11.so --slot 0 --id 01 --mechanism ECDSA-SHA384 --sign --input-file ${input} --output-file ${input}.sig --signature-format openssl
+
+    printf "input=${input}=$(cat ${input})}\n"
+    printf "output=${input}.sig=$(cat ${input}.sig)}\n"
+}
+
+main "$@"
