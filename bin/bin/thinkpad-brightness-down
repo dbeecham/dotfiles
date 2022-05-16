@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+function main() {
+    local min_val="0"
+    read -r cur_val < "/sys/class/backlight/intel_backlight/brightness"
+    local new_val=$((${cur_val} - 20))
+    local threshold_val=$((${min_val} < ${new_val} ? ${new_val} : ${min_val}))
+    printf ${threshold_val} > /sys/class/backlight/intel_backlight/brightness
+}
+
+main "$@"
