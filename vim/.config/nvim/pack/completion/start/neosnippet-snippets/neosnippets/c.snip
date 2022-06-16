@@ -503,7 +503,8 @@ options head
 		/* flags = */ FTW_MOUNT
 	);
 	if (-1 == ret) {
-		// handle error
+		syslog(LOG_ERR, "%s:%d:%s: nftw: %s", __FILE__, __LINE__, __func__, strerror(errno));
+		return -1;
 	}
 snippet nftwcb
 options head
